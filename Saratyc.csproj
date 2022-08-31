@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="2. Negocio\RN\" />
     <Folder Include="4. Datos\" />
     <Folder Include="3. Servicios\" />
     <Folder Include="5. Reportes\" />

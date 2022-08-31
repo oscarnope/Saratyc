@@ -17,3 +17,5 @@ C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\refin
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc.pdb
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc.genruntimeconfig.cache
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\ref\Saratyc.dll
+C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AgendarCita.resources
+C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.Usuarios.resources
