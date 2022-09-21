@@ -1,0 +1,33 @@
+﻿Id;Sector ciudad Vive;Turno;Tipo de compania;Institucion;Condicion de Salud;Diagnostico;Nivel de Conciencia;Compania;Nivel de Dependencia;Temperamento
+1;Sur (San Cristóbal, Usme, Tunjuelito, Antonio Nariño, Rafael Uribe, Sumapaz);Diurno;Con familiar mayor de edad;IPS;Catéter Periférico;Catéter Periférico;Si;Con familiar mayor de edad;Si;Reservado
+2;Occidente (Fontibón, Engativá, Suba, Barrios Unidos, Puente Aranda);Diurno;Con un familiar;IPS;Colostomía;Colostomía;No;Con un familiar;No;Hablador
+3;Sur Occidente (Bosa, Kennedy, Ciudad Bolívar);Cualquiera;Solo;Clínicas estéticas;Discapacidad auditiva;Discapacidad auditiva;Si;Solo;Si;Tranquilo
+4;Sur (San Cristóbal, Usme, Tunjuelito, Antonio Nariño, Rafael Uribe, Sumapaz);Diurno;Con un familiar;Todas las anteriores;Discapacidad visual                                                ;Discapacidad visual                                          ;No;Con empleada en el día;No;Reservado
+5;Sur (San Cristóbal, Usme, Tunjuelito, Antonio Nariño, Rafael Uribe, Sumapaz);Cualquiera;Con empleada en el día;Domicilio;Drenes;Drenes;Si;Con empleada permanente;Si;Hablador
+6;Sur Occidente (Bosa, Kennedy, Ciudad Bolívar);Diurno;Con un familiar;Todas las anteriores;Glucometría;Glucometría;No;Con familiar mayor de edad;No;Tranquilo
+7;Norte (Usaquén, Chapinero);Diurno;Solo;IPS;Medicación aplicación endovenosa;Medicación aplicación endovenosa;Si;Con un familiar;Si;Reservado
+8;Sur Occidente (Bosa, Kennedy, Ciudad Bolívar);Diurno;Solo;Todas las anteriores;Nefrostomia;Nefrostomia;No;Solo;No;Hablador
+9;Sur Occidente (Bosa, Kennedy, Ciudad Bolívar);Cualquiera;Con un familiar;Todas las anteriores;Oxigeno;Oxigeno;Si;Con empleada en el día;Si;Tranquilo
+10;Occidente (Fontibón, Engativá, Suba, Barrios Unidos, Puente Aranda);Cualquiera;Con empleada permanente;Todas las anteriores;Sonda Gastrostomía;Sonda Gastrostomía;No;Con empleada permanente;No;Reservado
+11;Sur Occidente (Bosa, Kennedy, Ciudad Bolívar);Cualquiera;Con familiar mayor de edad;Todas las anteriores;Sonda Naso gástrica;Sonda Naso gástrica;Si;Con familiar mayor de edad;Si;Hablador
+12;Occidente (Fontibón, Engativá, Suba, Barrios Unidos, Puente Aranda);Nocturno;Solo;Todas las anteriores;Sonda Orogástrica;Sonda Orogástrica;No;Con un familiar;No;Tranquilo
+13;Occidente (Fontibón, Engativá, Suba, Barrios Unidos, Puente Aranda);Cualquiera;Con un familiar;Todas las anteriores;Sonda Vesical;Sonda Vesical;Si;Solo;Si;Reservado
+14;Occidente (Fontibón, Engativá, Suba, Barrios Unidos, Puente Aranda);Diurno;Con un familiar;IPS;Traqueostomía;Traqueostomía;No;Con empleada en el día;No;Hablador
+15;Sur Occidente (Bosa, Kennedy, Ciudad Bolívar);Nocturno;Con familiar mayor de edad;Domicilio;Postcirugía estética;Postcirugía estética;Si;Con empleada permanente;Si;Tranquilo
+16;Sur Occidente (Bosa, Kennedy, Ciudad Bolívar);Diurno;Con empleada permanente;IPS;Catéter Periférico;Catéter Periférico;No;Con familiar mayor de edad;No;Reservado
+17;Sur (San Cristóbal, Usme, Tunjuelito, Antonio Nariño, Rafael Uribe, Sumapaz);Nocturno;Con un familiar;Todas las anteriores;Colostomía;Colostomía;Si;Con un familiar;Si;Hablador
+18;Occidente (Fontibón, Engativá, Suba, Barrios Unidos, Puente Aranda);Nocturno;Con empleada permanente;Domicilio;Discapacidad auditiva;Discapacidad auditiva;No;Solo;No;Tranquilo
+19;Sur (San Cristóbal, Usme, Tunjuelito, Antonio Nariño, Rafael Uribe, Sumapaz);Cualquiera;Solo;IPS;Discapacidad visual                                                ;Discapacidad visual                                                ;Si;Con empleada en el día;Si;Reservado
+20;Sur Occidente (Bosa, Kennedy, Ciudad Bolívar);Diurno;Con familiar mayor de edad;IPS;Drenes;Drenes Exp;No;Con empleada permanente;No;Hablador
+21;Occidente (Fontibón, Engativá, Suba, Barrios Unidos, Puente Aranda);Cualquiera;Solo;IPS;Glucometría;Glucometría Exp;Si;Con familiar mayor de edad;Si;Tranquilo
+22;Occidente (Fontibón, Engativá, Suba, Barrios Unidos, Puente Aranda);Nocturno;Con empleada permanente;Domicilio;Medicación aplicación endovenosa;Medicación aplicación endovenosa;No;Con un familiar;No;Reservado
+23;Sur Occidente (Bosa, Kennedy, Ciudad Bolívar);Cualquiera;Con familiar mayor de edad;Domicilio;Nefrostomia;Nefrostomia;Si;Solo;Si;Hablador
+24;Occidente (Fontibón, Engativá, Suba, Barrios Unidos, Puente Aranda);Cualquiera;Con familiar mayor de edad;Domicilio;Oxigeno;Oxigeno;No;Con empleada en el día;No;Tranquilo
+25;Sur Occidente (Bosa, Kennedy, Ciudad Bolívar);Nocturno;Con un familiar;Todas las anteriores;Sonda Gastrostomía;Sonda Gastrostomía;Si;Con empleada permanente;Si;Reservado
+26;Occidente (Fontibón, Engativá, Suba, Barrios Unidos, Puente Aranda);Nocturno;Con familiar mayor de edad;Todas las anteriores;Sonda Naso gástrica;Sonda Naso gástrica;No;Con familiar mayor de edad;No;Hablador
+27;Occidente (Fontibón, Engativá, Suba, Barrios Unidos, Puente Aranda);Diurno;Con empleada permanente;IPS;Sonda Orogástrica;Sonda Orogástrica;Si;Con un familiar;Si;Tranquilo
+28;Sur Occidente (Bosa, Kennedy, Ciudad Bolívar);Nocturno;Solo;IPS;Sonda Vesical;Sonda Vesical;No;Solo;No;Reservado
+29;Sur (San Cristóbal, Usme, Tunjuelito, Antonio Nariño, Rafael Uribe, Sumapaz);Cualquiera;Con un familiar;Todas las anteriores;Traqueostomía;Traqueostomía;Si;Con empleada en el día;Si;Hablador
+30;Sur Occidente (Bosa, Kennedy, Ciudad Bolívar);Nocturno;Con empleada permanente;IPS;Postcirugía estética;Postcirugía estética;No;Con empleada permanente;No;Tranquilo
+31;Sur Occidente (Bosa, Kennedy, Ciudad Bolívar);Nocturno;Solo;Todas las anteriores;Catéter Periférico;Catéter Periférico;Si;Con familiar mayor de edad;Si;Reservado
+32;Occidente (Fontibón, Engativá, Suba, Barrios Unidos, Puente Aranda);Nocturno;Con familiar mayor de edad;Todas las anteriores;Colostomía;Colostomía;No;Con un familiar;No;Hablador

@@ -1,0 +1,1 @@
+Pedro,Perez, 123456, 1956/12/11, Masculino, Kennedy, Roma, Comatoso, Independiente, Sonda Gastrostomía, Peso normal, Tranquilo (a), Medicina Interna, Paciente sin compañía, Femenino, Rango de Edad 20-35,Nacionalidad Colombiana, Hablador, , No 

@@ -1,4 +1,7 @@
-namespace Saratyc
+using System;
+using System.Windows.Forms;
+
+namespace Saratyc._1._Presentacion_UI.Forms
 {
     internal static class Program
     {
@@ -7,11 +10,12 @@ namespace Saratyc
         /// </summary>
         [STAThread]
         static void Main()
-        {
+       {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            //ApplicationConfiguration.Initialize();
             Application.Run(new Login());
         }
+
     }
 }

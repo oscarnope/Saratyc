@@ -5,7 +5,6 @@ C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\bin\Debug\net6.0-windows\Sarat
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\bin\Debug\net6.0-windows\Saratyc.pdb
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc.csproj.AssemblyReference.cache
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AuxiliarEnfermeria.resources
-C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc.Login.resources
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.Paciente.resources
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc.csproj.GenerateResource.cache
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc.GeneratedMSBuildEditorConfig.editorconfig
@@ -19,3 +18,11 @@ C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Sarat
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\ref\Saratyc.dll
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AgendarCita.resources
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.Usuarios.resources
+C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AsignarAuxiliar.resources
+C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AsignarTurno.resources
+C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AuxiliarRecomendado.resources
+C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.Borrador.resources
+C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.Login.resources
+C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.MenuServicios.resources
+C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.VerTurnos.resources
+C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc.Properties.Resources.resources

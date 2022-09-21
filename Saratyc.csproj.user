@@ -7,10 +7,10 @@
     <Compile Update="1. Presentacion UI\Forms\AuxiliarEnfermeria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="1. Presentacion UI\Forms\Paciente.cs">
+    <Compile Update="1. Presentacion UI\Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="1. Presentacion UI\Forms\Login.cs">
+    <Compile Update="1. Presentacion UI\Forms\Paciente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="1. Presentacion UI\Forms\Usuarios.cs">
