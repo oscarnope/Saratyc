@@ -27,7 +27,7 @@ import seaborn as sns
 
 from pandas_profiling import ProfileReport
 
-get_ipython().run_line_magic('matplotlib', 'inline')
+#get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # In[9]:
