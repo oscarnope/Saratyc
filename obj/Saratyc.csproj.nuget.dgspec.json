@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc.csproj": {}
+    "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Saratyc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc.csproj": {
+    "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Saratyc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc.csproj",
+        "projectUniqueName": "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Saratyc.csproj",
         "projectName": "Saratyc",
-        "projectPath": "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc.csproj",
+        "projectPath": "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Saratyc.csproj",
         "packagesPath": "C:\\Users\\Julian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Julian\\source\\repos\\Saratyc\\obj\\",
+        "outputPath": "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -22,15 +22,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0-windows7.0"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0-windows7.0": {
-            "targetAlias": "net5.0-windows",
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
             "projectReferences": {}
           }
         },
@@ -41,8 +41,8 @@
         }
       },
       "frameworks": {
-        "net5.0-windows7.0": {
-          "targetAlias": "net5.0-windows",
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
           "imports": [
             "net461",
             "net462",
@@ -53,14 +53,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WindowsForms": {
-              "privateAssets": "none"
-            }
-          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
         }
       }

@@ -19,7 +19,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //this.Hide();
+            this.Hide();
             VerTurnos at = new VerTurnos();
             at.Activate();
             at.Show();

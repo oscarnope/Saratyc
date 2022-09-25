@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
@@ -59,7 +60,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
+            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.textBox33 = new System.Windows.Forms.TextBox();
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -109,12 +115,6 @@
             this.textBox47 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.textBox34 = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -231,6 +231,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(808, 212);
             this.panel2.TabIndex = 5;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(3, 6);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(168, 20);
+            this.label18.TabIndex = 34;
+            this.label18.Text = "Solicitudes del Servicio";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label13
             // 
@@ -439,16 +450,55 @@
             this.panel3.Size = new System.Drawing.Size(808, 401);
             this.panel3.TabIndex = 33;
             // 
-            // label18
+            // textBox34
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(3, 6);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(168, 20);
-            this.label18.TabIndex = 34;
-            this.label18.Text = "Solicitudes del Servicio";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
+            this.textBox34.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textBox34.Location = new System.Drawing.Point(376, 356);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.Size = new System.Drawing.Size(125, 27);
+            this.textBox34.TabIndex = 48;
+            // 
+            // textBox35
+            // 
+            this.textBox35.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textBox35.Location = new System.Drawing.Point(214, 356);
+            this.textBox35.Name = "textBox35";
+            this.textBox35.Size = new System.Drawing.Size(125, 27);
+            this.textBox35.TabIndex = 47;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(21, 356);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(81, 20);
+            this.label34.TabIndex = 46;
+            this.label34.Text = "Contextura";
+            // 
+            // textBox24
+            // 
+            this.textBox24.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textBox24.Location = new System.Drawing.Point(376, 176);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(125, 27);
+            this.textBox24.TabIndex = 45;
+            // 
+            // textBox32
+            // 
+            this.textBox32.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textBox32.Location = new System.Drawing.Point(214, 176);
+            this.textBox32.Name = "textBox32";
+            this.textBox32.Size = new System.Drawing.Size(125, 27);
+            this.textBox32.TabIndex = 44;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(17, 179);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(98, 20);
+            this.label31.TabIndex = 43;
+            this.label31.Text = "Nacionalidad";
             // 
             // textBox33
             // 
@@ -882,56 +932,6 @@
             this.button1.TabIndex = 35;
             this.button1.Text = "Asignar Auxiliar";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox24
-            // 
-            this.textBox24.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox24.Location = new System.Drawing.Point(376, 176);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(125, 27);
-            this.textBox24.TabIndex = 45;
-            // 
-            // textBox32
-            // 
-            this.textBox32.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox32.Location = new System.Drawing.Point(214, 176);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(125, 27);
-            this.textBox32.TabIndex = 44;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(17, 179);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(98, 20);
-            this.label31.TabIndex = 43;
-            this.label31.Text = "Nacionalidad";
-            // 
-            // textBox34
-            // 
-            this.textBox34.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox34.Location = new System.Drawing.Point(376, 356);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(125, 27);
-            this.textBox34.TabIndex = 48;
-            // 
-            // textBox35
-            // 
-            this.textBox35.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox35.Location = new System.Drawing.Point(214, 356);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(125, 27);
-            this.textBox35.TabIndex = 47;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(21, 356);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(81, 20);
-            this.label34.TabIndex = 46;
-            this.label34.Text = "Contextura";
             // 
             // AuxiliarRecomendado
             // 

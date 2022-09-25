@@ -30,10 +30,10 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(432, 344);
             this.panel1.TabIndex = 2;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(102, 163);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(239, 49);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Editar Preferencias Auxiliar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -88,16 +98,6 @@
             this.button1.Text = "Asignar Turnos";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(102, 163);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(239, 49);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Editar Preferencias Auxiliar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // MenuServicios
             // 

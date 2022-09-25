@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace Saratyc._2._Negocio.BL
 {
-    class BAuxiliar
+    public class BTurno
     {
-        public List<string> cargarAuxiliares()
+        public List<string> cargarTurnos()
         {
             Utilidades ut = new Utilidades();
-            DAuxiliar dAuxiliar = new();
+            DTurno dTurno = new();
 
             string rutaArchivos = "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources";
-            string archivoAuxiliares = "Auxiliares.txt";
-            string ruta = rutaArchivos + "\\" + archivoAuxiliares;
+            string archivoTurnos= "Turnos.txt";
+            string ruta = rutaArchivos + "\\" + archivoTurnos;
 
-            List<string> lAuxiliares = new List<string>();
-            dAuxiliar.listaAuxiliares(ruta, lAuxiliares);
-            return lAuxiliares;
+            List<string> lTurnos = new List<string>();
+            dTurno.listaTurnos(ruta, lTurnos);
+            return lTurnos;
 
         }
 
@@ -28,7 +28,6 @@ namespace Saratyc._2._Negocio.BL
         {
 
         }
-
 
     }
 }

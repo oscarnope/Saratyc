@@ -1,1 +1,30 @@
-Domicilio,Diurno, 123456
+Clínica Carolina,0,ID16,10 horas nocturno,12-Sep-22,26-Sep-22,6,Si
+Clínica Mujer,0,0,8 horas diurno,05-Sep-22,07-Sep-22,49,No
+Domicilio,0,0,8 horas diurno,29-Sep-22,03-Oct-22,9,No
+Domicilio,0,0,6 horas,23-Sep-22,02-Oct-22,47,Si
+Clínica Ortopédica y Cirugía estética,0,0,8 horas diurno,17-Sep-22,23-Sep-22,41,No
+Clínica Carolina,ID5,,24 horas,13-Sep-22,13-Oct-22,62,No
+Clínica Azul,,,12 horas diurno,14-Sep-22,07-Oct-22,80,No
+Clínica Azul,,,10 horas nocturno,05-Sep-22,25-Sep-22,32,Si
+Clínica Carolina,,ID25,6 horas,10-Sep-22,14-Sep-22,89,No
+Prepagadas Country y Colina,,,24 horas,08-Sep-22,07-Oct-22,51,No
+Clínica Carolina,,,10 horas nocturno,16-Sep-22,08-Oct-22,67,No
+Clínica Mujer,,,8 horas nocturno,12-Sep-22,15-Sep-22,17,No
+Especialidad Mama,,,24 horas,27-Sep-22,21-Oct-22,57,Si,No
+Clínica Medery,,,12 horas nocturno,10-Sep-22,26-Sep-22,18,No
+Colina particular,,,24 horas,28-Sep-22,08-Oct-22,7,No
+Country,,,8 horas diurno,17-Sep-22,15-Oct-22,72,No
+Domicilio,,,8 horas nocturno,29-Sep-22,05-Oct-22,54,No
+Domicilio,ID8,,12 horas nocturno,22-Sep-22,20-Oct-22,83,No
+Colina particular,,,10 horas nocturno,11-Sep-22,30-Sep-22,86,No
+Domicilio,,,10 horas nocturno,26-Sep-22,23-Oct-22,36,No
+Clínica Azul,,,24 horas,08-Sep-22,07-Oct-22,37,No
+Prepagadas Country y Colina,,,10 horas diurno,13-Sep-22,09-Oct-22,24,No
+Domicilio,,,12 horas nocturno,11-Sep-22,05-Oct-22,4,Si
+Domicilio,,,12 horas nocturno,28-Sep-22,18-Oct-22,76,No
+Colina particular,,ID29,8 horas nocturno,19-Sep-22,25-Sep-22,21,No
+Country,,,10 horas nocturno,29-Sep-22,01-Oct-22,17,No
+Clínica Mujer,,,10 horas diurno,16-Sep-22,28-Sep-22,27,Si
+Country,ID22,,8 horas nocturno,22-Sep-22,04-Oct-22,28,No
+Clínica Azul,,,24 horas,06-Sep-22,28-Sep-22,78,No
+Domicilio,,,12 horas nocturno,10-Sep-22,12-Sep-22,81,No
