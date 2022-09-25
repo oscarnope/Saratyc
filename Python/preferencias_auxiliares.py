@@ -13,7 +13,7 @@
 # Preferencias Pacientes
 # 
 
-# In[1]:
+# In[5]:
 
 
 # Importing libraries
@@ -27,10 +27,10 @@ import seaborn as sns
 
 from pandas_profiling import ProfileReport
 
-#get_ipython().run_line_magic('matplotlib', 'inline')
+#%matplotlib inline
 
 
-# In[9]:
+# In[6]:
 
 
 # Panadas configuration for extending the number of rows and columns to visualize, if not limit set parameter to None or -1
@@ -38,14 +38,14 @@ pd.set_option('display.max_rows', 100)
 pd.set_option('display.max_columns', 100)
 
 
-# In[70]:
+# In[66]:
 
 
 # Loading las Preferencias de los Auxiliares CSV file as dataframe, showing first rows
 pref_aux_df = pd.read_csv('data/Datos_Preferencias_Aux.csv',sep=";",header= 0)
 
 
-# In[71]:
+# In[67]:
 
 
 # Showing first rows
@@ -54,13 +54,13 @@ pref_aux_df.head()
 
 # ### Analizing data quality
 
-# In[35]:
+# In[9]:
 
 
 pref_aux_df.dtypes
 
 
-# In[37]:
+# In[10]:
 
 
 ##Filtra por Tipo de Compania Pref, Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -74,7 +74,7 @@ TipoCompPref_df[TipoCompPref_df != 0] = 1
 TipoCompPref_df.head()
 
 
-# In[38]:
+# In[11]:
 
 
 ##Filtra por Tipo de Turno Pref, Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -88,7 +88,7 @@ TurnoPref_df[TurnoPref_df != 0] = 1
 TurnoPref_df.head()
 
 
-# In[39]:
+# In[12]:
 
 
 ##Filtra por Tipo de Servicios Pref, Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -102,10 +102,13 @@ TipoServiciosPref_df[TipoServiciosPref_df != 0] = 1
 TipoServiciosPref_df.head()
 
 
-# In[40]:
+# In[68]:
 
 
 ##Filtra por Temperamento Pref, Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
+##Temperamento de preferencia del auxiliar se puede filtrar los que tienen prioridad >= 3 
+##Tocaría llenar la variable Temperamento Pref de los auxiliares para poder encontrar las preferencias.
+
 pref_aux_df_filtro_df = pref_aux_df[['Id', 'Temperamento Pref']]
 pref_aux_df_filtro_df.head()
 
@@ -116,7 +119,7 @@ TemperamentoPref_df[TemperamentoPref_df != 0] = 1
 TemperamentoPref_df.head()
 
 
-# In[41]:
+# In[14]:
 
 
 ##Filtra por Remuneración Pref , Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -130,7 +133,7 @@ RemuneracionPref_df[RemuneracionPref_df != 0] = 1
 RemuneracionPref_df.head()
 
 
-# In[42]:
+# In[15]:
 
 
 ##Filtra por Remuneración Pref , Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -144,7 +147,7 @@ BinomioPref_df[BinomioPref_df != 0] = 1
 BinomioPref_df.head()
 
 
-# In[46]:
+# In[16]:
 
 
 ##Filtra por Remuneración Pref , Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -158,7 +161,7 @@ NiñosPref_df[NiñosPref_df != 0] = 1
 NiñosPref_df.head()
 
 
-# In[47]:
+# In[17]:
 
 
 ##Filtra por Remuneración Pref , Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -172,7 +175,7 @@ AdultosPref_df[AdultosPref_df != 0] = 1
 AdultosPref_df.head()
 
 
-# In[59]:
+# In[18]:
 
 
 ##Filtra por Experiencia, Normaliza los datos : Cambia los valores No a 0 y los demás a 1 
@@ -186,10 +189,11 @@ Experiencia_df = Experiencia_df.replace("No",0)
 Experiencia_df.head()
 
 
-# In[66]:
+# In[71]:
 
 
-##Filtra por Prioridad, Normaliza los datos : Cambia los valores a números entre 4 a 1
+##Filtra por Prioridad, Normaliza los datos : Cambia los valores a números entre 0 a 1, donde 1
+##son los valores muy importante e importante, los demás quedan en 0
 pref_aux_df_filtro_df = pref_aux_df[['Id' 
 ,'Sector de la ciudad Prioridad'                                          
 ,'Turno Prioridad'                                                        
@@ -212,28 +216,28 @@ pref_aux_df_filtro_df.head()
 
 pref_aux_df_filtro_df.set_index(['Id'])
 Prioridad_df = pref_aux_df_filtro_df
-Prioridad_df = Prioridad_df.replace("Muy Importante",4)
-Prioridad_df = Prioridad_df.replace("Importante",3)
-Prioridad_df = Prioridad_df.replace("Poco importante",2)
-Prioridad_df = Prioridad_df.replace("Nada importante",1)
+Prioridad_df = Prioridad_df.replace("Muy Importante",1)
+Prioridad_df = Prioridad_df.replace("Importante",1)
+Prioridad_df = Prioridad_df.replace("Poco importante",0)
+Prioridad_df = Prioridad_df.replace("Nada importante",0)
 Prioridad_df.head()
 
 
-# In[86]:
+# In[20]:
 
 
 # Loading los datos de los pacientes CSV file as dataframe, showing first rows
 dat_pac_df = pd.read_csv('data/Datos_Preferencias_Pacientes.csv',sep=";",header= 0)
 
 
-# In[87]:
+# In[21]:
 
 
 # Showing first rows
 dat_pac_df.head()
 
 
-# In[79]:
+# In[22]:
 
 
 ##Filtra por Turno Paciente, Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -247,7 +251,7 @@ TurnoPac_df[TurnoPac_df != 0] = 1
 TurnoPac_df.head()
 
 
-# In[80]:
+# In[23]:
 
 
 ##Filtra por Tipo de Compania Paciente, Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -261,7 +265,7 @@ TipoCompPac_df[TipoCompPac_df != 0] = 1
 TipoCompPac_df.head()
 
 
-# In[81]:
+# In[24]:
 
 
 ##Filtra por Institución Paciente, Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -275,7 +279,7 @@ InstitucionPac_df[InstitucionPac_df != 0] = 1
 InstitucionPac_df.head()
 
 
-# In[88]:
+# In[25]:
 
 
 ##Filtra por Institución Paciente, Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -289,7 +293,7 @@ CondicionSaludPac_df[CondicionSaludPac_df != 0] = 1
 CondicionSaludPac_df.head()
 
 
-# In[89]:
+# In[26]:
 
 
 ##Filtra por Institución Paciente, Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -303,7 +307,7 @@ DiagnosticoPac_df[DiagnosticoPac_df != 0] = 1
 DiagnosticoPac_df.head()
 
 
-# In[90]:
+# In[27]:
 
 
 ##Filtra por Institución Paciente, Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -317,7 +321,7 @@ ConcienciaPac_df[ConcienciaPac_df != 0] = 1
 ConcienciaPac_df.head()
 
 
-# In[91]:
+# In[28]:
 
 
 ##Filtra por Institución Paciente, Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -331,7 +335,7 @@ CompaniaPac_df[CompaniaPac_df != 0] = 1
 CompaniaPac_df.head()
 
 
-# In[92]:
+# In[29]:
 
 
 ##Filtra por Institución Paciente, Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -345,7 +349,7 @@ NivelDependenciaPac_df[NivelDependenciaPac_df != 0] = 1
 NivelDependenciaPac_df.head()
 
 
-# In[93]:
+# In[62]:
 
 
 ##Filtra por Institución Paciente, Pivotea las filas a columnas, Normaliza los datos : Cambia los valores nulos a 0 y los demás a 1 
@@ -359,7 +363,7 @@ TemperamentoPac_df[TemperamentoPac_df != 0] = 1
 TemperamentoPac_df.head()
 
 
-# In[94]:
+# In[31]:
 
 
 #Implementación de la similaridad del coseno 
@@ -379,7 +383,7 @@ def SimilaridadCoseno(pacientePref, auxiliarPref):
     return sumxy/np.sqrt((sumxx*sumyy))
 
 
-# In[112]:
+# In[32]:
 
 
 df1=TipoCompPac_df.reset_index()
@@ -387,13 +391,13 @@ df2=TipoCompPref_df.reset_index()
 df1.head()
 
 
-# In[113]:
+# In[33]:
 
 
 df2.head()
 
 
-# In[119]:
+# In[34]:
 
 
 #Encontrar auxiliares similares con las preferencias de los pacientes.
@@ -403,33 +407,33 @@ df2=TipoCompPref_df.reset_index()
 SimilaridadCoseno(df1.loc[0].values, df2.loc[0].values)
 
 
-# In[117]:
+# In[35]:
 
 
 #Datos del Paciente 1
 df1.loc[0].values
 
 
-# In[122]:
+# In[36]:
 
 
 #Preferencias del Auxiliar 1
 df2.loc[0].values
 
 
-# In[120]:
+# In[37]:
 
 
 SimilaridadCoseno(df1.loc[0].values, df2.loc[1].values)
 
 
-# In[121]:
+# In[38]:
 
 
 SimilaridadCoseno(df1.loc[0].values, df2.loc[2].values)
 
 
-# In[160]:
+# In[39]:
 
 
 #TipoCompPac_df
@@ -464,7 +468,167 @@ for idPaciente in range(len(TipoCompPac_df)):
 rec_Pac_df.head(20)
 
 
-# In[213]:
+# In[40]:
+
+
+#TurnoPref_df
+#TurnoPac_df
+#Turno del Paciente
+df1=TurnoPac_df.reset_index()
+df2=TurnoPref_df.reset_index()
+recTurno_Pac_df = pd.DataFrame()
+df = pd.DataFrame(columns=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'
+                          ,'15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28'
+                          , '29', '30', '31', '32'],
+                  index=range(32))
+
+df_New = pd.DataFrame(columns=[],
+                  index=range(1))
+
+for idPaciente in range(len(df1)):
+    ls_dataSimilar = []
+    for idAuxiliar in range(len(df2)):
+        ls_dataSimilar.append(SimilaridadCoseno(df1.loc[idPaciente].values, df2.loc[idAuxiliar].values))
+        df_New[idAuxiliar] = (SimilaridadCoseno(df1.loc[idPaciente].values, df2.loc[idAuxiliar].values))
+        
+    
+    recTurno_Pac_df = recTurno_Pac_df.append(df_New, ignore_index=True)
+
+
+recTurno_Pac_df.head(20)
+
+
+# In[46]:
+
+
+#TipoServiciosPref_df
+#InstitucionPac_df
+#Turno del Paciente
+df1=InstitucionPac_df.reset_index()
+df2=TipoServiciosPref_df.reset_index()
+recInstitucion_Pac_df = pd.DataFrame()
+df = pd.DataFrame(columns=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'
+                          ,'15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28'
+                          , '29', '30', '31', '32'],
+                  index=range(32))
+
+df_New = pd.DataFrame(columns=[],
+                  index=range(1))
+
+for idPaciente in range(len(df1)):
+    ls_dataSimilar = []
+    for idAuxiliar in range(len(df2)):
+        ls_dataSimilar.append(SimilaridadCoseno(df1.loc[idPaciente].values, df2.loc[idAuxiliar].values))
+        df_New[idAuxiliar] = (SimilaridadCoseno(df1.loc[idPaciente].values, df2.loc[idAuxiliar].values))
+        
+    
+    recInstitucion_Pac_df = recInstitucion_Pac_df.append(df_New, ignore_index=True)
+
+
+recInstitucion_Pac_df.head(20)
+
+
+# In[69]:
+
+
+#TemperamentoPref_df
+#TemperamentoPac_df
+#Temperamento del Paciente
+df1=TemperamentoPac_df.reset_index()
+df2=TemperamentoPref_df.reset_index()
+recTemperamento_Pac_df = pd.DataFrame()
+df = pd.DataFrame(columns=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'
+                          ,'15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28'
+                          , '29', '30', '31', '32'],
+                  index=range(32))
+
+df_New = pd.DataFrame(columns=[],
+                  index=range(1))
+
+for idPaciente in range(len(df1)):
+    ls_dataSimilar = []
+    for idAuxiliar in range(len(df2)):
+        ls_dataSimilar.append(SimilaridadCoseno(df1.loc[idPaciente].values, df2.loc[idAuxiliar].values))
+        df_New[idAuxiliar] = (SimilaridadCoseno(df1.loc[idPaciente].values, df2.loc[idAuxiliar].values))
+        
+    
+    recTemperamento_Pac_df = recTemperamento_Pac_df.append(df_New, ignore_index=True)
+
+
+recTemperamento_Pac_df.head(20)
+
+
+# In[50]:
+
+
+#Experiencia_df
+#CondicionSaludPac_df
+#Condición de salud del Paciente
+df1=Experiencia_df.reset_index()
+df2=CondicionSaludPac_df.reset_index()
+recCondicionSalud_Pac_df = pd.DataFrame()
+df = pd.DataFrame(columns=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'
+                          ,'15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28'
+                          , '29', '30', '31', '32'],
+                  index=range(32))
+
+df_New = pd.DataFrame(columns=[],
+                  index=range(1))
+
+for idPaciente in range(len(df1)):
+    ls_dataSimilar = []
+    for idAuxiliar in range(len(df2)):
+        ls_dataSimilar.append(SimilaridadCoseno(df1.loc[idPaciente].values, df2.loc[idAuxiliar].values))
+        df_New[idAuxiliar] = (SimilaridadCoseno(df1.loc[idPaciente].values, df2.loc[idAuxiliar].values))
+        
+    
+    recCondicionSalud_Pac_df = recCondicionSalud_Pac_df.append(df_New, ignore_index=True)
+
+
+recCondicionSalud_Pac_df.head(20)
+
+
+# In[74]:
+
+
+#Conciencia del Paciente 
+#Este caso se crea un dataset con la columna del temperamento del paciente.
+#Prioridad_df
+#ConcienciaPac_df
+
+df1=Prioridad_df['Temperamento del paciente Prioridad'].reset_index()
+df2=ConcienciaPac_df.reset_index()
+recConciencia_Pac_df = pd.DataFrame()
+df = pd.DataFrame(columns=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'
+                          ,'15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28'
+                          , '29', '30', '31', '32'],
+                  index=range(32))
+
+df_New = pd.DataFrame(columns=[],
+                  index=range(1))
+
+for idPaciente in range(len(df1)):
+    ls_dataSimilar = []
+    for idAuxiliar in range(len(df2)):
+        ls_dataSimilar.append(SimilaridadCoseno(df1.loc[idPaciente].values, df2.loc[idAuxiliar].values))
+        df_New[idAuxiliar] = (SimilaridadCoseno(df1.loc[idPaciente].values, df2.loc[idAuxiliar].values))
+        
+    
+    recConciencia_Pac_df = recConciencia_Pac_df.append(df_New, ignore_index=True)
+
+
+recConciencia_Pac_df.head(20)
+
+
+# In[ ]:
+
+
+##Seleccionar todos los dataset de recomendaciones para promediar los valores de cada campo y luego de eso si se puede
+##continuar con el ordenamiento de los valores para ordenar los auxiliares con mejor match.
+##Acá se deben unir todas las celdas y dividir por la cantidad de datasets.
+
+
+# In[41]:
 
 
 #Para el paciente 0
@@ -484,7 +648,7 @@ auxiliares_list = resultado_df["Auxiliar"].values.tolist()
 print(auxiliares_list)
 
 
-# In[217]:
+# In[42]:
 
 
 #Para el paciente 0
@@ -498,7 +662,7 @@ resultado_Pac_df.append(resultado_Pac_df, ignore_index=True)
 resultado_Pac_df.head()
 
 
-# In[265]:
+# In[43]:
 
 
 #Para todos los pacientes
@@ -529,7 +693,7 @@ for idPaciente in range(len(rec_Pac_df)):
 resultado_Pac_df.head(10)
 
 
-# In[267]:
+# In[44]:
 
 
 resultado_Pac_df.to_csv('data/Recomendacion_Pacientes.csv',sep=";",header= 0)

@@ -26,3 +26,31 @@ C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Sarat
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.MenuServicios.resources
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.VerTurnos.resources
 C:\Javeriana\MIS\trabajo de grado\SARATYC\Saratyc\obj\Debug\net6.0-windows\Saratyc.Properties.Resources.resources
+D:\github\saratyc\Saratyc\bin\Debug\net6.0-windows\Saratyc.exe
+D:\github\saratyc\Saratyc\bin\Debug\net6.0-windows\Saratyc.deps.json
+D:\github\saratyc\Saratyc\bin\Debug\net6.0-windows\Saratyc.runtimeconfig.json
+D:\github\saratyc\Saratyc\bin\Debug\net6.0-windows\Saratyc.dll
+D:\github\saratyc\Saratyc\bin\Debug\net6.0-windows\Saratyc.pdb
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.csproj.AssemblyReference.cache
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AgendarCita.resources
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AsignarAuxiliar.resources
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AsignarTurno.resources
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AuxiliarEnfermeria.resources
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AuxiliarRecomendado.resources
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.Borrador.resources
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.Login.resources
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.MenuServicios.resources
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.Paciente.resources
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.Usuarios.resources
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.VerTurnos.resources
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.Properties.Resources.resources
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.csproj.GenerateResource.cache
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.AssemblyInfoInputs.cache
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.AssemblyInfo.cs
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.csproj.CoreCompileInputs.cache
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.dll
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\refint\Saratyc.dll
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.pdb
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.genruntimeconfig.cache
+D:\github\saratyc\Saratyc\obj\Debug\net6.0-windows\ref\Saratyc.dll
