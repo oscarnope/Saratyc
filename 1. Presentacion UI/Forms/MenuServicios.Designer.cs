@@ -54,14 +54,15 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(125, 25);
+            this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(432, 344);
+            this.panel1.Size = new System.Drawing.Size(508, 377);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(102, 163);
+            this.button3.Location = new System.Drawing.Point(167, 207);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(239, 49);
             this.button3.TabIndex = 3;
@@ -73,27 +74,28 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(94, 23);
+            this.label1.Location = new System.Drawing.Point(179, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 41);
+            this.label1.Size = new System.Drawing.Size(201, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "Que desea hacer";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(102, 108);
+            this.button2.Location = new System.Drawing.Point(167, 154);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(239, 49);
+            this.button2.Size = new System.Drawing.Size(239, 47);
             this.button2.TabIndex = 1;
             this.button2.Text = "Asignar Plan de Capacitación";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(102, 67);
+            this.button1.Location = new System.Drawing.Point(167, 101);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(239, 35);
+            this.button1.Size = new System.Drawing.Size(239, 47);
             this.button1.TabIndex = 0;
             this.button1.Text = "Asignar Turnos";
             this.button1.UseVisualStyleBackColor = true;
@@ -101,9 +103,9 @@
             // 
             // MenuServicios
             // 
-            this.ClientSize = new System.Drawing.Size(670, 441);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(507, 378);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
             this.Name = "MenuServicios";
             this.Load += new System.EventHandler(this.MenuServicios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

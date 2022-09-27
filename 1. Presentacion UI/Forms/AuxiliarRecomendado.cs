@@ -29,5 +29,13 @@ namespace Saratyc._1._Presentacion_UI.Forms
         {
 
         }
+
+        private void regresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            VerTurnos vt = new VerTurnos();
+            vt.Activate();
+            vt.Show();
+        }
     }
 }

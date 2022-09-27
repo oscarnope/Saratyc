@@ -1,10 +1,16 @@
+using Microsoft.VisualBasic;
+using Org.BouncyCastle.Utilities;
 using Saratyc._1._Presentacion_UI.Forms;
+using Saratyc._4._Datos.DL;
+using System;
 using System.Windows.Forms;
 
 namespace Saratyc._1._Presentacion_UI.Forms
 {
     public partial class Login : Form
     {
+        ConexionMySQL conexion = new ConexionMySQL();
+
         public Login()
         {
             InitializeComponent();
@@ -44,7 +50,22 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
         private void ingresar_Click(object sender, System.EventArgs e)
         {
-            this.Hide();
+            //string conectado;
+            //string mensaje="";
+            /*conectado =conexion.conectarEnferdata();
+
+            //SE comprueba la conexion a la BD de enferdata y se muestra el mensaje correspondiente
+            if (conectado.Equals("true"))
+            {
+                mensaje = "Conectado con Enferdata";
+            }
+            else if (conectado.Equals("false"))
+            {
+                mensaje = "No se pudo establecer conexión con Enferdata";
+            }
+            MessageBox.Show(mensaje);*/
+
+            Hide();
             MenuServicios ms = new MenuServicios();
             ms.Activate();
             ms.Show();

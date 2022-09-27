@@ -36,6 +36,7 @@
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.regresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -57,7 +58,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(129, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(655, 411);
+            this.panel1.Size = new System.Drawing.Size(655, 367);
             this.panel1.TabIndex = 4;
             // 
             // dataGridView1
@@ -111,17 +112,29 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(123, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(449, 41);
+            this.label1.Size = new System.Drawing.Size(359, 32);
             this.label1.TabIndex = 5;
             this.label1.Text = "AUXILIARES RECOMENDADOS";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // regresar
+            // 
+            this.regresar.Location = new System.Drawing.Point(403, 436);
+            this.regresar.Name = "regresar";
+            this.regresar.Size = new System.Drawing.Size(94, 29);
+            this.regresar.TabIndex = 7;
+            this.regresar.Text = "Regresar";
+            this.regresar.UseVisualStyleBackColor = true;
+            this.regresar.Click += new System.EventHandler(this.regresar_Click);
+            // 
             // AsignarAuxiliar
             // 
             this.ClientSize = new System.Drawing.Size(851, 497);
+            this.Controls.Add(this.regresar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "AsignarAuxiliar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.AsignarAuxiliar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -142,5 +155,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Identificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
+        private Button regresar;
     }
 }

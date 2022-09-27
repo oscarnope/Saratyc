@@ -15,6 +15,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
         public AsignarAuxiliar()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void AsignarAuxiliar_Load(object sender, EventArgs e)
@@ -62,6 +63,14 @@ namespace Saratyc._1._Presentacion_UI.Forms
             AuxiliarRecomendado ar = new AuxiliarRecomendado();
             ar.Activate();
             ar.Show();
+        }
+
+        private void regresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AsignarAuxiliar aa = new AsignarAuxiliar();
+            aa.Activate();
+            aa.Show();
         }
     }
 }

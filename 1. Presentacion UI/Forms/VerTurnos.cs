@@ -28,6 +28,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
         public VerTurnos()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void AsignarTurno_Load(object sender, EventArgs e)
@@ -195,7 +196,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
         private void regresar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             MenuServicios ms = new MenuServicios();
             ms.Activate();
             ms.Show();

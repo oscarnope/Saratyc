@@ -27,7 +27,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
         private void AsignarTurno_Load(object sender, EventArgs e)
         {
-            
+            StartPosition = FormStartPosition.CenterScreen;
             //this.tbl_alunosBindingSource.Filter = string.Format("Nome LIKE '{0}%'", Variables.RecordName);
         }
 

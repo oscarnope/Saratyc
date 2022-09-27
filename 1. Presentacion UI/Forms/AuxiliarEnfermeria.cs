@@ -15,6 +15,20 @@ namespace Saratyc._1._Presentacion_UI.Forms
         public AuxiliarEnfermeria()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void AuxiliarEnfermeria_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void regresar_Click(object sender, EventArgs e)
+        {
+            Hide();
+            MenuServicios ms = new MenuServicios();
+            ms.Activate();
+            ms.Show();
         }
     }
 }
