@@ -14,12 +14,13 @@ namespace Saratyc._2._Negocio.BL
             Utilidades ut = new Utilidades();
             DTurno dTurno = new();
 
-            string rutaArchivos = "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources";
-            string archivoTurnos= "Turnos.txt";
-            string ruta = rutaArchivos + "\\" + archivoTurnos;
+            //string rutaArchivos = "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources";
+            //string archivoTurnos= "Turnos.txt";
+            //string ruta = rutaArchivos + "\\" + archivoTurnos;
 
             List<string> lTurnos = new List<string>();
-            dTurno.listaTurnos(ruta, lTurnos);
+            //dTurno.listaTurnos(ruta, lTurnos);
+            lTurnos = dTurno.listaTurnos();
             return lTurnos;
 
         }

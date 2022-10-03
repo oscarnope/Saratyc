@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +51,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button2);
@@ -76,7 +78,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(179, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 32);
+            this.label1.Size = new System.Drawing.Size(247, 41);
             this.label1.TabIndex = 2;
             this.label1.Text = "Que desea hacer";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -101,6 +103,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(167, 262);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(239, 49);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Reportes";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // MenuServicios
             // 
             this.ClientSize = new System.Drawing.Size(507, 378);
@@ -124,5 +135,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
+        private Button button4;
     }
 }

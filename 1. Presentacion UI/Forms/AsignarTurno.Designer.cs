@@ -104,7 +104,7 @@
             // 
             this.textBox8.Location = new System.Drawing.Point(284, 335);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(125, 23);
+            this.textBox8.Size = new System.Drawing.Size(175, 23);
             this.textBox8.TabIndex = 22;
             // 
             // label9
@@ -120,7 +120,7 @@
             // 
             this.textBox7.Location = new System.Drawing.Point(284, 127);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(125, 23);
+            this.textBox7.Size = new System.Drawing.Size(175, 23);
             this.textBox7.TabIndex = 20;
             // 
             // label8
@@ -136,7 +136,7 @@
             // 
             this.textBox6.Location = new System.Drawing.Point(284, 295);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 23);
+            this.textBox6.Size = new System.Drawing.Size(175, 23);
             this.textBox6.TabIndex = 17;
             // 
             // label7
@@ -162,35 +162,35 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(284, 254);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(125, 23);
+            this.textBox5.Size = new System.Drawing.Size(175, 23);
             this.textBox5.TabIndex = 14;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(284, 209);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 23);
+            this.textBox4.Size = new System.Drawing.Size(175, 23);
             this.textBox4.TabIndex = 13;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(284, 169);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 23);
+            this.textBox3.Size = new System.Drawing.Size(175, 23);
             this.textBox3.TabIndex = 12;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(284, 92);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 23);
+            this.textBox2.Size = new System.Drawing.Size(175, 23);
             this.textBox2.TabIndex = 11;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(284, 57);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 23);
+            this.textBox1.Size = new System.Drawing.Size(175, 23);
             this.textBox1.TabIndex = 10;
             // 
             // label6

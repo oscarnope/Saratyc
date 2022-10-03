@@ -14,6 +14,7 @@ namespace Saratyc._2._Negocio.BL
             string[] lines = System.IO.File.ReadAllLines(ruta);
         }
 
+
         void cargarLista()
         {
 
