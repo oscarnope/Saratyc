@@ -9,12 +9,14 @@ namespace Saratyc._4._Datos.DL
 {
     public class DAuxiliar
     {
-        private string nombres;
-        private string apellidos;
+        private int id;
+        private int idEnferdata;
+        private string nombre;
+        private string apellido;
         private string identificacion;
         private string fechaNacimiento;
         private string genero;
-        private string CondicionSalud;
+        /*private string CondicionSalud;
         private string ConCondicionSalud;
         private string ExpCondicionSalud;
         private string Diagnostico;
@@ -23,15 +25,17 @@ namespace Saratyc._4._Datos.DL
         private string Acompañamiento;
         private string ConAcompañamiento;
         private string ExpAcompañamiento;
+        */
+        private string ciudad;
         private string localidad;
         private string barrio;
-        private string restriccionDesplazamiento;
-        private string restriccionObjetos;
+        //private string restriccionDesplazamiento;
+        //private string restriccionObjetos;
         private string contextura;
         private string nacionalidad;
         private string disponibilidad;
         private string personalidad;
-        private string prefTipoTurno;
+        /*private string prefTipoTurno;
         private string prefTipoTurnoValor;
         private string prefAcompañamiento;
         private int prefAcompañamientoValor;
@@ -48,13 +52,29 @@ namespace Saratyc._4._Datos.DL
         private string gustoMascotas;
         private string interesCapacitacion;
         private int interesCapacitacionValor;
-
+        */
 
         public DAuxiliar()
         {
 
         }
 
+        public List<string> buscarAuxiliar(string identificacion)
+        {
+            string query;
+            List<string> lAuxiliares = new List<string>();
+
+            ConexionMySQL conexionMySQL = new ConexionMySQL();
+
+            //Consulta los datos de un auxiliar dada su identificacion
+            query = "SELECT \r\n    Enfermera.id idEnferdata,\r\n    Enfermera.nombre nombre,\r\n    Enfermera.apellido apellido,\r\n    Enfermera.identificacion identificacion,\r\n    Enfermera.fechaNacimiento fechaNacimiento,\r\n    Genero.nombre genero,\r\n    Ciudad.nombre ciudad,\r\n    CiudadLocalidad.nombre localidad,\r\n    Enfermera.barrio barrio,\r\n    Enfermera.fechaNacimiento fechaNacimiento,\r\n    '' contextura,\r\n    (SELECT \r\n            CASE id\r\n                    WHEN 1 THEN 'Colombiano'\r\n                    WHEN 2 THEN 'Colombiano'\r\n                    WHEN 4 THEN 'Extranjero'\r\n                    WHEN 5 THEN 'Colombiano'\r\n                    WHEN 6 THEN 'Colombiano'\r\n                    WHEN 7 THEN 'Colombiano'\r\n                    WHEN 8 THEN 'Extranjero'\r\n                    WHEN 9 THEN 'Extranjero'\r\n                    ELSE 'Colombiano'\r\n                END AS nacionalidad\r\n        FROM\r\n            `enferdata-web`.`TipoIdentificacion` TipoIdentificacion\r\n        WHERE\r\n            Enfermera.tipoIdentificacionId = TipoIdentificacion.id) AS nacionalidad,\r\n    'SI' disponibilidad,\r\n    'Pendiente' personalidad\r\nFROM\r\n    `enferdata-web`.`Enfermera` Enfermera,\r\n    `enferdata-web`.`Genero` Genero,\r\n    `enferdata-web`.`Ciudad` Ciudad,\r\n    `enferdata-web`.`CiudadLocalidad` CiudadLocalidad\r\nWHERE\r\n    Enfermera.generoId = Genero.id\r\n        AND Enfermera.ciudadId = Ciudad.id\r\n        AND Enfermera.ciudadLocalidadId = CiudadLocalidad.id\r\n        AND Enfermera.activo = 1\r\n        AND Enfermera.identificacion = '1015396096'\r\nORDER BY identificacion\r\n\r\n";
+
+            lAuxiliares = conexionMySQL.consultarEnferdata(query);
+
+            return lAuxiliares;
+        }
+
+        /*
         public List<string> listaAuxiliares(string rutaArchivo, List<string> listaAuxiliares)
         {
             var auxiliares = File.ReadAllLines(rutaArchivo);
@@ -114,5 +134,6 @@ namespace Saratyc._4._Datos.DL
             }
             return listaAuxiliares;
         }
+        */
     }
 }

@@ -12,7 +12,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
 {
     public partial class AsignarTurno : Form
     {
-        public AsignarTurno(string institucion, string restriccionAuxPreferido, string restriccionAuxRechazado, string tipoTurno, string fechaInicio, string fechaFin, string idPaciente, string asignado)
+        public AsignarTurno(string institucion, string restriccionAuxPreferido, string restriccionAuxRechazado, string tipoTurno, string fechaInicio, string fechaFin, string idPaciente, string asignado, string? idAuxiliarSaratyc)
         {
             InitializeComponent();
             textBox1.Text = institucion;
@@ -52,9 +52,9 @@ namespace Saratyc._1._Presentacion_UI.Forms
         private void regresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            VerTurnos vt = new VerTurnos();
-            vt.Activate();
-            vt.Show();
+            //VerTurnos vt = new VerTurnos();
+            //vt.Activate();
+            //vt.Show();
         }
     }
     

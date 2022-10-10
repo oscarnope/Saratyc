@@ -34,6 +34,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.regresar = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +90,7 @@
             // 
             // regresar
             // 
-            this.regresar.Location = new System.Drawing.Point(194, 274);
+            this.regresar.Location = new System.Drawing.Point(193, 327);
             this.regresar.Name = "regresar";
             this.regresar.Size = new System.Drawing.Size(130, 29);
             this.regresar.TabIndex = 24;
@@ -97,9 +98,19 @@
             this.regresar.UseVisualStyleBackColor = true;
             this.regresar.Click += new System.EventHandler(this.regresar_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(146, 258);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(239, 47);
+            this.button4.TabIndex = 25;
+            this.button4.Text = "Reportes";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // MenuCapacitacion
             // 
-            this.ClientSize = new System.Drawing.Size(492, 328);
+            this.ClientSize = new System.Drawing.Size(524, 410);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.regresar);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -124,5 +135,6 @@
         private Button button2;
         private Button button3;
         private Button regresar;
+        private Button button4;
     }
 }

@@ -39,13 +39,13 @@
             this.DGfechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGfechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGidPaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGasignado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AuxiliarEnferdata = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AuxiliarSaratyc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.regresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -97,13 +97,14 @@
             this.DGfechaInicio,
             this.DGfechaFin,
             this.DGidPaciente,
-            this.DGasignado});
+            this.AuxiliarEnferdata,
+            this.AuxiliarSaratyc});
             this.dataGridView1.Location = new System.Drawing.Point(7, 94);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(628, 165);
+            this.dataGridView1.Size = new System.Drawing.Size(628, 228);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -113,7 +114,7 @@
             this.DGinstitucion.HeaderText = "Institucion ";
             this.DGinstitucion.MinimumWidth = 6;
             this.DGinstitucion.Name = "DGinstitucion";
-            this.DGinstitucion.Width = 125;
+            this.DGinstitucion.Width = 200;
             // 
             // DGrestriccionAuxPreferido
             // 
@@ -134,7 +135,7 @@
             this.DGtipoTurno.HeaderText = "Tipo Turno";
             this.DGtipoTurno.MinimumWidth = 6;
             this.DGtipoTurno.Name = "DGtipoTurno";
-            this.DGtipoTurno.Width = 125;
+            this.DGtipoTurno.Width = 200;
             // 
             // DGfechaInicio
             // 
@@ -157,20 +158,27 @@
             this.DGidPaciente.Name = "DGidPaciente";
             this.DGidPaciente.Width = 125;
             // 
-            // DGasignado
+            // AuxiliarEnferdata
             // 
-            this.DGasignado.HeaderText = "Asignado";
-            this.DGasignado.MinimumWidth = 6;
-            this.DGasignado.Name = "DGasignado";
-            this.DGasignado.Width = 125;
+            this.AuxiliarEnferdata.HeaderText = "Auxiliar Enferdata";
+            this.AuxiliarEnferdata.MinimumWidth = 6;
+            this.AuxiliarEnferdata.Name = "AuxiliarEnferdata";
+            this.AuxiliarEnferdata.Width = 125;
+            // 
+            // AuxiliarSaratyc
+            // 
+            this.AuxiliarSaratyc.HeaderText = "Auxiliar Saratyc";
+            this.AuxiliarSaratyc.MinimumWidth = 6;
+            this.AuxiliarSaratyc.Name = "AuxiliarSaratyc";
+            this.AuxiliarSaratyc.Width = 125;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(524, 61);
+            this.button1.Location = new System.Drawing.Point(481, 61);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 27);
+            this.button1.Size = new System.Drawing.Size(118, 27);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Revisar";
+            this.button1.Text = "Turnos del día";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -192,33 +200,23 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(158, 393);
+            this.button2.Location = new System.Drawing.Point(147, 393);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 29);
+            this.button2.Size = new System.Drawing.Size(170, 40);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Ver turnos sin asignar";
+            this.button2.Text = "Turnos sin asignar Enferdata";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(351, 393);
+            this.button3.Location = new System.Drawing.Point(515, 393);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 29);
+            this.button3.Size = new System.Drawing.Size(159, 40);
             this.button3.TabIndex = 4;
-            this.button3.Text = "Ver turnos asignados";
+            this.button3.Text = "Turnos sin asignar Saratyc";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(538, 393);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(159, 29);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Ver todos los turnos";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // regresar
             // 
@@ -232,9 +230,8 @@
             // 
             // VerTurnos
             // 
-            this.ClientSize = new System.Drawing.Size(830, 490);
+            this.ClientSize = new System.Drawing.Size(830, 504);
             this.Controls.Add(this.regresar);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
@@ -261,15 +258,15 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGinstitucion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGrestriccionAuxPreferido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGrestriccionAuxRechazado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGtipoTurno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGfechaInicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGfechaFin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGidPaciente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGasignado;
         private System.Windows.Forms.Button regresar;
+        private DataGridViewTextBoxColumn DGinstitucion;
+        private DataGridViewTextBoxColumn DGrestriccionAuxPreferido;
+        private DataGridViewTextBoxColumn DGrestriccionAuxRechazado;
+        private DataGridViewTextBoxColumn DGtipoTurno;
+        private DataGridViewTextBoxColumn DGfechaInicio;
+        private DataGridViewTextBoxColumn DGfechaFin;
+        private DataGridViewTextBoxColumn DGidPaciente;
+        private DataGridViewTextBoxColumn AuxiliarEnferdata;
+        private DataGridViewTextBoxColumn AuxiliarSaratyc;
     }
 }

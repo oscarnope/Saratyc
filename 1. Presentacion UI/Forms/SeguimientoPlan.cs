@@ -30,5 +30,10 @@ namespace Saratyc._1._Presentacion_UI.Forms
             mc.Activate();
             mc.Show();
         }
+
+        private void Disenar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

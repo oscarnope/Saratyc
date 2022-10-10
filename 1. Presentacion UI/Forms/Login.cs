@@ -50,6 +50,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
         private void ingresar_Click(object sender, System.EventArgs e)
         {
+            /*
             string conectado;
             string mensaje="";
             conectado =conexion.conectarEnferdata();
@@ -64,6 +65,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 mensaje = "No se pudo establecer conexión con Enferdata";
             }
             MessageBox.Show(mensaje);
+            */
 
             Hide();
             MenuServicios ms = new MenuServicios();
