@@ -14,12 +14,12 @@ namespace Saratyc._2._Negocio.BL
             Utilidades ut = new Utilidades();
             DAuxiliar dAuxiliar = new();
 
-            string rutaArchivos = "C:\\Users\\Julian\\source\\repos\\Saratyc\\Resources";
+            string rutaArchivos = "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources";
             string archivoAuxiliares = "Auxiliares.txt";
             string ruta = rutaArchivos + "\\" + archivoAuxiliares;
 
             List<string> lAuxiliares = new List<string>();
-            dAuxiliar.listaAuxiliares(ruta, lAuxiliares);
+            //dAuxiliar.listaAuxiliares(ruta, lAuxiliares);
             return lAuxiliares;
 
         }
@@ -27,6 +27,14 @@ namespace Saratyc._2._Negocio.BL
         public void mostrarPacientes()
         {
 
+        }
+
+        public List<string> buscarAuxiliar(string identificacionAuxiliar)
+        {
+            DAuxiliar dAuxiliar = new();
+            List<string> lAuxiliar = new List<string>();
+            lAuxiliar=dAuxiliar.buscarAuxiliar(identificacionAuxiliar);
+            return lAuxiliar;
         }
 
 

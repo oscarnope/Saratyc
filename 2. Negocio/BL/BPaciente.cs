@@ -14,7 +14,7 @@ namespace Saratyc._2._Negocio.BL
             Utilidades ut = new Utilidades();
             DPaciente dPaciente = new();
             
-            string rutaArchivos = "C:\\Users\\Julian\\source\\repos\\Saratyc\\Resources";
+            string rutaArchivos = "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources";
             string archivoPacientes = "Pacientes.txt";
             string ruta = rutaArchivos + "\\" + archivoPacientes;
 
