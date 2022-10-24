@@ -31,20 +31,22 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textIdentificacion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Resultado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Reportar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgTema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgNivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPublicada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgFPublicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgFPresentacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgFEvaluacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgResultado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Tema = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,10 +55,11 @@
             this.Capacitaciones = new System.Windows.Forms.TabControl();
             this.regresar = new System.Windows.Forms.Button();
             this.Disenar = new System.Windows.Forms.Button();
+            this.indicador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Capacitaciones.SuspendLayout();
@@ -75,17 +78,18 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textApellido);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textNombre);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textIdentificacion);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(117, 35);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(489, 149);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label4
             // 
@@ -96,13 +100,13 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Apellidos";
             // 
-            // textBox2
+            // textApellido
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(187, 111);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(127, 23);
-            this.textBox2.TabIndex = 13;
+            this.textApellido.Enabled = false;
+            this.textApellido.Location = new System.Drawing.Point(187, 111);
+            this.textApellido.Name = "textApellido";
+            this.textApellido.Size = new System.Drawing.Size(127, 23);
+            this.textApellido.TabIndex = 13;
             // 
             // label3
             // 
@@ -113,13 +117,13 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Nombres";
             // 
-            // textBox3
+            // textNombre
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(187, 82);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(127, 23);
-            this.textBox3.TabIndex = 11;
+            this.textNombre.Enabled = false;
+            this.textNombre.Location = new System.Drawing.Point(187, 82);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(127, 23);
+            this.textNombre.TabIndex = 11;
             // 
             // button1
             // 
@@ -129,13 +133,14 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // textIdentificacion
             // 
-            this.textBox1.Location = new System.Drawing.Point(187, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 23);
-            this.textBox1.TabIndex = 4;
+            this.textIdentificacion.Location = new System.Drawing.Point(187, 56);
+            this.textIdentificacion.Name = "textIdentificacion";
+            this.textIdentificacion.Size = new System.Drawing.Size(127, 23);
+            this.textIdentificacion.TabIndex = 4;
             // 
             // label2
             // 
@@ -149,6 +154,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightYellow;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(19, 15);
             this.label1.Name = "label1";
@@ -158,7 +164,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.dataGridView4);
+            this.tabPage4.Controls.Add(this.dataGridView2);
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -167,50 +173,67 @@
             this.tabPage4.Text = "Evaluaciones";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
+            // dataGridView2
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewCheckBoxColumn1,
-            this.Resultado,
-            this.Reportar});
-            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowTemplate.Height = 25;
-            this.dataGridView4.Size = new System.Drawing.Size(586, 171);
-            this.dataGridView4.TabIndex = 1;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgTema,
+            this.dgNivel,
+            this.dgPublicada,
+            this.dgFPublicacion,
+            this.dgFPresentacion,
+            this.dgFEvaluacion,
+            this.dgResultado});
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(586, 171);
+            this.dataGridView2.TabIndex = 1;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
-            // dataGridViewTextBoxColumn5
+            // dgTema
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Tema";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTema.HeaderText = "Tema";
+            this.dgTema.MinimumWidth = 6;
+            this.dgTema.Name = "dgTema";
+            this.dgTema.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTema.Width = 125;
             // 
-            // dataGridViewTextBoxColumn6
+            // dgNivel
             // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Publicada";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgNivel.HeaderText = "Nivel";
+            this.dgNivel.Name = "dgNivel";
             // 
-            // dataGridViewCheckBoxColumn1
+            // dgPublicada
             // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Fecha Publicación";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPublicada.HeaderText = "Publicada";
+            this.dgPublicada.MinimumWidth = 6;
+            this.dgPublicada.Name = "dgPublicada";
+            this.dgPublicada.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPublicada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgPublicada.Width = 125;
             // 
-            // Resultado
+            // dgFPublicacion
             // 
-            this.Resultado.HeaderText = "Resultado";
-            this.Resultado.Name = "Resultado";
+            this.dgFPublicacion.HeaderText = "Fecha Publicación";
+            this.dgFPublicacion.Name = "dgFPublicacion";
             // 
-            // Reportar
+            // dgFPresentacion
             // 
-            this.Reportar.HeaderText = "Reportar";
-            this.Reportar.Name = "Reportar";
+            this.dgFPresentacion.HeaderText = "Fecha Presentación";
+            this.dgFPresentacion.Name = "dgFPresentacion";
+            // 
+            // dgFEvaluacion
+            // 
+            this.dgFEvaluacion.HeaderText = "Fecha Evaluación";
+            this.dgFEvaluacion.Name = "dgFEvaluacion";
+            // 
+            // dgResultado
+            // 
+            this.dgResultado.HeaderText = "Resultado";
+            this.dgResultado.Name = "dgResultado";
             // 
             // tabPage1
             // 
@@ -233,6 +256,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(586, 171);
             this.dataGridView1.TabIndex = 0;
@@ -240,20 +264,26 @@
             // Tema
             // 
             this.Tema.HeaderText = "Tema";
+            this.Tema.MinimumWidth = 6;
             this.Tema.Name = "Tema";
+            this.Tema.Width = 125;
             // 
             // Publicada
             // 
             this.Publicada.HeaderText = "Publicada";
+            this.Publicada.MinimumWidth = 6;
             this.Publicada.Name = "Publicada";
             this.Publicada.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Publicada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Publicada.Width = 125;
             // 
             // FechaPublicacion
             // 
             this.FechaPublicacion.HeaderText = "Fecha Publicación";
+            this.FechaPublicacion.MinimumWidth = 6;
             this.FechaPublicacion.Name = "FechaPublicacion";
             this.FechaPublicacion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FechaPublicacion.Width = 125;
             // 
             // Capacitaciones
             // 
@@ -285,9 +315,18 @@
             this.Disenar.UseVisualStyleBackColor = true;
             this.Disenar.Click += new System.EventHandler(this.Disenar_Click);
             // 
+            // indicador
+            // 
+            this.indicador.AutoSize = true;
+            this.indicador.Location = new System.Drawing.Point(0, 478);
+            this.indicador.Name = "indicador";
+            this.indicador.Size = new System.Drawing.Size(0, 15);
+            this.indicador.TabIndex = 34;
+            // 
             // SeguimientoPlan
             // 
             this.ClientSize = new System.Drawing.Size(658, 497);
+            this.Controls.Add(this.indicador);
             this.Controls.Add(this.regresar);
             this.Controls.Add(this.Disenar);
             this.Controls.Add(this.Capacitaciones);
@@ -299,11 +338,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.Capacitaciones.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -313,15 +353,15 @@
         private PictureBox pictureBox1;
         private Panel panel1;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox textApellido;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox textNombre;
         private Button button1;
-        private TextBox textBox1;
+        private TextBox textIdentificacion;
         private Label label2;
         private Label label1;
         private TabPage tabPage4;
-        private DataGridView dataGridView4;
+        private DataGridView dataGridView2;
         private TabPage tabPage1;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn Tema;
@@ -330,10 +370,13 @@
         private TabControl Capacitaciones;
         private Button regresar;
         private Button Disenar;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewCheckBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewTextBoxColumn dataGridViewCheckBoxColumn1;
-        private DataGridViewTextBoxColumn Resultado;
-        private DataGridViewButtonColumn Reportar;
+        private Label indicador;
+        private DataGridViewTextBoxColumn dgTema;
+        private DataGridViewTextBoxColumn dgNivel;
+        private DataGridViewCheckBoxColumn dgPublicada;
+        private DataGridViewTextBoxColumn dgFPublicacion;
+        private DataGridViewTextBoxColumn dgFPresentacion;
+        private DataGridViewTextBoxColumn dgFEvaluacion;
+        private DataGridViewTextBoxColumn dgResultado;
     }
 }

@@ -60,15 +60,12 @@ C:\Users\Julian\source\repos\Saratyc\Saratyc\bin\Debug\net6.0-windows\Saratyc.ru
 C:\Users\Julian\source\repos\Saratyc\Saratyc\bin\Debug\net6.0-windows\Saratyc.dll
 C:\Users\Julian\source\repos\Saratyc\Saratyc\bin\Debug\net6.0-windows\Saratyc.pdb
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.csproj.AssemblyReference.cache
-C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AsignarAuxiliar.resources
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AsignarTurno.resources
-C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AuxiliarEnfermeria.resources
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AuxiliarRecomendado.resources
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.Borrador.resources
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.Login.resources
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.MenuServicios.resources
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.Usuarios.resources
-C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.VerTurnos.resources
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.Properties.Resources.resources
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.csproj.GenerateResource.cache
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc.GeneratedMSBuildEditorConfig.editorconfig
@@ -95,3 +92,6 @@ C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.SeguimientoPlan.resources
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.ParametrizarTema.resources
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.EditarPlan.resources
+C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.ConsultarTurnos.resources
+C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AuxiliaresRecomendados.resources
+C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.DatosAuxiliar.resources

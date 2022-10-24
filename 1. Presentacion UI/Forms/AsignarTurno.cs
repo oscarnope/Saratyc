@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Saratyc._2._Negocio.BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,14 +16,14 @@ namespace Saratyc._1._Presentacion_UI.Forms
         public AsignarTurno(string institucion, string restriccionAuxPreferido, string restriccionAuxRechazado, string tipoTurno, string fechaInicio, string fechaFin, string idPaciente, string asignado, string? idAuxiliarSaratyc)
         {
             InitializeComponent();
-            textBox1.Text = institucion;
-            textBox2.Text = restriccionAuxPreferido;
-            textBox3.Text = tipoTurno;
-            textBox4.Text = fechaInicio;
-            textBox5.Text = fechaFin;
-            textBox6.Text = asignado;
-            textBox7.Text = restriccionAuxRechazado;
-            textBox8.Text = idPaciente;
+            textInstitucion.Text = institucion;
+            textAuxPreferido.Text = restriccionAuxPreferido;
+            textTipoTurno.Text = tipoTurno;
+            textFechaInicio.Text = fechaInicio;
+            textFechaFin.Text = fechaFin;
+            textIdAuxEnferdata.Text = asignado;
+            textAuxRechazado.Text = restriccionAuxRechazado;
+            textIdPaciente.Text = idPaciente;
         }
 
         private void AsignarTurno_Load(object sender, EventArgs e)
@@ -38,8 +39,35 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Se leen los valores
+            string institucion = textInstitucion.Text;
+            string tipoTurno = textTipoTurno.Text;
+            string fechaInicio = textFechaInicio.Text;
+            string fechaFin = textFechaFin.Text;
+
+            
+            int idPaciente = Int32.Parse(textIdPaciente.Text);
+            int idAuxPreferido = 0;
+            int idAuxRechazado = 0;
+
+            //Se normalizan los posibles valores nulos
+            if (!textAuxPreferido.Text.Equals(""))
+            {
+                idAuxPreferido = Int32.Parse(textAuxPreferido.Text);
+            }
+
+            if (!textAuxPreferido.Text.Equals(""))
+            {
+                idAuxRechazado = Int32.Parse(textAuxRechazado.Text);
+            }
+
+            int idauxAsignado = Int32.Parse(textIdAuxEnferdata.Text);
+
             this.Hide();
-            AsignarAuxiliar au = new AsignarAuxiliar();
+            //Se invoca el algoritmo que calcula la recomendacion de auxiliares
+            BRecomendarAuxiliares bRecomendarAuxiliares = new BRecomendarAuxiliares(institucion,tipoTurno,fechaInicio,fechaFin,idPaciente,idauxAsignado,idAuxPreferido,idAuxRechazado);
+
+            AuxiliaresRecomendados au = new AuxiliaresRecomendados(idPaciente);
             au.Activate();
             au.Show();
         }

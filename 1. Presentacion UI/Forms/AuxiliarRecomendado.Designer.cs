@@ -30,11 +30,13 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textAuxiliar = new System.Windows.Forms.TextBox();
+            this.textPaciente = new System.Windows.Forms.TextBox();
+            this.textIdentificacion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textApellidos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -44,22 +46,19 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.textBox48 = new System.Windows.Forms.TextBox();
-            this.textBox49 = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.textBox50 = new System.Windows.Forms.TextBox();
-            this.textBox51 = new System.Windows.Forms.TextBox();
+            this.textExpAuxTipoC = new System.Windows.Forms.TextBox();
+            this.textTipoCompañia = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
-            this.textBox52 = new System.Windows.Forms.TextBox();
-            this.textBox53 = new System.Windows.Forms.TextBox();
+            this.textExpAuxConci = new System.Windows.Forms.TextBox();
+            this.textNivelConciencia = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.textBox54 = new System.Windows.Forms.TextBox();
-            this.textBox55 = new System.Windows.Forms.TextBox();
-            this.textBox56 = new System.Windows.Forms.TextBox();
-            this.textBox57 = new System.Windows.Forms.TextBox();
+            this.textDiagnostico = new System.Windows.Forms.TextBox();
+            this.textCondicionSalud = new System.Windows.Forms.TextBox();
+            this.textConAuxDiag = new System.Windows.Forms.TextBox();
+            this.textExpAuxDiag = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
-            this.textBox58 = new System.Windows.Forms.TextBox();
-            this.textBox59 = new System.Windows.Forms.TextBox();
+            this.textConAuxCond = new System.Windows.Forms.TextBox();
+            this.textExpAuxCond = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -68,33 +67,27 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textPrefMascotasAux = new System.Windows.Forms.TextBox();
+            this.textPrefMascotasP = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textPrefIdiomaAux = new System.Windows.Forms.TextBox();
+            this.textPrefIdiomaP = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textPrefGeneroAux = new System.Windows.Forms.TextBox();
+            this.textPrefNGeneroP = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox60 = new System.Windows.Forms.TextBox();
-            this.textBox61 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox62 = new System.Windows.Forms.TextBox();
-            this.textBox63 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox64 = new System.Windows.Forms.TextBox();
-            this.textBox65 = new System.Windows.Forms.TextBox();
-            this.textBox66 = new System.Windows.Forms.TextBox();
+            this.textPrefPersonalidadAux = new System.Windows.Forms.TextBox();
+            this.textPrefNPersonalidadP = new System.Windows.Forms.TextBox();
+            this.textPrefNacionalidadP = new System.Windows.Forms.TextBox();
+            this.textPrefEdadP = new System.Windows.Forms.TextBox();
+            this.textPrefNacionalidadAux = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.textBox67 = new System.Windows.Forms.TextBox();
+            this.textPrefEdadAux = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -103,22 +96,21 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
-            this.textBox68 = new System.Windows.Forms.TextBox();
-            this.textBox69 = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.textBox70 = new System.Windows.Forms.TextBox();
-            this.textBox71 = new System.Windows.Forms.TextBox();
+            this.textNPrefCondA = new System.Windows.Forms.TextBox();
+            this.textPrefCondA = new System.Windows.Forms.TextBox();
+            this.textNPrefDiagA = new System.Windows.Forms.TextBox();
+            this.textPrefDiagA = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
-            this.textBox72 = new System.Windows.Forms.TextBox();
-            this.textBox73 = new System.Windows.Forms.TextBox();
+            this.textNPrefTurnoA = new System.Windows.Forms.TextBox();
+            this.textPrefTurnoA = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
-            this.textBox74 = new System.Windows.Forms.TextBox();
-            this.textBox75 = new System.Windows.Forms.TextBox();
-            this.textBox76 = new System.Windows.Forms.TextBox();
-            this.textBox77 = new System.Windows.Forms.TextBox();
-            this.textBox78 = new System.Windows.Forms.TextBox();
+            this.textNPrefGeneroA = new System.Windows.Forms.TextBox();
+            this.textPrefGeneroA = new System.Windows.Forms.TextBox();
+            this.textPrefEdadA = new System.Windows.Forms.TextBox();
+            this.textPrefCompA = new System.Windows.Forms.TextBox();
+            this.textNPrefEdadA = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
-            this.textBox79 = new System.Windows.Forms.TextBox();
+            this.textNPrefCompA = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -143,11 +135,13 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textAuxiliar);
+            this.panel1.Controls.Add(this.textPaciente);
+            this.panel1.Controls.Add(this.textIdentificacion);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textApellidos);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textNombre);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(127, 12);
@@ -155,12 +149,26 @@
             this.panel1.Size = new System.Drawing.Size(805, 104);
             this.panel1.TabIndex = 4;
             // 
-            // textBox3
+            // textAuxiliar
             // 
-            this.textBox3.Location = new System.Drawing.Point(236, 66);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 23);
-            this.textBox3.TabIndex = 11;
+            this.textAuxiliar.Location = new System.Drawing.Point(673, 65);
+            this.textAuxiliar.Name = "textAuxiliar";
+            this.textAuxiliar.Size = new System.Drawing.Size(125, 23);
+            this.textAuxiliar.TabIndex = 13;
+            // 
+            // textPaciente
+            // 
+            this.textPaciente.Location = new System.Drawing.Point(673, 40);
+            this.textPaciente.Name = "textPaciente";
+            this.textPaciente.Size = new System.Drawing.Size(125, 23);
+            this.textPaciente.TabIndex = 12;
+            // 
+            // textIdentificacion
+            // 
+            this.textIdentificacion.Location = new System.Drawing.Point(236, 66);
+            this.textIdentificacion.Name = "textIdentificacion";
+            this.textIdentificacion.Size = new System.Drawing.Size(125, 23);
+            this.textIdentificacion.TabIndex = 11;
             // 
             // label4
             // 
@@ -171,12 +179,12 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Apellidos";
             // 
-            // textBox2
+            // textApellidos
             // 
-            this.textBox2.Location = new System.Drawing.Point(513, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 23);
-            this.textBox2.TabIndex = 9;
+            this.textApellidos.Location = new System.Drawing.Point(513, 40);
+            this.textApellidos.Name = "textApellidos";
+            this.textApellidos.Size = new System.Drawing.Size(125, 23);
+            this.textApellidos.TabIndex = 9;
             // 
             // label3
             // 
@@ -187,12 +195,12 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Nombres";
             // 
-            // textBox1
+            // textNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(236, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 23);
-            this.textBox1.TabIndex = 7;
+            this.textNombre.Location = new System.Drawing.Point(236, 40);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(125, 23);
+            this.textNombre.TabIndex = 7;
             // 
             // label2
             // 
@@ -206,8 +214,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightYellow;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(251, -3);
+            this.label1.Location = new System.Drawing.Point(251, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(320, 32);
             this.label1.TabIndex = 5;
@@ -258,22 +267,19 @@
             // 
             this.panel5.Controls.Add(this.label35);
             this.panel5.Controls.Add(this.label36);
-            this.panel5.Controls.Add(this.textBox48);
-            this.panel5.Controls.Add(this.textBox49);
-            this.panel5.Controls.Add(this.label37);
-            this.panel5.Controls.Add(this.textBox50);
-            this.panel5.Controls.Add(this.textBox51);
+            this.panel5.Controls.Add(this.textExpAuxTipoC);
+            this.panel5.Controls.Add(this.textTipoCompañia);
             this.panel5.Controls.Add(this.label38);
-            this.panel5.Controls.Add(this.textBox52);
-            this.panel5.Controls.Add(this.textBox53);
+            this.panel5.Controls.Add(this.textExpAuxConci);
+            this.panel5.Controls.Add(this.textNivelConciencia);
             this.panel5.Controls.Add(this.label39);
-            this.panel5.Controls.Add(this.textBox54);
-            this.panel5.Controls.Add(this.textBox55);
-            this.panel5.Controls.Add(this.textBox56);
-            this.panel5.Controls.Add(this.textBox57);
+            this.panel5.Controls.Add(this.textDiagnostico);
+            this.panel5.Controls.Add(this.textCondicionSalud);
+            this.panel5.Controls.Add(this.textConAuxDiag);
+            this.panel5.Controls.Add(this.textExpAuxDiag);
             this.panel5.Controls.Add(this.label40);
-            this.panel5.Controls.Add(this.textBox58);
-            this.panel5.Controls.Add(this.textBox59);
+            this.panel5.Controls.Add(this.textConAuxCond);
+            this.panel5.Controls.Add(this.textExpAuxCond);
             this.panel5.Controls.Add(this.label41);
             this.panel5.Controls.Add(this.label42);
             this.panel5.Controls.Add(this.label43);
@@ -302,46 +308,21 @@
             this.label36.TabIndex = 32;
             this.label36.Text = "Paciente";
             // 
-            // textBox48
+            // textExpAuxTipoC
             // 
-            this.textBox48.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox48.Location = new System.Drawing.Point(435, 218);
-            this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(125, 23);
-            this.textBox48.TabIndex = 30;
+            this.textExpAuxTipoC.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textExpAuxTipoC.Location = new System.Drawing.Point(448, 186);
+            this.textExpAuxTipoC.Name = "textExpAuxTipoC";
+            this.textExpAuxTipoC.Size = new System.Drawing.Size(83, 23);
+            this.textExpAuxTipoC.TabIndex = 27;
             // 
-            // textBox49
+            // textTipoCompañia
             // 
-            this.textBox49.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox49.Location = new System.Drawing.Point(273, 217);
-            this.textBox49.Name = "textBox49";
-            this.textBox49.Size = new System.Drawing.Size(125, 23);
-            this.textBox49.TabIndex = 29;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(91, 224);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(124, 15);
-            this.label37.TabIndex = 28;
-            this.label37.Text = "Nivel de dependencia ";
-            // 
-            // textBox50
-            // 
-            this.textBox50.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox50.Location = new System.Drawing.Point(435, 187);
-            this.textBox50.Name = "textBox50";
-            this.textBox50.Size = new System.Drawing.Size(125, 23);
-            this.textBox50.TabIndex = 27;
-            // 
-            // textBox51
-            // 
-            this.textBox51.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox51.Location = new System.Drawing.Point(273, 186);
-            this.textBox51.Name = "textBox51";
-            this.textBox51.Size = new System.Drawing.Size(125, 23);
-            this.textBox51.TabIndex = 26;
+            this.textTipoCompañia.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textTipoCompañia.Location = new System.Drawing.Point(244, 186);
+            this.textTipoCompañia.Name = "textTipoCompañia";
+            this.textTipoCompañia.Size = new System.Drawing.Size(154, 23);
+            this.textTipoCompañia.TabIndex = 26;
             // 
             // label38
             // 
@@ -352,21 +333,21 @@
             this.label38.TabIndex = 25;
             this.label38.Text = "Tipo compañía ";
             // 
-            // textBox52
+            // textExpAuxConci
             // 
-            this.textBox52.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox52.Location = new System.Drawing.Point(435, 154);
-            this.textBox52.Name = "textBox52";
-            this.textBox52.Size = new System.Drawing.Size(125, 23);
-            this.textBox52.TabIndex = 24;
+            this.textExpAuxConci.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textExpAuxConci.Location = new System.Drawing.Point(448, 152);
+            this.textExpAuxConci.Name = "textExpAuxConci";
+            this.textExpAuxConci.Size = new System.Drawing.Size(83, 23);
+            this.textExpAuxConci.TabIndex = 24;
             // 
-            // textBox53
+            // textNivelConciencia
             // 
-            this.textBox53.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox53.Location = new System.Drawing.Point(273, 153);
-            this.textBox53.Name = "textBox53";
-            this.textBox53.Size = new System.Drawing.Size(125, 23);
-            this.textBox53.TabIndex = 23;
+            this.textNivelConciencia.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textNivelConciencia.Location = new System.Drawing.Point(244, 153);
+            this.textNivelConciencia.Name = "textNivelConciencia";
+            this.textNivelConciencia.Size = new System.Drawing.Size(154, 23);
+            this.textNivelConciencia.TabIndex = 23;
             // 
             // label39
             // 
@@ -377,37 +358,37 @@
             this.label39.TabIndex = 22;
             this.label39.Text = "Nivel de conciencia ";
             // 
-            // textBox54
+            // textDiagnostico
             // 
-            this.textBox54.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox54.Location = new System.Drawing.Point(273, 117);
-            this.textBox54.Name = "textBox54";
-            this.textBox54.Size = new System.Drawing.Size(125, 23);
-            this.textBox54.TabIndex = 21;
+            this.textDiagnostico.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textDiagnostico.Location = new System.Drawing.Point(244, 117);
+            this.textDiagnostico.Name = "textDiagnostico";
+            this.textDiagnostico.Size = new System.Drawing.Size(154, 23);
+            this.textDiagnostico.TabIndex = 21;
             // 
-            // textBox55
+            // textCondicionSalud
             // 
-            this.textBox55.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox55.Location = new System.Drawing.Point(273, 83);
-            this.textBox55.Name = "textBox55";
-            this.textBox55.Size = new System.Drawing.Size(125, 23);
-            this.textBox55.TabIndex = 20;
+            this.textCondicionSalud.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textCondicionSalud.Location = new System.Drawing.Point(244, 83);
+            this.textCondicionSalud.Name = "textCondicionSalud";
+            this.textCondicionSalud.Size = new System.Drawing.Size(154, 23);
+            this.textCondicionSalud.TabIndex = 20;
             // 
-            // textBox56
+            // textConAuxDiag
             // 
-            this.textBox56.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox56.Location = new System.Drawing.Point(610, 124);
-            this.textBox56.Name = "textBox56";
-            this.textBox56.Size = new System.Drawing.Size(125, 23);
-            this.textBox56.TabIndex = 19;
+            this.textConAuxDiag.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textConAuxDiag.Location = new System.Drawing.Point(612, 116);
+            this.textConAuxDiag.Name = "textConAuxDiag";
+            this.textConAuxDiag.Size = new System.Drawing.Size(88, 23);
+            this.textConAuxDiag.TabIndex = 19;
             // 
-            // textBox57
+            // textExpAuxDiag
             // 
-            this.textBox57.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox57.Location = new System.Drawing.Point(435, 121);
-            this.textBox57.Name = "textBox57";
-            this.textBox57.Size = new System.Drawing.Size(125, 23);
-            this.textBox57.TabIndex = 18;
+            this.textExpAuxDiag.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textExpAuxDiag.Location = new System.Drawing.Point(448, 117);
+            this.textExpAuxDiag.Name = "textExpAuxDiag";
+            this.textExpAuxDiag.Size = new System.Drawing.Size(83, 23);
+            this.textExpAuxDiag.TabIndex = 18;
             // 
             // label40
             // 
@@ -418,26 +399,26 @@
             this.label40.TabIndex = 16;
             this.label40.Text = "Diagnóstico";
             // 
-            // textBox58
+            // textConAuxCond
             // 
-            this.textBox58.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox58.Location = new System.Drawing.Point(610, 87);
-            this.textBox58.Name = "textBox58";
-            this.textBox58.Size = new System.Drawing.Size(125, 23);
-            this.textBox58.TabIndex = 15;
+            this.textConAuxCond.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textConAuxCond.Location = new System.Drawing.Point(612, 82);
+            this.textConAuxCond.Name = "textConAuxCond";
+            this.textConAuxCond.Size = new System.Drawing.Size(88, 23);
+            this.textConAuxCond.TabIndex = 15;
             // 
-            // textBox59
+            // textExpAuxCond
             // 
-            this.textBox59.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox59.Location = new System.Drawing.Point(435, 87);
-            this.textBox59.Name = "textBox59";
-            this.textBox59.Size = new System.Drawing.Size(125, 23);
-            this.textBox59.TabIndex = 14;
+            this.textExpAuxCond.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textExpAuxCond.Location = new System.Drawing.Point(448, 83);
+            this.textExpAuxCond.Name = "textExpAuxCond";
+            this.textExpAuxCond.Size = new System.Drawing.Size(83, 23);
+            this.textExpAuxCond.TabIndex = 14;
             // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(612, 56);
+            this.label41.Location = new System.Drawing.Point(590, 56);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(126, 15);
             this.label41.TabIndex = 13;
@@ -446,7 +427,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(448, 56);
+            this.label42.Location = new System.Drawing.Point(432, 56);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(110, 15);
             this.label42.TabIndex = 12;
@@ -477,39 +458,34 @@
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.textBox5);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.textBox7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.textBox8);
             this.panel2.Controls.Add(this.textBox9);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox10);
-            this.panel2.Controls.Add(this.textBox11);
+            this.panel2.Controls.Add(this.textPrefMascotasAux);
+            this.panel2.Controls.Add(this.textPrefMascotasP);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.textBox12);
-            this.panel2.Controls.Add(this.textBox13);
+            this.panel2.Controls.Add(this.textPrefIdiomaAux);
+            this.panel2.Controls.Add(this.textPrefIdiomaP);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.textBox14);
-            this.panel2.Controls.Add(this.textBox15);
+            this.panel2.Controls.Add(this.textPrefGeneroAux);
+            this.panel2.Controls.Add(this.textPrefNGeneroP);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.textBox60);
-            this.panel2.Controls.Add(this.textBox61);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.textBox62);
-            this.panel2.Controls.Add(this.textBox63);
-            this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.textBox64);
-            this.panel2.Controls.Add(this.textBox65);
-            this.panel2.Controls.Add(this.textBox66);
+            this.panel2.Controls.Add(this.textPrefPersonalidadAux);
+            this.panel2.Controls.Add(this.textPrefNPersonalidadP);
+            this.panel2.Controls.Add(this.textPrefNacionalidadP);
+            this.panel2.Controls.Add(this.textPrefEdadP);
+            this.panel2.Controls.Add(this.textPrefNacionalidadAux);
             this.panel2.Controls.Add(this.label44);
-            this.panel2.Controls.Add(this.textBox67);
+            this.panel2.Controls.Add(this.textPrefEdadAux);
             this.panel2.Controls.Add(this.label45);
             this.panel2.Controls.Add(this.label46);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(808, 320);
             this.panel2.TabIndex = 34;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // textBox4
             // 
@@ -536,26 +512,10 @@
             this.label5.TabIndex = 46;
             this.label5.Text = "Contextura";
             // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox6.Location = new System.Drawing.Point(452, 177);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 23);
-            this.textBox6.TabIndex = 45;
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox7.Location = new System.Drawing.Point(290, 177);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(125, 23);
-            this.textBox7.TabIndex = 44;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(93, 180);
+            this.label6.Location = new System.Drawing.Point(89, 75);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 15);
             this.label6.TabIndex = 43;
@@ -586,51 +546,51 @@
             this.label7.TabIndex = 40;
             this.label7.Text = "Rango de edad Auxiliar";
             // 
-            // textBox10
+            // textPrefMascotasAux
             // 
-            this.textBox10.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox10.Location = new System.Drawing.Point(453, 283);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(125, 23);
-            this.textBox10.TabIndex = 38;
+            this.textPrefMascotasAux.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefMascotasAux.Location = new System.Drawing.Point(453, 213);
+            this.textPrefMascotasAux.Name = "textPrefMascotasAux";
+            this.textPrefMascotasAux.Size = new System.Drawing.Size(125, 23);
+            this.textPrefMascotasAux.TabIndex = 38;
             // 
-            // textBox11
+            // textPrefMascotasP
             // 
-            this.textBox11.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox11.Location = new System.Drawing.Point(291, 283);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(125, 23);
-            this.textBox11.TabIndex = 37;
+            this.textPrefMascotasP.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefMascotasP.Location = new System.Drawing.Point(291, 213);
+            this.textPrefMascotasP.Name = "textPrefMascotasP";
+            this.textPrefMascotasP.Size = new System.Drawing.Size(125, 23);
+            this.textPrefMascotasP.TabIndex = 37;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(95, 286);
+            this.label8.Location = new System.Drawing.Point(95, 216);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 15);
             this.label8.TabIndex = 36;
             this.label8.Text = "Mascotas";
             // 
-            // textBox12
+            // textPrefIdiomaAux
             // 
-            this.textBox12.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox12.Location = new System.Drawing.Point(452, 247);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(125, 23);
-            this.textBox12.TabIndex = 35;
+            this.textPrefIdiomaAux.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefIdiomaAux.Location = new System.Drawing.Point(452, 177);
+            this.textPrefIdiomaAux.Name = "textPrefIdiomaAux";
+            this.textPrefIdiomaAux.Size = new System.Drawing.Size(125, 23);
+            this.textPrefIdiomaAux.TabIndex = 35;
             // 
-            // textBox13
+            // textPrefIdiomaP
             // 
-            this.textBox13.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox13.Location = new System.Drawing.Point(290, 247);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(125, 23);
-            this.textBox13.TabIndex = 34;
+            this.textPrefIdiomaP.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefIdiomaP.Location = new System.Drawing.Point(290, 177);
+            this.textPrefIdiomaP.Name = "textPrefIdiomaP";
+            this.textPrefIdiomaP.Size = new System.Drawing.Size(125, 23);
+            this.textPrefIdiomaP.TabIndex = 34;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(94, 250);
+            this.label9.Location = new System.Drawing.Point(94, 180);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 15);
             this.label9.TabIndex = 33;
@@ -639,145 +599,113 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(324, 7);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(256, 7);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 15);
+            this.label10.Size = new System.Drawing.Size(148, 15);
             this.label10.TabIndex = 32;
-            this.label10.Text = "Paciente";
+            this.label10.Text = "Preferencias del Paciente";
             // 
-            // textBox14
+            // textPrefGeneroAux
             // 
-            this.textBox14.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox14.Location = new System.Drawing.Point(452, 214);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(125, 23);
-            this.textBox14.TabIndex = 30;
+            this.textPrefGeneroAux.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefGeneroAux.Location = new System.Drawing.Point(452, 144);
+            this.textPrefGeneroAux.Name = "textPrefGeneroAux";
+            this.textPrefGeneroAux.Size = new System.Drawing.Size(125, 23);
+            this.textPrefGeneroAux.TabIndex = 30;
             // 
-            // textBox15
+            // textPrefNGeneroP
             // 
-            this.textBox15.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox15.Location = new System.Drawing.Point(290, 214);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(125, 23);
-            this.textBox15.TabIndex = 29;
+            this.textPrefNGeneroP.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefNGeneroP.Location = new System.Drawing.Point(290, 144);
+            this.textPrefNGeneroP.Name = "textPrefNGeneroP";
+            this.textPrefNGeneroP.Size = new System.Drawing.Size(125, 23);
+            this.textPrefNGeneroP.TabIndex = 29;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(94, 217);
+            this.label11.Location = new System.Drawing.Point(95, 144);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 15);
             this.label11.TabIndex = 28;
             this.label11.Text = "Género";
             // 
-            // textBox60
+            // textPrefPersonalidadAux
             // 
-            this.textBox60.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox60.Location = new System.Drawing.Point(452, 138);
-            this.textBox60.Name = "textBox60";
-            this.textBox60.Size = new System.Drawing.Size(125, 23);
-            this.textBox60.TabIndex = 27;
+            this.textPrefPersonalidadAux.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefPersonalidadAux.Location = new System.Drawing.Point(452, 105);
+            this.textPrefPersonalidadAux.Name = "textPrefPersonalidadAux";
+            this.textPrefPersonalidadAux.Size = new System.Drawing.Size(125, 23);
+            this.textPrefPersonalidadAux.TabIndex = 24;
             // 
-            // textBox61
+            // textPrefNPersonalidadP
             // 
-            this.textBox61.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox61.Location = new System.Drawing.Point(290, 138);
-            this.textBox61.Name = "textBox61";
-            this.textBox61.Size = new System.Drawing.Size(125, 23);
-            this.textBox61.TabIndex = 26;
+            this.textPrefNPersonalidadP.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefNPersonalidadP.Location = new System.Drawing.Point(290, 105);
+            this.textPrefNPersonalidadP.Name = "textPrefNPersonalidadP";
+            this.textPrefNPersonalidadP.Size = new System.Drawing.Size(125, 23);
+            this.textPrefNPersonalidadP.TabIndex = 23;
             // 
-            // label13
+            // textPrefNacionalidadP
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(89, 144);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(89, 15);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "Tipo compañía ";
+            this.textPrefNacionalidadP.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefNacionalidadP.Location = new System.Drawing.Point(290, 72);
+            this.textPrefNacionalidadP.Name = "textPrefNacionalidadP";
+            this.textPrefNacionalidadP.Size = new System.Drawing.Size(125, 23);
+            this.textPrefNacionalidadP.TabIndex = 21;
             // 
-            // textBox62
+            // textPrefEdadP
             // 
-            this.textBox62.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox62.Location = new System.Drawing.Point(452, 105);
-            this.textBox62.Name = "textBox62";
-            this.textBox62.Size = new System.Drawing.Size(125, 23);
-            this.textBox62.TabIndex = 24;
+            this.textPrefEdadP.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefEdadP.Location = new System.Drawing.Point(290, 38);
+            this.textPrefEdadP.Name = "textPrefEdadP";
+            this.textPrefEdadP.Size = new System.Drawing.Size(125, 23);
+            this.textPrefEdadP.TabIndex = 20;
             // 
-            // textBox63
+            // textPrefNacionalidadAux
             // 
-            this.textBox63.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox63.Location = new System.Drawing.Point(290, 105);
-            this.textBox63.Name = "textBox63";
-            this.textBox63.Size = new System.Drawing.Size(125, 23);
-            this.textBox63.TabIndex = 23;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(89, 111);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(99, 15);
-            this.label18.TabIndex = 22;
-            this.label18.Text = "Lugar del servicio";
-            // 
-            // textBox64
-            // 
-            this.textBox64.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox64.Location = new System.Drawing.Point(290, 72);
-            this.textBox64.Name = "textBox64";
-            this.textBox64.Size = new System.Drawing.Size(125, 23);
-            this.textBox64.TabIndex = 21;
-            // 
-            // textBox65
-            // 
-            this.textBox65.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox65.Location = new System.Drawing.Point(290, 38);
-            this.textBox65.Name = "textBox65";
-            this.textBox65.Size = new System.Drawing.Size(125, 23);
-            this.textBox65.TabIndex = 20;
-            // 
-            // textBox66
-            // 
-            this.textBox66.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox66.Location = new System.Drawing.Point(452, 72);
-            this.textBox66.Name = "textBox66";
-            this.textBox66.Size = new System.Drawing.Size(125, 23);
-            this.textBox66.TabIndex = 18;
+            this.textPrefNacionalidadAux.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefNacionalidadAux.Location = new System.Drawing.Point(452, 72);
+            this.textPrefNacionalidadAux.Name = "textPrefNacionalidadAux";
+            this.textPrefNacionalidadAux.Size = new System.Drawing.Size(125, 23);
+            this.textPrefNacionalidadAux.TabIndex = 18;
             // 
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(89, 78);
+            this.label44.Location = new System.Drawing.Point(89, 113);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(92, 15);
+            this.label44.Size = new System.Drawing.Size(75, 15);
             this.label44.TabIndex = 16;
-            this.label44.Text = "Tipo de servicio ";
+            this.label44.Text = "Personalidad";
             // 
-            // textBox67
+            // textPrefEdadAux
             // 
-            this.textBox67.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox67.Location = new System.Drawing.Point(452, 38);
-            this.textBox67.Name = "textBox67";
-            this.textBox67.Size = new System.Drawing.Size(125, 23);
-            this.textBox67.TabIndex = 14;
+            this.textPrefEdadAux.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefEdadAux.Location = new System.Drawing.Point(452, 38);
+            this.textPrefEdadAux.Name = "textPrefEdadAux";
+            this.textPrefEdadAux.Size = new System.Drawing.Size(125, 23);
+            this.textPrefEdadAux.TabIndex = 14;
             // 
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(483, 7);
+            this.label45.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label45.Location = new System.Drawing.Point(464, 7);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(47, 15);
+            this.label45.Size = new System.Drawing.Size(84, 15);
             this.label45.TabIndex = 12;
-            this.label45.Text = "Auxiliar";
+            this.label45.Text = "Datos Auxiliar";
             // 
             // label46
             // 
             this.label46.AutoSize = true;
             this.label46.Location = new System.Drawing.Point(89, 41);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(87, 15);
+            this.label46.Size = new System.Drawing.Size(76, 15);
             this.label46.TabIndex = 10;
-            this.label46.Text = "Temperamento";
+            this.label46.Text = "Edad Auxiliar";
             // 
             // tabPage3
             // 
@@ -796,22 +724,21 @@
             this.panel6.Controls.Add(this.label48);
             this.panel6.Controls.Add(this.label49);
             this.panel6.Controls.Add(this.label50);
-            this.panel6.Controls.Add(this.textBox68);
-            this.panel6.Controls.Add(this.textBox69);
-            this.panel6.Controls.Add(this.label51);
-            this.panel6.Controls.Add(this.textBox70);
-            this.panel6.Controls.Add(this.textBox71);
+            this.panel6.Controls.Add(this.textNPrefCondA);
+            this.panel6.Controls.Add(this.textPrefCondA);
+            this.panel6.Controls.Add(this.textNPrefDiagA);
+            this.panel6.Controls.Add(this.textPrefDiagA);
             this.panel6.Controls.Add(this.label52);
-            this.panel6.Controls.Add(this.textBox72);
-            this.panel6.Controls.Add(this.textBox73);
+            this.panel6.Controls.Add(this.textNPrefTurnoA);
+            this.panel6.Controls.Add(this.textPrefTurnoA);
             this.panel6.Controls.Add(this.label53);
-            this.panel6.Controls.Add(this.textBox74);
-            this.panel6.Controls.Add(this.textBox75);
-            this.panel6.Controls.Add(this.textBox76);
-            this.panel6.Controls.Add(this.textBox77);
-            this.panel6.Controls.Add(this.textBox78);
+            this.panel6.Controls.Add(this.textNPrefGeneroA);
+            this.panel6.Controls.Add(this.textPrefGeneroA);
+            this.panel6.Controls.Add(this.textPrefEdadA);
+            this.panel6.Controls.Add(this.textPrefCompA);
+            this.panel6.Controls.Add(this.textNPrefEdadA);
             this.panel6.Controls.Add(this.label54);
-            this.panel6.Controls.Add(this.textBox79);
+            this.panel6.Controls.Add(this.textNPrefCompA);
             this.panel6.Controls.Add(this.label55);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
@@ -841,7 +768,7 @@
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label49.Location = new System.Drawing.Point(124, 44);
+            this.label49.Location = new System.Drawing.Point(310, 44);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(142, 15);
             this.label49.TabIndex = 34;
@@ -856,46 +783,37 @@
             this.label50.TabIndex = 40;
             this.label50.Text = "Rango de edad Paciente";
             // 
-            // textBox68
+            // textNPrefCondA
             // 
-            this.textBox68.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox68.Location = new System.Drawing.Point(501, 239);
-            this.textBox68.Name = "textBox68";
-            this.textBox68.Size = new System.Drawing.Size(125, 23);
-            this.textBox68.TabIndex = 35;
+            this.textNPrefCondA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textNPrefCondA.Location = new System.Drawing.Point(501, 239);
+            this.textNPrefCondA.Name = "textNPrefCondA";
+            this.textNPrefCondA.Size = new System.Drawing.Size(125, 23);
+            this.textNPrefCondA.TabIndex = 35;
             // 
-            // textBox69
+            // textPrefCondA
             // 
-            this.textBox69.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox69.Location = new System.Drawing.Point(339, 239);
-            this.textBox69.Name = "textBox69";
-            this.textBox69.Size = new System.Drawing.Size(125, 23);
-            this.textBox69.TabIndex = 34;
+            this.textPrefCondA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefCondA.Location = new System.Drawing.Point(339, 239);
+            this.textPrefCondA.Name = "textPrefCondA";
+            this.textPrefCondA.Size = new System.Drawing.Size(125, 23);
+            this.textPrefCondA.TabIndex = 34;
             // 
-            // label51
+            // textNPrefDiagA
             // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(360, 44);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(52, 15);
-            this.label51.TabIndex = 32;
-            this.label51.Text = "Paciente";
+            this.textNPrefDiagA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textNPrefDiagA.Location = new System.Drawing.Point(501, 206);
+            this.textNPrefDiagA.Name = "textNPrefDiagA";
+            this.textNPrefDiagA.Size = new System.Drawing.Size(125, 23);
+            this.textNPrefDiagA.TabIndex = 30;
             // 
-            // textBox70
+            // textPrefDiagA
             // 
-            this.textBox70.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox70.Location = new System.Drawing.Point(501, 206);
-            this.textBox70.Name = "textBox70";
-            this.textBox70.Size = new System.Drawing.Size(125, 23);
-            this.textBox70.TabIndex = 30;
-            // 
-            // textBox71
-            // 
-            this.textBox71.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox71.Location = new System.Drawing.Point(339, 206);
-            this.textBox71.Name = "textBox71";
-            this.textBox71.Size = new System.Drawing.Size(125, 23);
-            this.textBox71.TabIndex = 29;
+            this.textPrefDiagA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefDiagA.Location = new System.Drawing.Point(339, 206);
+            this.textPrefDiagA.Name = "textPrefDiagA";
+            this.textPrefDiagA.Size = new System.Drawing.Size(125, 23);
+            this.textPrefDiagA.TabIndex = 29;
             // 
             // label52
             // 
@@ -906,21 +824,21 @@
             this.label52.TabIndex = 28;
             this.label52.Text = "Género";
             // 
-            // textBox72
+            // textNPrefTurnoA
             // 
-            this.textBox72.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox72.Location = new System.Drawing.Point(501, 175);
-            this.textBox72.Name = "textBox72";
-            this.textBox72.Size = new System.Drawing.Size(125, 23);
-            this.textBox72.TabIndex = 27;
+            this.textNPrefTurnoA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textNPrefTurnoA.Location = new System.Drawing.Point(501, 175);
+            this.textNPrefTurnoA.Name = "textNPrefTurnoA";
+            this.textNPrefTurnoA.Size = new System.Drawing.Size(125, 23);
+            this.textNPrefTurnoA.TabIndex = 27;
             // 
-            // textBox73
+            // textPrefTurnoA
             // 
-            this.textBox73.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox73.Location = new System.Drawing.Point(339, 175);
-            this.textBox73.Name = "textBox73";
-            this.textBox73.Size = new System.Drawing.Size(125, 23);
-            this.textBox73.TabIndex = 26;
+            this.textPrefTurnoA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefTurnoA.Location = new System.Drawing.Point(339, 175);
+            this.textPrefTurnoA.Name = "textPrefTurnoA";
+            this.textPrefTurnoA.Size = new System.Drawing.Size(125, 23);
+            this.textPrefTurnoA.TabIndex = 26;
             // 
             // label53
             // 
@@ -931,45 +849,45 @@
             this.label53.TabIndex = 25;
             this.label53.Text = "Tipo compañía ";
             // 
-            // textBox74
+            // textNPrefGeneroA
             // 
-            this.textBox74.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox74.Location = new System.Drawing.Point(501, 142);
-            this.textBox74.Name = "textBox74";
-            this.textBox74.Size = new System.Drawing.Size(125, 23);
-            this.textBox74.TabIndex = 24;
+            this.textNPrefGeneroA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textNPrefGeneroA.Location = new System.Drawing.Point(501, 142);
+            this.textNPrefGeneroA.Name = "textNPrefGeneroA";
+            this.textNPrefGeneroA.Size = new System.Drawing.Size(125, 23);
+            this.textNPrefGeneroA.TabIndex = 24;
             // 
-            // textBox75
+            // textPrefGeneroA
             // 
-            this.textBox75.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox75.Location = new System.Drawing.Point(339, 142);
-            this.textBox75.Name = "textBox75";
-            this.textBox75.Size = new System.Drawing.Size(125, 23);
-            this.textBox75.TabIndex = 23;
+            this.textPrefGeneroA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefGeneroA.Location = new System.Drawing.Point(339, 142);
+            this.textPrefGeneroA.Name = "textPrefGeneroA";
+            this.textPrefGeneroA.Size = new System.Drawing.Size(125, 23);
+            this.textPrefGeneroA.TabIndex = 23;
             // 
-            // textBox76
+            // textPrefEdadA
             // 
-            this.textBox76.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox76.Location = new System.Drawing.Point(339, 109);
-            this.textBox76.Name = "textBox76";
-            this.textBox76.Size = new System.Drawing.Size(125, 23);
-            this.textBox76.TabIndex = 21;
+            this.textPrefEdadA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefEdadA.Location = new System.Drawing.Point(339, 109);
+            this.textPrefEdadA.Name = "textPrefEdadA";
+            this.textPrefEdadA.Size = new System.Drawing.Size(125, 23);
+            this.textPrefEdadA.TabIndex = 21;
             // 
-            // textBox77
+            // textPrefCompA
             // 
-            this.textBox77.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox77.Location = new System.Drawing.Point(339, 75);
-            this.textBox77.Name = "textBox77";
-            this.textBox77.Size = new System.Drawing.Size(125, 23);
-            this.textBox77.TabIndex = 20;
+            this.textPrefCompA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textPrefCompA.Location = new System.Drawing.Point(339, 75);
+            this.textPrefCompA.Name = "textPrefCompA";
+            this.textPrefCompA.Size = new System.Drawing.Size(125, 23);
+            this.textPrefCompA.TabIndex = 20;
             // 
-            // textBox78
+            // textNPrefEdadA
             // 
-            this.textBox78.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox78.Location = new System.Drawing.Point(501, 109);
-            this.textBox78.Name = "textBox78";
-            this.textBox78.Size = new System.Drawing.Size(125, 23);
-            this.textBox78.TabIndex = 18;
+            this.textNPrefEdadA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textNPrefEdadA.Location = new System.Drawing.Point(501, 109);
+            this.textNPrefEdadA.Name = "textNPrefEdadA";
+            this.textNPrefEdadA.Size = new System.Drawing.Size(125, 23);
+            this.textNPrefEdadA.TabIndex = 18;
             // 
             // label54
             // 
@@ -980,22 +898,23 @@
             this.label54.TabIndex = 16;
             this.label54.Text = "Tipo de Turno";
             // 
-            // textBox79
+            // textNPrefCompA
             // 
-            this.textBox79.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.textBox79.Location = new System.Drawing.Point(501, 75);
-            this.textBox79.Name = "textBox79";
-            this.textBox79.Size = new System.Drawing.Size(125, 23);
-            this.textBox79.TabIndex = 14;
+            this.textNPrefCompA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.textNPrefCompA.Location = new System.Drawing.Point(501, 75);
+            this.textNPrefCompA.Name = "textNPrefCompA";
+            this.textNPrefCompA.Size = new System.Drawing.Size(125, 23);
+            this.textNPrefCompA.TabIndex = 14;
             // 
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(475, 44);
+            this.label55.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label55.Location = new System.Drawing.Point(506, 44);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(155, 15);
+            this.label55.Size = new System.Drawing.Size(90, 15);
             this.label55.TabIndex = 12;
-            this.label55.Text = "Nivel de preferencia Auxiliar";
+            this.label55.Text = "Datos Paciente";
             // 
             // AuxiliarRecomendado
             // 
@@ -1030,11 +949,11 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textIdentificacion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textApellidos;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
@@ -1077,22 +996,19 @@
         private Panel panel5;
         private Label label35;
         private Label label36;
-        private TextBox textBox48;
-        private TextBox textBox49;
-        private Label label37;
-        private TextBox textBox50;
-        private TextBox textBox51;
+        private TextBox textExpAuxTipoC;
+        private TextBox textTipoCompañia;
         private Label label38;
-        private TextBox textBox52;
-        private TextBox textBox53;
+        private TextBox textExpAuxConci;
+        private TextBox textNivelConciencia;
         private Label label39;
-        private TextBox textBox54;
-        private TextBox textBox55;
-        private TextBox textBox56;
-        private TextBox textBox57;
+        private TextBox textDiagnostico;
+        private TextBox textCondicionSalud;
+        private TextBox textConAuxDiag;
+        private TextBox textExpAuxDiag;
         private Label label40;
-        private TextBox textBox58;
-        private TextBox textBox59;
+        private TextBox textConAuxCond;
+        private TextBox textExpAuxCond;
         private Label label41;
         private Label label42;
         private Label label43;
@@ -1101,33 +1017,27 @@
         private TextBox textBox4;
         private TextBox textBox5;
         private Label label5;
-        private TextBox textBox6;
-        private TextBox textBox7;
         private Label label6;
         private TextBox textBox8;
         private TextBox textBox9;
         private Label label7;
-        private TextBox textBox10;
-        private TextBox textBox11;
+        private TextBox textPrefMascotasAux;
+        private TextBox textPrefMascotasP;
         private Label label8;
-        private TextBox textBox12;
-        private TextBox textBox13;
+        private TextBox textPrefIdiomaAux;
+        private TextBox textPrefIdiomaP;
         private Label label9;
         private Label label10;
-        private TextBox textBox14;
-        private TextBox textBox15;
+        private TextBox textPrefGeneroAux;
+        private TextBox textPrefNGeneroP;
         private Label label11;
-        private TextBox textBox60;
-        private TextBox textBox61;
-        private Label label13;
-        private TextBox textBox62;
-        private TextBox textBox63;
-        private Label label18;
-        private TextBox textBox64;
-        private TextBox textBox65;
-        private TextBox textBox66;
+        private TextBox textPrefPersonalidadAux;
+        private TextBox textPrefNPersonalidadP;
+        private TextBox textPrefNacionalidadP;
+        private TextBox textPrefEdadP;
+        private TextBox textPrefNacionalidadAux;
         private Label label44;
-        private TextBox textBox67;
+        private TextBox textPrefEdadAux;
         private Label label45;
         private Label label46;
         private TabPage tabPage3;
@@ -1136,22 +1046,23 @@
         private Label label48;
         private Label label49;
         private Label label50;
-        private TextBox textBox68;
-        private TextBox textBox69;
-        private Label label51;
-        private TextBox textBox70;
-        private TextBox textBox71;
+        private TextBox textNPrefCondA;
+        private TextBox textPrefCondA;
+        private TextBox textNPrefDiagA;
+        private TextBox textPrefDiagA;
         private Label label52;
-        private TextBox textBox72;
-        private TextBox textBox73;
+        private TextBox textNPrefTurnoA;
+        private TextBox textPrefTurnoA;
         private Label label53;
-        private TextBox textBox74;
-        private TextBox textBox75;
-        private TextBox textBox76;
-        private TextBox textBox77;
-        private TextBox textBox78;
+        private TextBox textNPrefGeneroA;
+        private TextBox textPrefGeneroA;
+        private TextBox textPrefEdadA;
+        private TextBox textPrefCompA;
+        private TextBox textNPrefEdadA;
         private Label label54;
-        private TextBox textBox79;
+        private TextBox textNPrefCompA;
         private Label label55;
+        private TextBox textAuxiliar;
+        private TextBox textPaciente;
     }
 }

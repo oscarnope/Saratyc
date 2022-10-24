@@ -41,6 +41,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Tema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Conocimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Experiencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Considerar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -52,10 +56,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Disenar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.Tema = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Conocimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Experiencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Considerar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -155,6 +155,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightYellow;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(85, 12);
             this.label1.Name = "label1";
@@ -199,6 +200,26 @@
             this.dataGridView1.Size = new System.Drawing.Size(586, 114);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Tema
+            // 
+            this.Tema.HeaderText = "Tema";
+            this.Tema.Name = "Tema";
+            // 
+            // Conocimiento
+            // 
+            this.Conocimiento.HeaderText = "Conocimiento";
+            this.Conocimiento.Name = "Conocimiento";
+            // 
+            // Experiencia
+            // 
+            this.Experiencia.HeaderText = "Experiencia";
+            this.Experiencia.Name = "Experiencia";
+            // 
+            // Considerar
+            // 
+            this.Considerar.HeaderText = "Considerar";
+            this.Considerar.Name = "Considerar";
             // 
             // tabPage2
             // 
@@ -308,26 +329,6 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // Tema
-            // 
-            this.Tema.HeaderText = "Tema";
-            this.Tema.Name = "Tema";
-            // 
-            // Conocimiento
-            // 
-            this.Conocimiento.HeaderText = "Conocimiento";
-            this.Conocimiento.Name = "Conocimiento";
-            // 
-            // Experiencia
-            // 
-            this.Experiencia.HeaderText = "Experiencia";
-            this.Experiencia.Name = "Experiencia";
-            // 
-            // Considerar
-            // 
-            this.Considerar.HeaderText = "Considerar";
-            this.Considerar.Name = "Considerar";
             // 
             // EditarPlan
             // 

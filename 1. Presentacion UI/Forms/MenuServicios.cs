@@ -23,7 +23,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            VerTurnos at = new VerTurnos();
+            ConsultarTurnos at = new ConsultarTurnos();
             at.Activate();
             at.Show();
         }
@@ -41,7 +41,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AuxiliarEnfermeria ae = new AuxiliarEnfermeria();
+            DatosAuxiliar ae = new DatosAuxiliar();
             ae.Activate();
             ae.Show();
         }

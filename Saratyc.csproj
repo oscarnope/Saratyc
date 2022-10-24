@@ -22,7 +22,7 @@
     <Compile Update="1. Presentacion UI\Forms\AsignarTurno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="1. Presentacion UI\Forms\AsignarAuxiliar.cs">
+    <Compile Update="1. Presentacion UI\Forms\AuxiliaresRecomendados.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="1. Presentacion UI\Forms\AuxiliarRecomendado.cs">
@@ -43,7 +43,7 @@
     <Compile Update="1. Presentacion UI\Forms\MenuCapacitacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="1. Presentacion UI\Forms\VerTurnos.cs">
+    <Compile Update="1. Presentacion UI\Forms\ConsultarTurnos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="1. Presentacion UI\Forms\MenuServicios.cs">

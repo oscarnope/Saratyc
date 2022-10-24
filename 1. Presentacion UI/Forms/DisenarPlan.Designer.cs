@@ -31,11 +31,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textIdentificacion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Evaluaciones = new System.Windows.Forms.TabControl();
@@ -58,27 +58,30 @@
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ConsiderarDemanda = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PQR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Disenar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.regresar = new System.Windows.Forms.Button();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PQR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.indicador = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.Evaluaciones.SuspendLayout();
@@ -93,8 +96,8 @@
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage6.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -110,11 +113,11 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textApellido);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textNombre);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textIdentificacion);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(128, 12);
@@ -131,13 +134,13 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Apellidos";
             // 
-            // textBox2
+            // textApellido
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(187, 111);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(127, 23);
-            this.textBox2.TabIndex = 13;
+            this.textApellido.Enabled = false;
+            this.textApellido.Location = new System.Drawing.Point(187, 111);
+            this.textApellido.Name = "textApellido";
+            this.textApellido.Size = new System.Drawing.Size(127, 23);
+            this.textApellido.TabIndex = 13;
             // 
             // label3
             // 
@@ -148,13 +151,13 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Nombres";
             // 
-            // textBox3
+            // textNombre
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(187, 82);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(127, 23);
-            this.textBox3.TabIndex = 11;
+            this.textNombre.Enabled = false;
+            this.textNombre.Location = new System.Drawing.Point(187, 82);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(127, 23);
+            this.textNombre.TabIndex = 11;
             // 
             // button1
             // 
@@ -164,13 +167,14 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // textIdentificacion
             // 
-            this.textBox1.Location = new System.Drawing.Point(187, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 23);
-            this.textBox1.TabIndex = 4;
+            this.textIdentificacion.Location = new System.Drawing.Point(187, 56);
+            this.textIdentificacion.Name = "textIdentificacion";
+            this.textIdentificacion.Size = new System.Drawing.Size(127, 23);
+            this.textIdentificacion.TabIndex = 4;
             // 
             // label2
             // 
@@ -184,6 +188,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightYellow;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(85, 12);
             this.label1.Name = "label1";
@@ -369,6 +374,7 @@
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn10,
             this.dataGridViewCheckBoxColumn1});
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.Location = new System.Drawing.Point(3, 3);
@@ -381,27 +387,24 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "Tema";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.Width = 125;
             // 
             // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Resultado Evaluaciones";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Nivel";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Resultado";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.HeaderText = "Considerar";
-            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn1.Width = 125;
             // 
             // tabPage5
             // 
@@ -419,7 +422,7 @@
             this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewCheckBoxColumn2});
+            this.ConsiderarDemanda});
             this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView5.Location = new System.Drawing.Point(0, 0);
             this.dataGridView5.Name = "dataGridView5";
@@ -438,20 +441,20 @@
             // 
             // dataGridViewTextBoxColumn8
             // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Porcentaje demanda ultimo año";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Demanda ultimo año (%)";
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn8.Width = 125;
             // 
-            // dataGridViewCheckBoxColumn2
+            // ConsiderarDemanda
             // 
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Considerar";
-            this.dataGridViewCheckBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn2.Width = 125;
+            this.ConsiderarDemanda.HeaderText = "Considerar";
+            this.ConsiderarDemanda.MinimumWidth = 6;
+            this.ConsiderarDemanda.Name = "ConsiderarDemanda";
+            this.ConsiderarDemanda.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ConsiderarDemanda.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ConsiderarDemanda.Width = 125;
             // 
             // tabPage6
             // 
@@ -463,6 +466,37 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "PQR";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.PQR,
+            this.dataGridViewCheckBoxColumn3});
+            this.dataGridView6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView6.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.RowTemplate.Height = 25;
+            this.dataGridView6.Size = new System.Drawing.Size(586, 171);
+            this.dataGridView6.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Tema";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // PQR
+            // 
+            this.PQR.HeaderText = "PQR";
+            this.PQR.Name = "PQR";
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.HeaderText = "Considerar";
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // checkBox1
             // 
@@ -502,10 +536,20 @@
             this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.checkBox3);
             this.panel2.Controls.Add(this.checkBox2);
-            this.panel2.Location = new System.Drawing.Point(48, 378);
+            this.panel2.Location = new System.Drawing.Point(48, 414);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(582, 89);
             this.panel2.TabIndex = 7;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(402, 38);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(49, 19);
+            this.checkBox5.TabIndex = 9;
+            this.checkBox5.Text = "PQR";
+            this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // checkBox4
             // 
@@ -528,7 +572,7 @@
             // 
             // Disenar
             // 
-            this.Disenar.Location = new System.Drawing.Point(332, 484);
+            this.Disenar.Location = new System.Drawing.Point(332, 520);
             this.Disenar.Name = "Disenar";
             this.Disenar.Size = new System.Drawing.Size(75, 23);
             this.Disenar.TabIndex = 8;
@@ -537,7 +581,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(213, 484);
+            this.button2.Location = new System.Drawing.Point(213, 520);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 9;
@@ -546,7 +590,7 @@
             // 
             // regresar
             // 
-            this.regresar.Location = new System.Drawing.Point(448, 484);
+            this.regresar.Location = new System.Drawing.Point(448, 520);
             this.regresar.Name = "regresar";
             this.regresar.Size = new System.Drawing.Size(94, 23);
             this.regresar.TabIndex = 30;
@@ -554,50 +598,29 @@
             this.regresar.UseVisualStyleBackColor = true;
             this.regresar.Click += new System.EventHandler(this.regresar_Click);
             // 
-            // dataGridView6
+            // indicador
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn9,
-            this.PQR,
-            this.dataGridViewCheckBoxColumn3});
-            this.dataGridView6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView6.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.RowTemplate.Height = 25;
-            this.dataGridView6.Size = new System.Drawing.Size(586, 171);
-            this.dataGridView6.TabIndex = 0;
+            this.indicador.AutoSize = true;
+            this.indicador.Location = new System.Drawing.Point(1, 514);
+            this.indicador.Name = "indicador";
+            this.indicador.Size = new System.Drawing.Size(0, 15);
+            this.indicador.TabIndex = 31;
             // 
-            // checkBox5
+            // button3
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(402, 38);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(49, 19);
-            this.checkBox5.TabIndex = 9;
-            this.checkBox5.Text = "PQR";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Tema";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // PQR
-            // 
-            this.PQR.HeaderText = "PQR";
-            this.PQR.Name = "PQR";
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Considerar";
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.button3.Location = new System.Drawing.Point(276, 378);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(114, 23);
+            this.button3.TabIndex = 32;
+            this.button3.Text = "Generar Plan";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // DisenarPlan
             // 
-            this.ClientSize = new System.Drawing.Size(682, 530);
+            this.ClientSize = new System.Drawing.Size(682, 549);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.indicador);
             this.Controls.Add(this.regresar);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Disenar);
@@ -622,10 +645,11 @@
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -636,7 +660,7 @@
         private Panel panel1;
         private Label label1;
         private Button button1;
-        private TextBox textBox1;
+        private TextBox textIdentificacion;
         private Label label2;
         private TabControl Evaluaciones;
         private TabPage tabPage1;
@@ -650,9 +674,9 @@
         private CheckBox checkBox3;
         private Panel panel2;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox textApellido;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox textNombre;
         private Label label5;
         private Button Disenar;
         private Button button2;
@@ -669,19 +693,22 @@
         private TabPage tabPage4;
         private DataGridView dataGridView4;
         private CheckBox checkBox4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private TabPage tabPage5;
         private DataGridView dataGridView5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private TabPage tabPage6;
         private DataGridView dataGridView6;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private DataGridViewTextBoxColumn PQR;
         private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
         private CheckBox checkBox5;
+        private Label indicador;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private Button button3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewCheckBoxColumn ConsiderarDemanda;
     }
 }

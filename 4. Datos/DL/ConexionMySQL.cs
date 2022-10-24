@@ -40,7 +40,7 @@ namespace Saratyc._4._Datos.DL
         public List<string> consultarEnferdata(string query)
         {
 
-
+            int error = 0;
 
             MySqlConnection sqlConexion = new MySqlConnection("Server=74.208.41.234; Database=enferdata-web; user=enferdata_consulta; password=4f&l$9p01A;");
 
@@ -54,43 +54,51 @@ namespace Saratyc._4._Datos.DL
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro" + erro);
+                //MessageBox.Show("Erro" + erro);
+                error = 1;
+                MessageBox.Show("No se pudo establecer conexión con Enferdata, intente nuevamente","Error Conectando");
                 //Close();
+
+                //datosConsulta.Add(lineaError);
             }
 
-            //Se ejecuta el comando de lectura
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            string a; 
-            string linea = "";
-            int campo = 0;
-
-            while (reader.Read())
+            if (error != 1)
             {
 
-                var values = new Object[reader.FieldCount];
-                reader.GetValues(values);
+                //Se ejecuta el comando de lectura
+                MySqlDataReader reader = cmd.ExecuteReader();
 
-                datos = values.ToList();
+                string a;
+                string linea = "";
+                int campo = 0;
 
-                foreach (var registro in datos)
+                while (reader.Read())
                 {
-                    campo++;
-                    a= registro.ToString();
 
-                    if (campo < reader.FieldCount)
+                    var values = new Object[reader.FieldCount];
+                    reader.GetValues(values);
+
+                    datos = values.ToList();
+
+                    foreach (var registro in datos)
                     {
-                        linea += a + ",";
+                        campo++;
+                        a = registro.ToString();
+
+                        if (campo < reader.FieldCount)
+                        {
+                            linea += a + ",";
+                        }
+                        else
+                        {
+                            linea += a;
+                        }
                     }
-                    else
-                    {
-                        linea += a;
-                    }
+
+                    datosConsulta.Add(linea);
+                    linea = "";
+                    campo = 0;
                 }
-
-                datosConsulta.Add(linea);
-                linea = "";
-                campo = 0;
             }
             //Se retorna la lista de resultados
             return datosConsulta;

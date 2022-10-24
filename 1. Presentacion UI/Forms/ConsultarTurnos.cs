@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Saratyc._1._Presentacion_UI.Forms
 {
-    public partial class VerTurnos : Form
+    public partial class ConsultarTurnos : Form
     {
         string idTurno;
         string institucion;
@@ -31,7 +31,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
         BTurno bTurno = new();
         BVerTurnos bVerTurnos = new();
 
-        public VerTurnos()
+        public ConsultarTurnos()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -55,9 +55,9 @@ namespace Saratyc._1._Presentacion_UI.Forms
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //this.Hide();
-            AsignarTurno at = new AsignarTurno(institucion, restriccionAuxPreferido, restriccionAuxRechazado, tipoTurno, fechaInicio, fechaFin, idPaciente, idAuxiliarEnferdata,idAuxiliarSaratyc);
-            at.Activate();
-            at.Show();
+            //AsignarTurno at = new AsignarTurno(institucion, restriccionAuxPreferido, restriccionAuxRechazado, tipoTurno, fechaInicio, fechaFin, idPaciente, idAuxiliarEnferdata,idAuxiliarSaratyc);
+            //at.Activate();
+            //at.Show();
         }
 
         private void dataGridView1_CellDoubleClick(Object sender, DataGridViewCellEventArgs e)
@@ -82,6 +82,9 @@ namespace Saratyc._1._Presentacion_UI.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             //Se muestran todos los turnos que dan inicio en la fecha seleccionada y aun no finalizan
+
+            Indicador.ForeColor = Color.Blue;
+            Indicador.Text = "Buscando Turnos...";
 
             string fechaSeleccionada = dateTimePicker1.Value.ToString("dd-MMM-yy");//Se guarda la fecha seleccionada
             dataGridView1.Rows.Clear(); //Se limpia el datagrid
@@ -117,6 +120,20 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 }
             }
 
+            //Si no se encuentra ningun turno, solo existira una fila, vacia, por eso se preguinta por el numero 1
+            string registros = dataGridView1.Rows.Count.ToString();
+            if (registros.Equals("1"))
+            {
+                Indicador.ForeColor = Color.Red;
+                Indicador.Text = "No se encontraron turnos sin asignar";
+            }
+            else
+            {
+                Indicador.ForeColor = Color.Blue;
+                Indicador.Text = "Búsqueda Finalizada";
+            }
+
+
             //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             //dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
             //dataGridView1.AllowUserToOrderColumns = true;
@@ -131,10 +148,15 @@ namespace Saratyc._1._Presentacion_UI.Forms
         {
             //Se muestran todos los turnos que no tienen asignacion en enferdata y aun no finalizan
 
+            Indicador.ForeColor = Color.Blue;
+            Indicador.Text = "Buscando Turnos...";
+
+
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
 
             lTurnos = bTurno.cargarTurnos();
+
             foreach (string turno in lTurnos)
             {
                 var columns = turno.Split(',').ToList();
@@ -149,11 +171,30 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 idAuxiliarEnferdata = columns[8].ToString();
                 idAuxiliarSaratyc = columns[9].ToString();
 
+                //Se elimina la hora de las fechas
+                fechaInicio = fechaInicio.Substring(0,fechaInicio.IndexOf(" "));
+                fechaFin = fechaFin.Substring(0, fechaFin.IndexOf(" "));
+
+
                 if (idAuxiliarEnferdata.Equals(""))
                 {
                     dataGridView1.Rows.Add(institucion, restriccionAuxPreferido, restriccionAuxRechazado, tipoTurno, fechaInicio, fechaFin, idPaciente, idAuxiliarEnferdata, idAuxiliarSaratyc);
                 }
             }
+
+            //Si no se encuentra ningun turno, solo existira una fila, vacia, por eso se pregunta por el numero 1
+            string registros = dataGridView1.Rows.Count.ToString();
+            if (registros.Equals("1"))
+            {
+                Indicador.ForeColor = Color.Red;
+                Indicador.Text = "No se encontraron turnos sin asignar";
+            }
+            else
+            {
+                Indicador.ForeColor = Color.Blue;
+                Indicador.Text = "Búsqueda Finalizada";
+            }
+
 
 
         }
@@ -162,6 +203,9 @@ namespace Saratyc._1._Presentacion_UI.Forms
         {
             //Se muestran todos los turnos que no tienen asignacion en Saratyc y aun no finalizan
 
+            Indicador.ForeColor = Color.Blue;
+            Indicador.Text = "Buscando Turnos...";
+
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
 
@@ -180,10 +224,28 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 idAuxiliarEnferdata = columns[8].ToString();
                 idAuxiliarSaratyc = columns[9].ToString();
 
+                //Se elimina la hora de las fechas
+                fechaInicio = fechaInicio.Substring(0, fechaInicio.IndexOf(" "));
+                fechaFin = fechaFin.Substring(0, fechaFin.IndexOf(" "));
+
+                //if (idAuxiliarSaratyc.Equals("") && (fechaInicio.Equals("10/10/2022 12:00:00 AM") || fechaInicio.Equals("10/10/2022 12:00:00 AM") || fechaInicio.Equals("10/10/2022 12:00:00 AM")))
                 if (idAuxiliarSaratyc.Equals(""))
                 {
                     dataGridView1.Rows.Add(institucion, restriccionAuxPreferido, restriccionAuxRechazado, tipoTurno, fechaInicio, fechaFin, idPaciente, idAuxiliarEnferdata, idAuxiliarSaratyc);
                 }
+            }
+
+            //Si no se encuentra ningun turno, solo existira una fila, vacia, por eso se pregunta por el numero 1
+            string registros = dataGridView1.Rows.Count.ToString();
+            if (registros.Equals("1"))
+            {
+                Indicador.ForeColor = Color.Red;
+                Indicador.Text = "No se encontraron turnos sin asignar";
+            }
+            else
+            {
+                Indicador.ForeColor = Color.Blue;
+                Indicador.Text = "Búsqueda Finalizada";
             }
 
 

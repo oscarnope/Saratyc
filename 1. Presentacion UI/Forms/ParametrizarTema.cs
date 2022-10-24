@@ -43,9 +43,9 @@ namespace Saratyc._1._Presentacion_UI.Forms
             dataGridView1.Rows.Add("Habilidades blandas");
             dataGridView1.Rows.Add("Madre recién nacido");
             dataGridView1.Rows.Add("Medicación aplicación endovenosa");
-            dataGridView1.Rows.Add("Medicina Interna ");
+            dataGridView1.Rows.Add("Medicina Interna");
             dataGridView1.Rows.Add("Nefrostomia");
-            dataGridView1.Rows.Add("Neurológico ");
+            dataGridView1.Rows.Add("Neurológico");
             dataGridView1.Rows.Add("Oncológico ");
             dataGridView1.Rows.Add("Oxigeno");
             dataGridView1.Rows.Add("Psiquiátrico ");
