@@ -1267,6 +1267,126 @@ resultado.to_csv('data/Turnos.csv',sep=";",header= 0)
 
 
 
+# In[60]:
+
+
+#dat_pac_df
+dat_pac_df.groupby(['GRUPO DIAGNOSTICO','PREFERENCIA_GENERO'], as_index=True).count().sort_values('ID',ascending = False)
+df_grouped = dat_pac_df.groupby(['GRUPO DIAGNOSTICO','PREFERENCIA_GENERO'], as_index=True).count().sort_values('ID',ascending = False)
+df_grouped.head(10)
+df_grouped = df_grouped.reset_index()
+df_grouped_estadistica = df_grouped[['GRUPO DIAGNOSTICO','PREFERENCIA_GENERO','ID']]
+df_grouped_estadistica.index = df_grouped_estadistica.index.set_names(['index'])
+df_grouped_estadistica.to_csv('data/top_diagnostico_paciente.csv',sep=",",header= 1)
+
+
+# In[61]:
+
+
+pref_aux_df.groupby(['DIAGNOSTICO4','GENERO','CONOCIMIENTOD4'], as_index=True).count().sort_values('ID',ascending = False)
+df_grouped = pref_aux_df.groupby(['DIAGNOSTICO4','GENERO','CONOCIMIENTOD4'], as_index=True).count().sort_values('ID',ascending = False)
+df_grouped.head(10)
+
+
+# In[62]:
+
+
+pref_aux_df.groupby(['DIAGNOSTICO1','GENERO','CONOCIMIENTOD1'], as_index=True).count().sort_values('ID',ascending = False)
+df_grouped = pref_aux_df.groupby(['DIAGNOSTICO1','GENERO','CONOCIMIENTOD1'], as_index=True).count().sort_values('ID',ascending = False)
+df_grouped.head(10)
+
+
+# In[63]:
+
+
+pref_aux_genero_df = pref_aux_df[["GENERO"]]
+pref_aux_genero_df.head()
+ConocimientoPref_df
+
+df_filter_aux_genero_exp_con = pref_aux_genero_df.join(ConocimientoPref_df)
+df_filter_aux_genero_exp_con.head()
+
+
+# In[64]:
+
+
+#Auxiliares con conocimientos
+df_grouped_aux_conocimientos = df_filter_aux_genero_exp_con.groupby(['GENERO'], as_index=True).sum().sort_values('GENERO',ascending = False)
+df_grouped_aux_conocimientos.head(10)
+df_grouped_aux_conocimientos.to_csv('top_conocimiento_auxiliar.csv',sep=",",header= 1)
+
+
+# In[65]:
+
+
+#Auxiliares sin conocimientos
+df_filter_aux_genero_exp_con = df_filter_aux_genero_exp_con.replace(1,2)
+df_filter_aux_genero_exp_con = df_filter_aux_genero_exp_con.replace(0,1)
+df_filter_aux_genero_exp_con = df_filter_aux_genero_exp_con.replace(2,0)
+df_grouped_aux_sin_conocimientos = df_filter_aux_genero_exp_con.groupby(['GENERO'], as_index=True).sum().sort_values('GENERO',ascending = False)
+df_grouped_aux_sin_conocimientos.head(10)
+df_grouped_aux_sin_conocimientos.to_csv('data/top_sin_conocimiento_auxiliar.csv',sep=",",header= 1)
+
+
+# In[66]:
+
+
+# import the module
+from sqlalchemy import create_engine
+
+# create sqlalchemy engine
+engine = create_engine("mysql+pymysql://{user}:{pw}@a2nlmysql49plsk.secureserver.net:3306/{db}"
+                       .format(user="saratyc",
+                               pw="saratic234**",
+                               db="SaratycReport"))
+
+
+# In[67]:
+
+
+# Insert whole DataFrame into MySQL
+df_grouped_estadistica.columns = df_grouped_estadistica.columns.str.replace(' ', '_')
+df_grouped_estadistica.to_sql('top_diagnostico_paciente', con = engine, if_exists = 'replace', chunksize = 1000)
+
+
+# In[68]:
+
+
+df_grouped_aux_conocimientos.head()
+
+
+# In[69]:
+
+
+df_grouped_aux_conocimientos.columns = df_grouped_aux_conocimientos.columns.str.replace('é', 'e')
+df_grouped_aux_conocimientos.columns = df_grouped_aux_conocimientos.columns.str.replace('í', 'i')
+df_grouped_aux_conocimientos.columns = df_grouped_aux_conocimientos.columns.str.replace('ú', 'u')
+df_grouped_aux_conocimientos.columns = df_grouped_aux_conocimientos.columns.str.replace('á', 'a')
+df_grouped_aux_conocimientos.columns = df_grouped_aux_conocimientos.columns.str.replace('ó', 'o')
+df_grouped_aux_conocimientos.columns = df_grouped_aux_conocimientos.columns.str.replace(' ', '_')
+df_grouped_aux_conocimientos = df_grouped_aux_conocimientos.reset_index()
+df_grouped_aux_conocimientos.to_sql('top_conocimiento_auxiliar', con = engine, if_exists = 'replace', chunksize = 1000)
+
+
+# In[70]:
+
+
+df_grouped_aux_sin_conocimientos.columns = df_grouped_aux_sin_conocimientos.columns.str.replace('é', 'e')
+df_grouped_aux_sin_conocimientos.columns = df_grouped_aux_sin_conocimientos.columns.str.replace('í', 'i')
+df_grouped_aux_sin_conocimientos.columns = df_grouped_aux_sin_conocimientos.columns.str.replace('ú', 'u')
+df_grouped_aux_sin_conocimientos.columns = df_grouped_aux_sin_conocimientos.columns.str.replace('á', 'a')
+df_grouped_aux_sin_conocimientos.columns = df_grouped_aux_sin_conocimientos.columns.str.replace('ó', 'o')
+df_grouped_aux_sin_conocimientos.columns = df_grouped_aux_sin_conocimientos.columns.str.replace(' ', '_')
+df_grouped_aux_sin_conocimientos = df_grouped_aux_sin_conocimientos.reset_index()
+df_grouped_aux_sin_conocimientos.to_sql('top_sin_conocimiento_auxiliar', con = engine, if_exists = 'replace', chunksize = 1000)
+
+
+# In[71]:
+
+
+engine.dispose()
+
+
 # In[ ]:
 
 
