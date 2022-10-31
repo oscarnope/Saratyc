@@ -67,10 +67,31 @@ namespace Saratyc._1._Presentacion_UI.Forms
             MessageBox.Show(mensaje);
             */
 
-            Hide();
-            MenuServicios ms = new MenuServicios();
-            ms.Activate();
-            ms.Show();
+            string usuario = textLogin.Text;
+            string password = textPassword.Text;
+
+            usuario = "admin";
+            password = "123";
+
+
+
+            if (usuario.Equals("admin") && password.Equals("123"))
+            {
+                Hide();
+                MenuServicios ms = new MenuServicios();
+                ms.Activate();
+                ms.Show();
+            }
+            else
+            {
+                indicador.ForeColor = Color.Red;
+                indicador.Text = "Usuario o contraseña incorrectos";
+            }
+            
+
+
+
+
         }
     }
 }

@@ -28,6 +28,12 @@
     <Compile Update="1. Presentacion UI\Forms\AuxiliarRecomendado.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="1. Presentacion UI\Forms\PQR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="1. Presentacion UI\Forms\CapacitacionPropuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="1. Presentacion UI\Forms\EditarPlan.cs">
       <SubType>Form</SubType>
     </Compile>

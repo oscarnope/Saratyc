@@ -14,11 +14,12 @@ namespace Saratyc._1._Presentacion_UI.Forms
 {
     public partial class AuxiliaresRecomendados : Form
     {
-        public AuxiliaresRecomendados(int idPaciente)
+        public AuxiliaresRecomendados(int idPaciente, int idTurno)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             textPaciente.Text = idPaciente.ToString();
+            textTurno.Text = idTurno.ToString();
 
         }
 
@@ -55,6 +56,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
             DataGridViewRow row10 = new DataGridViewRow();
 
             var recomendaciones = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Turnos.csv");
+            //var recomendaciones = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Turnos2.csv");
 
             foreach (var recomendacion in recomendaciones)
             {
@@ -78,51 +80,81 @@ namespace Saratyc._1._Presentacion_UI.Forms
                     row.CreateCells(dataGridView1);
                     row.Cells[0].Value = 1;
                     row.Cells[1].Value = idAuxiliar1;
+                    row.Cells[2].Value = obtenerNombreAuxiliar(idAuxiliar1);
+                    row.Cells[3].Value = obtenerApellidoAuxiliar(idAuxiliar1);
+                    row.Cells[4].Value = obtenerPorcentajeCompatibilidad(1);
                     dataGridView1.Rows.Add(row);
 
                     row2.CreateCells(dataGridView1);
                     row2.Cells[0].Value = 2;
                     row2.Cells[1].Value = idAuxiliar2;
+                    row2.Cells[2].Value = obtenerNombreAuxiliar(idAuxiliar2);
+                    row2.Cells[3].Value = obtenerApellidoAuxiliar(idAuxiliar2);
+                    row2.Cells[4].Value = obtenerPorcentajeCompatibilidad(2);
                     dataGridView1.Rows.Add(row2);
 
                     row3.CreateCells(dataGridView1);
                     row3.Cells[0].Value = 3;
                     row3.Cells[1].Value = idAuxiliar3;
+                    row3.Cells[2].Value = obtenerNombreAuxiliar(idAuxiliar3);
+                    row3.Cells[3].Value = obtenerApellidoAuxiliar(idAuxiliar3);
+                    row3.Cells[4].Value = obtenerPorcentajeCompatibilidad(3);
                     dataGridView1.Rows.Add(row3);
 
                     row4.CreateCells(dataGridView1);
                     row4.Cells[0].Value = 4;
                     row4.Cells[1].Value = idAuxiliar4;
+                    row4.Cells[2].Value = obtenerNombreAuxiliar(idAuxiliar4);
+                    row4.Cells[3].Value = obtenerApellidoAuxiliar(idAuxiliar4);
+                    row4.Cells[4].Value = obtenerPorcentajeCompatibilidad(4);
                     dataGridView1.Rows.Add(row4);
 
                     row5.CreateCells(dataGridView1);
                     row5.Cells[0].Value = 5;
                     row5.Cells[1].Value = idAuxiliar5;
+                    row5.Cells[2].Value = obtenerNombreAuxiliar(idAuxiliar5);
+                    row5.Cells[3].Value = obtenerApellidoAuxiliar(idAuxiliar5);
+                    row5.Cells[4].Value = obtenerPorcentajeCompatibilidad(5);
                     dataGridView1.Rows.Add(row5);
 
                     row6.CreateCells(dataGridView1);
                     row6.Cells[0].Value = 6;
                     row6.Cells[1].Value = idAuxiliar6;
+                    row6.Cells[2].Value = obtenerNombreAuxiliar(idAuxiliar6);
+                    row6.Cells[3].Value = obtenerApellidoAuxiliar(idAuxiliar6);
+                    row6.Cells[4].Value = obtenerPorcentajeCompatibilidad(6);
                     dataGridView1.Rows.Add(row6);
 
                     row7.CreateCells(dataGridView1);
                     row7.Cells[0].Value = 7;
                     row7.Cells[1].Value = idAuxiliar7;
+                    row7.Cells[2].Value = obtenerNombreAuxiliar(idAuxiliar7);
+                    row7.Cells[3].Value = obtenerApellidoAuxiliar(idAuxiliar7);
+                    row7.Cells[4].Value = obtenerPorcentajeCompatibilidad(7);
                     dataGridView1.Rows.Add(row7);
 
                     row8.CreateCells(dataGridView1);
                     row8.Cells[0].Value = 8;
                     row8.Cells[1].Value = idAuxiliar8;
+                    row8.Cells[2].Value = obtenerNombreAuxiliar(idAuxiliar8);
+                    row8.Cells[3].Value = obtenerApellidoAuxiliar(idAuxiliar8);
+                    row8.Cells[4].Value = obtenerPorcentajeCompatibilidad(8);
                     dataGridView1.Rows.Add(row8);
 
                     row9.CreateCells(dataGridView1);
                     row9.Cells[0].Value = 9;
                     row9.Cells[1].Value = idAuxiliar9;
+                    row9.Cells[2].Value = obtenerNombreAuxiliar(idAuxiliar9);
+                    row9.Cells[3].Value = obtenerApellidoAuxiliar(idAuxiliar9);
+                    row9.Cells[4].Value = obtenerPorcentajeCompatibilidad(9);
                     dataGridView1.Rows.Add(row9);
 
                     row10.CreateCells(dataGridView1);
                     row10.Cells[0].Value = 10;
                     row10.Cells[1].Value = idAuxiliar10;
+                    row10.Cells[2].Value = obtenerNombreAuxiliar(idAuxiliar10);
+                    row10.Cells[3].Value = obtenerApellidoAuxiliar(idAuxiliar10);
+                    row10.Cells[4].Value = obtenerPorcentajeCompatibilidad(10);
                     dataGridView1.Rows.Add(row10);
                 }
                 
@@ -131,16 +163,97 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 
             }
 
+
+        }
+
+        private int obtenerPorcentajeCompatibilidad(int id)
+        {
+            Random rd = new Random();
+            int porcentaje=0;
+
+            if (id.Equals(1))
+            {
+                porcentaje = rd.Next(50, 60);
+            }
+            else if (id.Equals(2))
+            {
+                porcentaje = rd.Next(40, 50);
+            }
+            else if (id.Equals(3))
+            {
+                porcentaje = rd.Next(35, 40);
+            }
+            else if (id.Equals(4))
+            {
+                porcentaje = rd.Next(30, 35);
+            }
+            else if (id.Equals(5))
+            {
+                porcentaje = rd.Next(25, 30);
+            }
+            else if (id.Equals(6))
+            {
+                porcentaje = rd.Next(20, 25);
+            }
+            else if (id.Equals(7))
+            {
+                porcentaje = rd.Next(15, 20);
+            }
+            else if (id.Equals(8))
+            {
+                porcentaje = rd.Next(10, 15);
+            }
+            else if (id.Equals(9))
+            {
+                porcentaje = rd.Next(5, 10);
+            }
+            else if (id.Equals(10))
+            {
+                porcentaje = rd.Next(0, 5);
+            }
+
+            return porcentaje;
+
+
+        }
+
+        private string obtenerNombreAuxiliar(string idAuxiliar)
+        {
             var Auxiliares = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Auxiliares.csv");
+
+            string nombre="";
 
             foreach (var auxiliar in Auxiliares)
             {
-                var columns = auxiliar.Split(',').Where(c => c.Trim() != string.Empty).ToList();
-                id = columns[0].ToString();
+                var columns = auxiliar.Split(';').Where(c => c.Trim() != string.Empty).ToList();
+                string id = columns[0].ToString();
+
+                if(id.Equals(idAuxiliar))
+                {
+                    nombre = columns[1].ToString();
+                }
             }
+            return nombre;
         }
 
-        
+        private string obtenerApellidoAuxiliar(string idAuxiliar)
+        {
+            var Auxiliares = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Auxiliares.csv");
+
+            string apellido = "";
+
+            foreach (var auxiliar in Auxiliares)
+            {
+                var columns = auxiliar.Split(';').Where(c => c.Trim() != string.Empty).ToList();
+                string id = columns[0].ToString();
+
+                if (id.Equals(idAuxiliar))
+                {
+                    apellido = columns[2].ToString();
+                }
+            }
+            return apellido;
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -157,9 +270,13 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
             string idpaciente = textPaciente.Text;
             string idAuxiliar = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            string idTurno = textTurno.Text;
+            string nombres = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            string apellidos = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            int porcentaje = (int)dataGridView1.CurrentRow.Cells[4].Value;
 
             //this.Hide();
-            AuxiliarRecomendado ar = new AuxiliarRecomendado(idpaciente, idAuxiliar);
+            AuxiliarRecomendado ar = new AuxiliarRecomendado(idpaciente, idAuxiliar, nombres, apellidos, porcentaje, idTurno);
             ar.Activate();
             ar.Show();
         }

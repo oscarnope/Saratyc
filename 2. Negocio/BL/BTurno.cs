@@ -24,5 +24,10 @@ namespace Saratyc._2._Negocio.BL
 
         }
 
+        internal void asignarTurno(string idTurno, string idPaciente, string idAuxiliar)
+        {
+            DTurno dTurno = new();
+            dTurno.asignarTurno(idTurno, idPaciente, idAuxiliar);
+        }
     }
 }

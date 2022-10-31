@@ -1,4 +1,5 @@
-﻿using MySqlX.XDevAPI.Relational;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySqlX.XDevAPI.Relational;
 using Saratyc._2._Negocio.BL;
 using Saratyc._4._Datos.DL;
 using System;
@@ -71,7 +72,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
             else
             {
-                lAuxiliar = bAuxiliar.buscarAuxiliar(identificacionAuxiliar);
+                lAuxiliar = bAuxiliar.buscarAuxiliarEnferdata(identificacionAuxiliar);
 
                 foreach (string auxiliar in lAuxiliar)
                 {
@@ -107,7 +108,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
                     poblarEvaluaciones(identificacionAuxiliar);
                     poblarDemanda();
 
-                    indicador.ForeColor = Color.Black;
+                    indicador.ForeColor = Color.Blue;
                     indicador.Text = "Se encontró la información del auxiliar";
                 }
             }
@@ -227,6 +228,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
             DataGridViewRow row20 = new DataGridViewRow();
 
             int numFila = 0;
+
 
             var experiencias = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Experiencias.csv");
 
@@ -955,27 +957,183 @@ namespace Saratyc._1._Presentacion_UI.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             List<string> lTemas = new List<string>();
-            
+
             int filasMostradas = dataGridView1.DisplayedRowCount(true);
             bool seleccion = false;
-            string temaSeleccionado ="";
+            string temaSeleccionado = "";
             int currentRow = 0;
 
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            //Conocimiento
+
+            if (chkConocimiento.Checked)
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    currentRow = row.Index;
+                    if (currentRow < filasMostradas - 1)
+                    {
+                        temaSeleccionado = row.Cells[0].Value.ToString();
+
+                        if (!temaSeleccionado.Equals(null))
+                        {
+                            DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)row.Cells["Considerar"];
+                            if (Convert.ToBoolean(cell.Value))
+                            {
+                                //esta seleccionada
+                                seleccion = true;
+                                lTemas.Add(temaSeleccionado + ",Conocimiento");
+
+                            }
+                            else
+                            {
+                                //no esta seleccionada
+                                seleccion = false;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+
+            if (chkExperiencia.Checked)
+            {
+                foreach (DataGridViewRow row in dataGridView2.Rows)
+                {
+                    currentRow = row.Index;
+                    if (currentRow < filasMostradas - 1)
+                    {
+                        temaSeleccionado = row.Cells[0].Value.ToString();
+
+                        if (!temaSeleccionado.Equals(null))
+                        {
+                            DataGridViewCheckBoxCell cell2 = (DataGridViewCheckBoxCell)row.Cells["ConsiderarExp"];
+                            if (Convert.ToBoolean(cell2.Value))
+                            {
+                                //esta seleccionada
+                                seleccion = true;
+                                lTemas.Add(temaSeleccionado + ",Experiencia");
+
+                            }
+                            else
+                            {
+                                //no esta seleccionada
+                                seleccion = false;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+
+            if (chkIntereses.Checked)
+            {
+                foreach (DataGridViewRow row in dataGridView3.Rows)
+                {
+                    currentRow = row.Index;
+                    if (currentRow < filasMostradas - 1)
+                    {
+                        temaSeleccionado = row.Cells[0].Value.ToString();
+
+                        if (!temaSeleccionado.Equals(null))
+                        {
+                            DataGridViewCheckBoxCell cell3 = (DataGridViewCheckBoxCell)row.Cells["ConsiderarInt"];
+                            if (Convert.ToBoolean(cell3.Value))
+                            {
+                                //esta seleccionada
+                                seleccion = true;
+                                lTemas.Add(temaSeleccionado + ",Interes");
+
+                            }
+                            else
+                            {
+                                //no esta seleccionada
+                                seleccion = false;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            if (chkEvaluaciones.Checked)
+            {
+                foreach (DataGridViewRow row in dataGridView4.Rows)
+                {
+                    currentRow = row.Index;
+                    if (currentRow < filasMostradas - 1)
+                    {
+                        temaSeleccionado = row.Cells[0].Value.ToString();
+
+                        if (!temaSeleccionado.Equals(null))
+                        {
+                            DataGridViewCheckBoxCell cell4 = (DataGridViewCheckBoxCell)row.Cells["ConsiderarEval"];
+                            if (Convert.ToBoolean(cell4.Value))
+                            {
+                                //esta seleccionada
+                                seleccion = true;
+                                lTemas.Add(temaSeleccionado + ",Evaluaciones");
+
+                            }
+                            else
+                            {
+                                //no esta seleccionada
+                                seleccion = false;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            if (chkPQR.Checked)
+            {
+
+                foreach (DataGridViewRow row in dataGridView5.Rows)
+                {
+                    currentRow = row.Index;
+                    if (currentRow < filasMostradas - 1)
+                    {
+                        temaSeleccionado = row.Cells[0].Value.ToString();
+
+                        if (!temaSeleccionado.Equals(null))
+                        {
+                            DataGridViewCheckBoxCell cell5 = (DataGridViewCheckBoxCell)row.Cells["ConsiderarDemanda"];
+                            if (Convert.ToBoolean(cell5.Value))
+                            {
+                                //esta seleccionada
+                                seleccion = true;
+                                lTemas.Add(temaSeleccionado + ",Demanda");
+
+                            }
+                            else
+                            {
+                                //no esta seleccionada
+                                seleccion = false;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            /*
+            foreach (DataGridViewRow row in dataGridView6.Rows)
             {
                 currentRow = row.Index;
-                if (currentRow < filasMostradas-1)
+                if (currentRow < filasMostradas - 1)
                 {
                     temaSeleccionado = row.Cells[0].Value.ToString();
 
                     if (!temaSeleccionado.Equals(null))
                     {
-                        DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)row.Cells["Considerar"];
-                        if (Convert.ToBoolean(cell.Value))
+                        DataGridViewCheckBoxCell cell6 = (DataGridViewCheckBoxCell)row.Cells["ConsiderarPQR"];
+                        if (Convert.ToBoolean(cell6.Value))
                         {
                             //esta seleccionada
                             seleccion = true;
-                            lTemas.Add(temaSeleccionado);
+                            lTemas.Add(temaSeleccionado+ ",PQR");
 
                         }
                         else
@@ -987,8 +1145,96 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 }
 
             }
+            */
+            
+            
+            string tema;
+            string concepto;
+            string nivel="";
+            List<string> lcapacitaciones = new List<string>();
+            List<string> ltemasPropuestos = new List<string>();
 
+
+            foreach (var ltema in lTemas)
+            {
+
+
+                var columns = ltema.Split(',').Where(c => c.Trim() != string.Empty).ToList();
+                tema = columns[0].ToString();
+                concepto = columns[1].ToString();
+
+                if (concepto.Equals("Conocimiento"))
+                {
+                    nivel = "Avanzado";
+                }
+                else if (concepto.Equals("Experiencia"))
+                {
+                    nivel = "Avanzado";
+                }
+                else if (concepto.Equals("Interes"))
+                {
+                    nivel = "Basico";
+                }
+                else if (concepto.Equals("Evaluaciones"))
+                {
+                    nivel = "Avanzado";
+                }
+                else if (concepto.Equals("Demanda"))
+                {
+                    nivel = "Basico";
+                }
+                else if (concepto.Equals("PQR"))
+                {
+                    nivel = "Avanzado";
+                }
+
+                //Si el listado de capacitaciones ya contiene ese tema
+                if(ltemasPropuestos.Contains(tema))
+                {
+                    //Si ya lo contiene no lo añade
+                    if(nivel.Equals("Basico"))
+                    {
+                        //
+                    }
+                    else
+                    {
+                        //Si es avanzado entonces lo reemplaza de nivel Basico a Avanzado
+                        string oldValue = tema + ",Basico";
+                        string newValue = tema + ",Avanzado";
+                        int index = lcapacitaciones.IndexOf(oldValue);
+                        if (index != -1)
+                        {
+                            lcapacitaciones[index] = newValue;
+                        }
+                    }
+
+                }
+                else
+                {
+                    //Si no lo contiene lo añade a la lista de capacitaciones
+                    lcapacitaciones.Add(tema + "," + nivel);
+
+                    //lo añade a la lista de temas
+
+                    ltemasPropuestos.Add(tema);
+                }
+
+
+
+
+            }
+            //poblarGrilla(lcapacitaciones);
+
+            //this.Hide();
+            CapacitacionPropuesta capacitacionPropuesta = new CapacitacionPropuesta(lcapacitaciones, idEnferdata);
+            capacitacionPropuesta.Activate();
+            capacitacionPropuesta.Show();
+        }
+
+        private void Disenar_Click(object sender, EventArgs e)
+        {
 
         }
     }
+        
 }

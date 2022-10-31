@@ -13,7 +13,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
 {
     public partial class AsignarTurno : Form
     {
-        public AsignarTurno(string institucion, string restriccionAuxPreferido, string restriccionAuxRechazado, string tipoTurno, string fechaInicio, string fechaFin, string idPaciente, string asignado, string? idAuxiliarSaratyc)
+        public AsignarTurno(string institucion, string restriccionAuxPreferido, string restriccionAuxRechazado, string tipoTurno, string fechaInicio, string fechaFin, string idPaciente, string asignado, string? idAuxiliarSaratyc, string idTurno)
         {
             InitializeComponent();
             textInstitucion.Text = institucion;
@@ -24,6 +24,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
             textIdAuxEnferdata.Text = asignado;
             textAuxRechazado.Text = restriccionAuxRechazado;
             textIdPaciente.Text = idPaciente;
+            textIdTurno.Text = idTurno;
         }
 
         private void AsignarTurno_Load(object sender, EventArgs e)
@@ -49,6 +50,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
             int idPaciente = Int32.Parse(textIdPaciente.Text);
             int idAuxPreferido = 0;
             int idAuxRechazado = 0;
+            int idTurno = Int32.Parse(textIdTurno.Text);
 
             //Se normalizan los posibles valores nulos
             if (!textAuxPreferido.Text.Equals(""))
@@ -64,10 +66,10 @@ namespace Saratyc._1._Presentacion_UI.Forms
             int idauxAsignado = Int32.Parse(textIdAuxEnferdata.Text);
 
             this.Hide();
-            //Se invoca el algoritmo que calcula la recomendacion de auxiliares
+            //Se invoca el algoritmo que calcula la recomendacion de auxiliares, este se alimenta del archivo de phyton y a esos resultados les realiza procesamiento adicional
             BRecomendarAuxiliares bRecomendarAuxiliares = new BRecomendarAuxiliares(institucion,tipoTurno,fechaInicio,fechaFin,idPaciente,idauxAsignado,idAuxPreferido,idAuxRechazado);
 
-            AuxiliaresRecomendados au = new AuxiliaresRecomendados(idPaciente);
+            AuxiliaresRecomendados au = new AuxiliaresRecomendados(idPaciente, idTurno);
             au.Activate();
             au.Show();
         }

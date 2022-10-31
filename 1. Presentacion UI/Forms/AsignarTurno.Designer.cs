@@ -30,6 +30,8 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textIdTurno = new System.Windows.Forms.TextBox();
+            this.idTurno = new System.Windows.Forms.Label();
             this.textIdSaratyc = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.regresar = new System.Windows.Forms.Button();
@@ -67,6 +69,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textIdTurno);
+            this.panel1.Controls.Add(this.idTurno);
             this.panel1.Controls.Add(this.textIdSaratyc);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.regresar);
@@ -95,6 +99,24 @@
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // textIdTurno
+            // 
+            this.textIdTurno.Enabled = false;
+            this.textIdTurno.Location = new System.Drawing.Point(164, 315);
+            this.textIdTurno.Name = "textIdTurno";
+            this.textIdTurno.Size = new System.Drawing.Size(220, 22);
+            this.textIdTurno.TabIndex = 27;
+            // 
+            // idTurno
+            // 
+            this.idTurno.AutoSize = true;
+            this.idTurno.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.idTurno.Location = new System.Drawing.Point(36, 318);
+            this.idTurno.Name = "idTurno";
+            this.idTurno.Size = new System.Drawing.Size(61, 14);
+            this.idTurno.TabIndex = 26;
+            this.idTurno.Text = "ID Turno";
+            // 
             // textIdSaratyc
             // 
             this.textIdSaratyc.Enabled = false;
@@ -116,7 +138,7 @@
             // regresar
             // 
             this.regresar.BackColor = System.Drawing.Color.LightGray;
-            this.regresar.Location = new System.Drawing.Point(148, 371);
+            this.regresar.Location = new System.Drawing.Point(151, 394);
             this.regresar.Name = "regresar";
             this.regresar.Size = new System.Drawing.Size(171, 29);
             this.regresar.TabIndex = 23;
@@ -181,7 +203,7 @@
             // recomendarAuxiliares
             // 
             this.recomendarAuxiliares.BackColor = System.Drawing.Color.LightGray;
-            this.recomendarAuxiliares.Location = new System.Drawing.Point(148, 332);
+            this.recomendarAuxiliares.Location = new System.Drawing.Point(151, 355);
             this.recomendarAuxiliares.Name = "recomendarAuxiliares";
             this.recomendarAuxiliares.Size = new System.Drawing.Size(171, 33);
             this.recomendarAuxiliares.TabIndex = 15;
@@ -333,5 +355,7 @@
         private System.Windows.Forms.Button regresar;
         private TextBox textIdSaratyc;
         private Label label10;
+        private TextBox textIdTurno;
+        private Label idTurno;
     }
 }

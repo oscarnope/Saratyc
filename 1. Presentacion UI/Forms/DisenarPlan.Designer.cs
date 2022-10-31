@@ -48,18 +48,18 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Experiencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ConsiderarExp = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Interes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ConsiderarInt = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ConsiderarEval = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,13 +69,13 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PQR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.ConsiderarPQR = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chkConocimiento = new System.Windows.Forms.CheckBox();
+            this.chkExperiencia = new System.Windows.Forms.CheckBox();
+            this.chkIntereses = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.chkPQR = new System.Windows.Forms.CheckBox();
+            this.chkEvaluaciones = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Disenar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -128,9 +128,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(61, 118);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 15);
+            this.label4.Size = new System.Drawing.Size(62, 14);
             this.label4.TabIndex = 14;
             this.label4.Text = "Apellidos";
             // 
@@ -145,9 +146,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(61, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 15);
+            this.label3.Size = new System.Drawing.Size(60, 14);
             this.label3.TabIndex = 12;
             this.label3.Text = "Nombres";
             // 
@@ -161,12 +163,14 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.LightGray;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(339, 55);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 5;
             this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textIdentificacion
@@ -179,22 +183,23 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(5, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 15);
+            this.label2.Size = new System.Drawing.Size(159, 14);
             this.label2.TabIndex = 3;
             this.label2.Text = "Documento de identidad";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.LightYellow;
+            this.label1.BackColor = System.Drawing.Color.Silver;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(85, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 32);
+            this.label1.Size = new System.Drawing.Size(252, 32);
             this.label1.TabIndex = 2;
-            this.label1.Text = "PLAN DE CAPACITACIÓN";
+            this.label1.Text = "Plan de Capacitación";
             // 
             // Evaluaciones
             // 
@@ -276,7 +281,7 @@
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.Experiencia,
-            this.dataGridViewTextBoxColumn2});
+            this.ConsiderarExp});
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
@@ -299,14 +304,14 @@
             this.Experiencia.Name = "Experiencia";
             this.Experiencia.Width = 125;
             // 
-            // dataGridViewTextBoxColumn2
+            // ConsiderarExp
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Considerar";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn2.Width = 125;
+            this.ConsiderarExp.HeaderText = "Considerar";
+            this.ConsiderarExp.MinimumWidth = 6;
+            this.ConsiderarExp.Name = "ConsiderarExp";
+            this.ConsiderarExp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ConsiderarExp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ConsiderarExp.Width = 125;
             // 
             // tabPage3
             // 
@@ -324,7 +329,7 @@
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.Interes,
-            this.dataGridViewTextBoxColumn4});
+            this.ConsiderarInt});
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
@@ -348,14 +353,14 @@
             this.Interes.Name = "Interes";
             this.Interes.Width = 125;
             // 
-            // dataGridViewTextBoxColumn4
+            // ConsiderarInt
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Considerar";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn4.Width = 125;
+            this.ConsiderarInt.HeaderText = "Considerar";
+            this.ConsiderarInt.MinimumWidth = 6;
+            this.ConsiderarInt.Name = "ConsiderarInt";
+            this.ConsiderarInt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ConsiderarInt.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ConsiderarInt.Width = 125;
             // 
             // tabPage4
             // 
@@ -375,7 +380,7 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn10,
-            this.dataGridViewCheckBoxColumn1});
+            this.ConsiderarEval});
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.Location = new System.Drawing.Point(3, 3);
             this.dataGridView4.Name = "dataGridView4";
@@ -399,12 +404,12 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "Resultado";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
-            // dataGridViewCheckBoxColumn1
+            // ConsiderarEval
             // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Considerar";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ConsiderarEval.HeaderText = "Considerar";
+            this.ConsiderarEval.Name = "ConsiderarEval";
+            this.ConsiderarEval.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ConsiderarEval.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tabPage5
             // 
@@ -473,7 +478,7 @@
             this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn9,
             this.PQR,
-            this.dataGridViewCheckBoxColumn3});
+            this.ConsiderarPQR});
             this.dataGridView6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView6.Location = new System.Drawing.Point(3, 3);
             this.dataGridView6.Name = "dataGridView6";
@@ -491,134 +496,151 @@
             this.PQR.HeaderText = "PQR";
             this.PQR.Name = "PQR";
             // 
-            // dataGridViewCheckBoxColumn3
+            // ConsiderarPQR
             // 
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Considerar";
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ConsiderarPQR.HeaderText = "Considerar";
+            this.ConsiderarPQR.Name = "ConsiderarPQR";
+            this.ConsiderarPQR.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ConsiderarPQR.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // checkBox1
+            // chkConocimiento
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(141, 38);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(102, 19);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Conocimiento";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkConocimiento.AutoSize = true;
+            this.chkConocimiento.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkConocimiento.Location = new System.Drawing.Point(141, 38);
+            this.chkConocimiento.Name = "chkConocimiento";
+            this.chkConocimiento.Size = new System.Drawing.Size(110, 18);
+            this.chkConocimiento.TabIndex = 4;
+            this.chkConocimiento.Text = "Conocimiento";
+            this.chkConocimiento.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkExperiencia
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(141, 63);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(86, 19);
-            this.checkBox2.TabIndex = 5;
-            this.checkBox2.Text = "Experiencia";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkExperiencia.AutoSize = true;
+            this.chkExperiencia.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkExperiencia.Location = new System.Drawing.Point(141, 63);
+            this.chkExperiencia.Name = "chkExperiencia";
+            this.chkExperiencia.Size = new System.Drawing.Size(94, 18);
+            this.chkExperiencia.TabIndex = 5;
+            this.chkExperiencia.Text = "Experiencia";
+            this.chkExperiencia.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chkIntereses
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(270, 38);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(72, 19);
-            this.checkBox3.TabIndex = 6;
-            this.checkBox3.Text = "Intereses";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkIntereses.AutoSize = true;
+            this.chkIntereses.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkIntereses.Location = new System.Drawing.Point(270, 38);
+            this.chkIntereses.Name = "chkIntereses";
+            this.chkIntereses.Size = new System.Drawing.Size(83, 18);
+            this.chkIntereses.TabIndex = 6;
+            this.chkIntereses.Text = "Intereses";
+            this.chkIntereses.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.checkBox5);
-            this.panel2.Controls.Add(this.checkBox4);
+            this.panel2.Controls.Add(this.chkPQR);
+            this.panel2.Controls.Add(this.chkEvaluaciones);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.checkBox1);
-            this.panel2.Controls.Add(this.checkBox3);
-            this.panel2.Controls.Add(this.checkBox2);
+            this.panel2.Controls.Add(this.chkConocimiento);
+            this.panel2.Controls.Add(this.chkIntereses);
+            this.panel2.Controls.Add(this.chkExperiencia);
             this.panel2.Location = new System.Drawing.Point(48, 414);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(582, 89);
             this.panel2.TabIndex = 7;
             // 
-            // checkBox5
+            // chkPQR
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(402, 38);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(49, 19);
-            this.checkBox5.TabIndex = 9;
-            this.checkBox5.Text = "PQR";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chkPQR.AutoSize = true;
+            this.chkPQR.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkPQR.Location = new System.Drawing.Point(402, 38);
+            this.chkPQR.Name = "chkPQR";
+            this.chkPQR.Size = new System.Drawing.Size(52, 18);
+            this.chkPQR.TabIndex = 9;
+            this.chkPQR.Text = "PQR";
+            this.chkPQR.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chkEvaluaciones
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(270, 63);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(94, 19);
-            this.checkBox4.TabIndex = 8;
-            this.checkBox4.Text = "Evaluaciones";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chkEvaluaciones.AutoSize = true;
+            this.chkEvaluaciones.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkEvaluaciones.Location = new System.Drawing.Point(270, 63);
+            this.chkEvaluaciones.Name = "chkEvaluaciones";
+            this.chkEvaluaciones.Size = new System.Drawing.Size(103, 18);
+            this.chkEvaluaciones.TabIndex = 8;
+            this.chkEvaluaciones.Text = "Evaluaciones";
+            this.chkEvaluaciones.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(102, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(372, 15);
+            this.label5.Size = new System.Drawing.Size(435, 14);
             this.label5.TabIndex = 7;
             this.label5.Text = "Marque los aspectos que se tendrán en cuenta para el diseño del plan";
             // 
             // Disenar
             // 
-            this.Disenar.Location = new System.Drawing.Point(332, 520);
+            this.Disenar.BackColor = System.Drawing.Color.LightGray;
+            this.Disenar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Disenar.Location = new System.Drawing.Point(334, 528);
             this.Disenar.Name = "Disenar";
             this.Disenar.Size = new System.Drawing.Size(75, 23);
             this.Disenar.TabIndex = 8;
             this.Disenar.Text = "Guardar";
-            this.Disenar.UseVisualStyleBackColor = true;
+            this.Disenar.UseVisualStyleBackColor = false;
+            this.Disenar.Click += new System.EventHandler(this.Disenar_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(213, 520);
+            this.button2.BackColor = System.Drawing.Color.LightGray;
+            this.button2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(215, 528);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 9;
             this.button2.Text = "Editar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // regresar
             // 
-            this.regresar.Location = new System.Drawing.Point(448, 520);
+            this.regresar.BackColor = System.Drawing.Color.LightGray;
+            this.regresar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.regresar.Location = new System.Drawing.Point(450, 528);
             this.regresar.Name = "regresar";
             this.regresar.Size = new System.Drawing.Size(94, 23);
             this.regresar.TabIndex = 30;
             this.regresar.Text = "Regresar";
-            this.regresar.UseVisualStyleBackColor = true;
+            this.regresar.UseVisualStyleBackColor = false;
             this.regresar.Click += new System.EventHandler(this.regresar_Click);
             // 
             // indicador
             // 
             this.indicador.AutoSize = true;
-            this.indicador.Location = new System.Drawing.Point(1, 514);
+            this.indicador.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.indicador.Location = new System.Drawing.Point(6, 571);
             this.indicador.Name = "indicador";
-            this.indicador.Size = new System.Drawing.Size(0, 15);
+            this.indicador.Size = new System.Drawing.Size(0, 19);
             this.indicador.TabIndex = 31;
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.LightGray;
+            this.button3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.Location = new System.Drawing.Point(276, 378);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(114, 23);
             this.button3.TabIndex = 32;
             this.button3.Text = "Generar Plan";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // DisenarPlan
             // 
-            this.ClientSize = new System.Drawing.Size(682, 549);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
+            this.ClientSize = new System.Drawing.Size(682, 599);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.indicador);
             this.Controls.Add(this.regresar);
@@ -669,9 +691,9 @@
         private DataGridView dataGridView2;
         private TabPage tabPage3;
         private DataGridView dataGridView3;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
+        private CheckBox chkConocimiento;
+        private CheckBox chkExperiencia;
+        private CheckBox chkIntereses;
         private Panel panel2;
         private Label label4;
         private TextBox textApellido;
@@ -684,31 +706,31 @@
         private DataGridViewTextBoxColumn Tema;
         private DataGridViewTextBoxColumn Conocimiento;
         private DataGridViewCheckBoxColumn Considerar;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn Experiencia;
-        private DataGridViewCheckBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn Interes;
-        private DataGridViewCheckBoxColumn dataGridViewTextBoxColumn4;
         private TabPage tabPage4;
         private DataGridView dataGridView4;
-        private CheckBox checkBox4;
+        private CheckBox chkEvaluaciones;
         private TabPage tabPage5;
         private DataGridView dataGridView5;
         private TabPage tabPage6;
         private DataGridView dataGridView6;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private DataGridViewTextBoxColumn PQR;
-        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
-        private CheckBox checkBox5;
+        private CheckBox chkPQR;
         private Label indicador;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private Button button3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewCheckBoxColumn ConsiderarDemanda;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn Experiencia;
+        private DataGridViewCheckBoxColumn ConsiderarExp;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn Interes;
+        private DataGridViewCheckBoxColumn ConsiderarInt;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private DataGridViewCheckBoxColumn ConsiderarEval;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewTextBoxColumn PQR;
+        private DataGridViewCheckBoxColumn ConsiderarPQR;
     }
 }

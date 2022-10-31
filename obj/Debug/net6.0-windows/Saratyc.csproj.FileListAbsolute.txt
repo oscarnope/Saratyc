@@ -95,3 +95,5 @@ C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.ConsultarTurnos.resources
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.AuxiliaresRecomendados.resources
 C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.DatosAuxiliar.resources
+C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.CapacitacionPropuesta.resources
+C:\Users\Julian\source\repos\Saratyc\Saratyc\obj\Debug\net6.0-windows\Saratyc._1._Presentacion_UI.Forms.PQR.resources

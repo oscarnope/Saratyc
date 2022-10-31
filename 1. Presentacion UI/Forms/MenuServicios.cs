@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -67,6 +68,33 @@ namespace Saratyc._1._Presentacion_UI.Forms
             MenuServicios ms = new MenuServicios();
             ms.Activate();
             ms.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Hide();
+            PQR pqr = new PQR();
+            pqr.Activate();
+            pqr.Show();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Process myProcess = new Process();
+
+            try
+            {
+                // true is the default, but it is important not to set it to false
+                myProcess.StartInfo.UseShellExecute = true;
+                myProcess.StartInfo.FileName = "https://datastudio.google.com/reporting/62f6561c-4151-4c5f-8a75-a0284a1eb234/page/qgR";
+                myProcess.Start();
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine(error.Message);
+            }
+
+
         }
     }
 }

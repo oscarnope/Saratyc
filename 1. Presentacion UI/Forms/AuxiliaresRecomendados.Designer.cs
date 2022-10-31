@@ -37,8 +37,11 @@
             this.Identificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PorcentajeCompatibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.regresar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textTurno = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -56,6 +59,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textTurno);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textPaciente);
             this.panel1.Controls.Add(this.paciente);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -69,7 +74,7 @@
             // 
             this.textPaciente.Enabled = false;
             this.textPaciente.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textPaciente.Location = new System.Drawing.Point(299, 51);
+            this.textPaciente.Location = new System.Drawing.Point(167, 50);
             this.textPaciente.Name = "textPaciente";
             this.textPaciente.Size = new System.Drawing.Size(100, 22);
             this.textPaciente.TabIndex = 9;
@@ -78,7 +83,7 @@
             // 
             this.paciente.AutoSize = true;
             this.paciente.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.paciente.Location = new System.Drawing.Point(213, 54);
+            this.paciente.Location = new System.Drawing.Point(81, 54);
             this.paciente.Name = "paciente";
             this.paciente.Size = new System.Drawing.Size(59, 14);
             this.paciente.TabIndex = 8;
@@ -91,7 +96,8 @@
             this.ranking,
             this.Identificacion,
             this.Nombres,
-            this.Apellidos});
+            this.Apellidos,
+            this.PorcentajeCompatibilidad});
             this.dataGridView1.Location = new System.Drawing.Point(22, 78);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -129,6 +135,11 @@
             this.Apellidos.Name = "Apellidos";
             this.Apellidos.Width = 125;
             // 
+            // PorcentajeCompatibilidad
+            // 
+            this.PorcentajeCompatibilidad.HeaderText = "%Compatibilidad";
+            this.PorcentajeCompatibilidad.Name = "PorcentajeCompatibilidad";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -143,14 +154,34 @@
             // 
             // regresar
             // 
+            this.regresar.BackColor = System.Drawing.Color.LightGray;
             this.regresar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.regresar.Location = new System.Drawing.Point(403, 436);
             this.regresar.Name = "regresar";
             this.regresar.Size = new System.Drawing.Size(94, 29);
             this.regresar.TabIndex = 7;
             this.regresar.Text = "Regresar";
-            this.regresar.UseVisualStyleBackColor = true;
+            this.regresar.UseVisualStyleBackColor = false;
             this.regresar.Click += new System.EventHandler(this.regresar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(351, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 14);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Turno";
+            // 
+            // textTurno
+            // 
+            this.textTurno.Enabled = false;
+            this.textTurno.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textTurno.Location = new System.Drawing.Point(416, 50);
+            this.textTurno.Name = "textTurno";
+            this.textTurno.Size = new System.Drawing.Size(100, 22);
+            this.textTurno.TabIndex = 11;
             // 
             // AuxiliaresRecomendados
             // 
@@ -178,12 +209,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ranking;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Identificacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
         private Button regresar;
         private Label paciente;
         private TextBox textPaciente;
+        private DataGridViewTextBoxColumn ranking;
+        private DataGridViewTextBoxColumn Identificacion;
+        private DataGridViewTextBoxColumn Nombres;
+        private DataGridViewTextBoxColumn Apellidos;
+        private DataGridViewTextBoxColumn PorcentajeCompatibilidad;
+        private TextBox textTurno;
+        private Label label2;
     }
 }

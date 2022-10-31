@@ -1,7 +1,12 @@
-﻿using System;
+﻿using Google.Protobuf.Collections;
+using Microsoft.VisualBasic.ApplicationServices;
+using Saratyc._4._Datos.DL;
+using Saratyc.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,7 +16,46 @@ namespace Saratyc._2._Negocio.BL
     public class BRecomendarAuxiliares
     {
         Utilidades utilidades = new Utilidades();
+
+        //Se declara la lista de auxiliares que llevara el ranking
+        public List<string> rankingAuxiliares = new List<string>();
+
         //int idPaciente = Int32.Parse(textPaciente.Text);
+
+        //Se declaran las variables que se usaran para ponderar en el match
+        int pesoCondicionExperiencia = 10;
+        int pesoDiagnosticoExperiencia = 9;
+        int pesoConcienciaExperiencia = 8;
+        int pesoCompañiaExperiencia = 7;
+        int pesoRestricciones = 6;
+        int pesoCondicionConocimiento = 5;
+        int pesoDiagnosticoConocimiento = 4;
+        int pesoConcienciaConocimiento = 8;
+        int pesoTemperamento = 3;
+        int pesoLugar = 2;
+        int pesoGeneroPrefPaciente = 0;
+
+        //Pesos de preferencias
+        int pesoDatosSolicitud = 0;
+
+        //Se declaran las variables que se usaran para ponderar el % de coincidencia
+        double porcCondicionExperiencia = 16.39;
+        double porcDiagnosticoExperiencia = 14.75;
+        double porcConcienciaExperiencia = 13.11;
+        double porcCompañiaExperiencia = 11.48;
+        double porcRestricciones = 9.84;
+        double porcCondicionConocimiento = 8.20;
+        double porcDiagnosticoConocimiento = 6.56;
+        double porcConcienciaConocimiento = 0;
+        double porcTemperamento = 4.92;
+        double porcLugar = 3.28;
+        double porcGeneroPrefPaciente = 0;
+
+        //Variable que indica el porcentaje de coincidencias
+        double porcentajeCoincidencia = 0;
+
+        int[] arrayAuxiliares;
+        string auxOrdenados;
 
         //Se declaran variables para guardar datos del paciente
         string IDPACIENTE = "";
@@ -235,7 +279,7 @@ namespace Saratyc._2._Negocio.BL
         string PRIORIDAD_PREFERENCIA_GENERO = "";
         string PRIORIDAD_PREFERENCIA_DIAGNOSTICO = "";
         string PRIORIDAD_PREFERENCIA_CONDICION = "";
-        string TIPOCONTRATO = ""
+        string TIPOCONTRATO = "";
 
         //Variable usada para detectar si ya se encontro el paciente
         int pacienteEncontrado = 0;
@@ -243,11 +287,14 @@ namespace Saratyc._2._Negocio.BL
 
         public BRecomendarAuxiliares(string institucion, string tipoTurno, string fechaInicio, string fechaFin, int idPaciente, int idauxAsignado, int idAuxPreferido, int idAuxRechazado)
         {
+            
             //Se calcula el ranking del turno
             int rankingTurno = RankingTurno(institucion, tipoTurno, fechaInicio, fechaFin);
 
             //Se cargan los datos de los pacientes
             var pacientes = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Pacientes.csv");
+
+            double porcentajeCoincidenciaMax = 0;
 
             //Se busca el paciente entre los datos cargados
             foreach (var paciente in pacientes)
@@ -256,7 +303,7 @@ namespace Saratyc._2._Negocio.BL
                 //Se lee cada uno de los pacientes
                 if (pacienteEncontrado.Equals(0))
                 {
-                    var columnsP = paciente.Split(',').Where(c => c.Trim() != string.Empty).ToList();
+                    var columnsP = paciente.Split(';').Where(c => c.Trim() != string.Empty).ToList();
                     IDPACIENTE = columnsP[0].ToString();
                     NOMBREPACIENTE = columnsP[1].ToString();
                     APELLIDOPACIENTE = columnsP[2].ToString();
@@ -286,7 +333,7 @@ namespace Saratyc._2._Negocio.BL
                         pacienteEncontrado = 1;
 
                         //Se leen los datos de los auxiliares
-                        var auxiliares = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Auxiliares4.2.csv");
+                        var auxiliares = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Auxiliares.csv");
 
                         foreach (var auxiliar in auxiliares)
                         {
@@ -493,16 +540,546 @@ namespace Saratyc._2._Negocio.BL
 
                             //Se calcula el ranking del tipo de contrato
                             int rankingTipoContrato = RankingTipoContrato(TIPOCONTRATO);
+
+                            //Se hace cero la variable
+                            porcentajeCoincidencia = 0;
+
+                            //Aqui se cargan los resultados obtenidos en phyton
+                            //cargarResultadosPhyton();
+
+                            //Esta es una recreacion de lo que hace Phyton para efectos de pruebas 
+                            matchCondicion(CONDICIONSALUD);
+                            matchDiagnostico(GRUPODIAGNOSTICO);
+                            matchConciencia(NIVELCONCIENCIA);
+                            matchRestricciones(NIVELAUTONOMIA,RESTRICCION_DESPLAZAMIENTO, RESTRICCION_OBJETOS);
+                            matchTemperamento(TEMPERAMENTO,PERSONALIDAD);
+                            //matchTipoServicio
+                            matchLugar(LOCALIDADPACIENTE, LOCALIDAD);
+                            matchGenero(PREFERENCIAGENERO, GENEROPAUX);
+                            //matchGenero(LOCALIDADPACIENTE, LOCALIDAD);
+
+
+                            if (!IDAUX.Equals("ID"))
+                            {
+                                int intIDAUX = Int32.Parse(IDAUX);
+                                rankingAuxiliares.Add(string.Format("{0:D2}", intIDAUX) + "," + porcentajeCoincidencia.ToString("00.00"));
+                            }
+
                         }
 
                     }
                 }
             }
+
+            //Se ordena por el porcentaje de coincidencia la lista
+            rankingAuxiliares.Sort((n1, n2) => n1.Split(",")[1].CompareTo(n2.Split(",")[1]));
+
+            //Se guarda el numero de auxiliares procesado
+            int numeroAuxiliares = rankingAuxiliares.Count;
+
+            //Se crean los arrays que se usaran para imprimir los archivos
+            string[] arrayAuxiliares = new string[numeroAuxiliares];
+            string[] arrayPorcentajes = new string[numeroAuxiliares]; 
+
+            //Se recorre el listado de ranking a la inversa
+            for (int k = rankingAuxiliares.Count;k >= 1; k--)
+            {
+                var columns = rankingAuxiliares[k-1].Split(',').Where(c => c.Trim() != string.Empty).ToList();
+                string IDAUX = columns[0].ToString();
+                string porcentajeCoincidencia = columns[1].ToString();
+                
+                //Se almacenan los valores en los arrays en orden ascendente, pues asi se almacenan con el sort
+                arrayAuxiliares[k-1] = IDAUX;
+                arrayPorcentajes[k-1] = porcentajeCoincidencia;
+
+            }
+
+            //Se invierten, para que queden en orden ascendente 
+            Array.Reverse(arrayAuxiliares);
+            Array.Reverse(arrayPorcentajes);
+
+            //string[] arrayAuxiliaresOK = new string[numeroAuxiliares];
+
+            //Solo si viene informacion en el archivo de recomendaciones se añaden el id del paciente
+            if (!arrayAuxiliares.Count().Equals(0))
+            {
+
+                // Translate your splitted string (array) in a list:
+                var rankingAuxiliares2 = arrayAuxiliares.ToList<string>();
+
+                // Se inserta el id del paciente 2 veces, solo por compatibilidad con Phyton, para que las primeras 2 posiciones lo contengan
+                rankingAuxiliares2.Insert(0, IDPACIENTE);
+                rankingAuxiliares2.Insert(0, IDPACIENTE);
+
+                // Back to array:
+                string[] arrayAuxiliares2 = rankingAuxiliares2.ToArray<string>();
+
+                crearArchivosRanking(arrayAuxiliares2, "Turnos.csv", "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\");
+                crearArchivosRanking(arrayPorcentajes, "Rankings.csv", "C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\");
+            }
+
+
+
         }
 
+        private void crearArchivosRanking(string[] arrayDatos,string nombreArchivo, string ruta)
+        {
+            utilidades.escribirArchivoTurnos(arrayDatos, nombreArchivo, ruta);
+        }
+
+        private void matchCondicion(string condiciónSalud)
+        {
+            //Calcula el match de la condición de salud del paciente con los conocimientos y experiencia del auxiliar
+            string expAuxCondicion = "NO";
+            string conAuxCondicion = "NO";
+
+            if (condiciónSalud.Trim().Equals(CONDICION1.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC1;
+                conAuxCondicion = CONOCIMIENTOC1;
+            }
+            else if (condiciónSalud.Trim().Equals(CONDICION2.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC2;
+                conAuxCondicion = CONOCIMIENTOC2;
+            }
+            else if (condiciónSalud.Trim().Equals(CONDICION3.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC3;
+                conAuxCondicion = CONOCIMIENTOC3;
+            }
+            else if (condiciónSalud.Trim().Equals(CONDICION4.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC4;
+                conAuxCondicion = CONOCIMIENTOC4;
+            }
+            else if (condiciónSalud.Trim().Equals(CONDICION5.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC5;
+                conAuxCondicion = CONOCIMIENTOC5;
+            }
+            else if (condiciónSalud.Trim().Equals(CONDICION6.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC6;
+                conAuxCondicion = CONOCIMIENTOC6;
+            }
+            else if (condiciónSalud.Trim().Equals(CONDICION7.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC7;
+                conAuxCondicion = CONOCIMIENTOC7;
+            }
+            else if (condiciónSalud.Trim().Equals(CONDICION8.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC8;
+                conAuxCondicion = CONOCIMIENTOC8;
+            }
+            else if (condiciónSalud.Trim().Equals(CONDICION9.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC9;
+                conAuxCondicion = CONOCIMIENTOC9;
+            }
+            else if (condiciónSalud.Trim().Equals(CONDICION10.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC10;
+                conAuxCondicion = CONOCIMIENTOC10;
+            }
+            else if (condiciónSalud.Trim().Equals(CONDICION11.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC11;
+                conAuxCondicion = CONOCIMIENTOC11;
+            }
+            else if (condiciónSalud.Trim().Equals(CONDICION12.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC12;
+                conAuxCondicion = CONOCIMIENTOC12;
+            }
+            else if (condiciónSalud.Trim().Equals(CONDICION13.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC13;
+                conAuxCondicion = CONOCIMIENTOC13;
+            }
+            else if (condiciónSalud.Trim().Equals(CONDICION14.Trim()))
+            {
+                expAuxCondicion = EXPERIENCIAC14;
+                conAuxCondicion = CONOCIMIENTOC14;
+            }
+
+            //Si coincide la condicion
+            if (expAuxCondicion.Equals("SI"))
+            {
+                pesoDatosSolicitud+= pesoCondicionExperiencia * 1;
+                porcentajeCoincidencia += porcCondicionExperiencia;
+
+            }
+            if (conAuxCondicion.Equals("SI"))
+            {
+                pesoDatosSolicitud+= pesoCondicionConocimiento * 1;
+                porcentajeCoincidencia += porcCondicionConocimiento;
+            }
+
+        }
+
+        private void matchDiagnostico(string grupoDiagnostico)
+        {
+            //Calcula el match del grupo diagnostico del paciente con los conocimientos y experiencia del auxiliar
+            string expAuxDiagnostico = "NO";
+            string conAuxDiagnostico = "NO";
+
+            if (grupoDiagnostico.Trim().Equals(DIAGNOSTICO1.Trim()))
+            {
+                expAuxDiagnostico = EXPERIENCIAD1;
+                conAuxDiagnostico = CONOCIMIENTOD1;
+            }
+            else if (grupoDiagnostico.Trim().Equals(DIAGNOSTICO2.Trim()))
+            {
+                expAuxDiagnostico = EXPERIENCIAD2;
+                conAuxDiagnostico = CONOCIMIENTOD2;
+            }
+            else if (grupoDiagnostico.Trim().Equals(DIAGNOSTICO3.Trim()))
+            {
+                expAuxDiagnostico = EXPERIENCIAD3;
+                conAuxDiagnostico = CONOCIMIENTOD3;
+            }
+            else if (grupoDiagnostico.Trim().Equals(DIAGNOSTICO4.Trim()))
+            {
+                expAuxDiagnostico = EXPERIENCIAD4;
+                conAuxDiagnostico = CONOCIMIENTOD4;
+            }
+            else if (grupoDiagnostico.Trim().Equals(DIAGNOSTICO5.Trim()))
+            {
+                expAuxDiagnostico = EXPERIENCIAD5;
+                conAuxDiagnostico = CONOCIMIENTOD5;
+            }
+            else if (grupoDiagnostico.Trim().Equals(DIAGNOSTICO6.Trim()))
+            {
+                expAuxDiagnostico = EXPERIENCIAD6;
+                conAuxDiagnostico = CONOCIMIENTOD6;
+            }
+
+            //Si coincide el diagnostico
+            if (expAuxDiagnostico.Equals("SI"))
+            {
+                pesoDatosSolicitud += pesoDiagnosticoExperiencia * 1;
+                porcentajeCoincidencia += porcDiagnosticoExperiencia;
+
+            }
+            if (conAuxDiagnostico.Equals("SI"))
+            {
+                pesoDatosSolicitud += pesoDiagnosticoConocimiento * 1;
+                porcentajeCoincidencia += porcDiagnosticoConocimiento;
+            }
+        }
+
+        private void matchConciencia(string nivelConciencia)
+        {
+            //Calcula el match del nivel de conciencia del paciente con los conocimientos y experiencia del auxiliar
+            string expAuxConciencia= "NO";
+            string conAuxConciencia = "NO";
+
+            if (nivelConciencia.Trim().Equals(CONCIENCIA1.Trim()))
+            {
+                expAuxConciencia = EXPERIENCIACC1;
+                conAuxConciencia = CONOCIMIENTOCC1;
+            }
+            else if (nivelConciencia.Trim().Equals(CONCIENCIA2.Trim()))
+            {
+                expAuxConciencia = EXPERIENCIACC2;
+                conAuxConciencia = CONOCIMIENTOCC2;
+            }
+            else if (nivelConciencia.Trim().Equals(CONCIENCIA3.Trim()))
+            {
+                expAuxConciencia = EXPERIENCIACC3;
+                conAuxConciencia = CONOCIMIENTOCC3;
+            }
+            else if (nivelConciencia.Trim().Equals(CONCIENCIA4.Trim()))
+            {
+                expAuxConciencia = EXPERIENCIACC4;
+                conAuxConciencia = CONOCIMIENTOCC4;
+            }
+            else if (nivelConciencia.Trim().Equals(CONCIENCIA5.Trim()))
+            {
+                expAuxConciencia = EXPERIENCIACC5;
+                conAuxConciencia = CONOCIMIENTOCC5;
+            }
+
+
+            //Si coincide el nivel de conciencia 
+            if (expAuxConciencia.Equals("SI"))
+            {
+                pesoDatosSolicitud += pesoConcienciaExperiencia;
+                porcentajeCoincidencia += porcConcienciaExperiencia;
+
+            }
+            if (conAuxConciencia.Equals("SI"))
+            {
+                pesoDatosSolicitud += pesoConcienciaConocimiento;
+                porcentajeCoincidencia += porcConcienciaConocimiento;
+            }
+        }
+
+        private void matchRestricciones(string nivelAutonomia, string restriccionDesplazamiento, string restriccionObjetos)
+        {
+            //Los auxiliares con restricciones no se asignan a pacientes con dependencia moderada o severa
+            if(nivelAutonomia.Trim().Equals("Dependiente Moderado") && nivelAutonomia.Trim().Equals("Dependiente Severo/a"))
+            {
+                if(restriccionDesplazamiento.Equals("NO") && restriccionObjetos.Equals("NO"))
+                {
+                    pesoDatosSolicitud += pesoRestricciones;
+                    porcentajeCoincidencia += porcRestricciones;
+                }
+            }
+        }
+
+        private void matchTemperamento(string temperamento, string personalidad)
+        {
+            int matchOK = 0;
+            
+            //Match de los temperamentos de auxiliar y paciente
+            if(temperamento.Trim().Equals("Ansioso (a)") && personalidad.Trim().Equals("Tranquilo (a)"))
+            {
+                matchOK = 1;
+            }
+            else if (temperamento.Trim().Equals("Tranquilo (a)") && personalidad.Trim().Equals("Tranquilo (a)"))
+            {
+                matchOK = 1;
+            }
+            else if (temperamento.Trim().Equals("Demandante") && personalidad.Trim().Equals("Tranquilo (a)"))
+            {
+                matchOK = 1;
+            }
+            else if (temperamento.Trim().Equals("Demandante") && personalidad.Trim().Equals("Hablador (a)"))
+            {
+                matchOK = 1;
+            }
+            else if (temperamento.Trim().Equals("Callado-Reservado(a)") && personalidad.Trim().Equals("Demandante"))
+            {
+                matchOK = 1;
+            }
+            else if (temperamento.Trim().Equals("Hablador (a)") && personalidad.Trim().Equals("Demandante"))
+            {
+                matchOK = 1;
+            }
+            else if (temperamento.Trim().Equals("Multifacético") && personalidad.Trim().Equals("Tranquilo (a)"))
+            {
+                matchOK = 1;
+            }
+            else if (temperamento.Trim().Equals("Tranquilo (a)") && personalidad.Trim().Equals("Ansioso (a)"))
+            {
+                matchOK = 1;
+            }
+
+            if (matchOK == 1)
+            {
+                pesoDatosSolicitud += pesoTemperamento;
+                porcentajeCoincidencia += porcTemperamento;
+            }
+        }
+
+
+        private void matchLugar(string localidadPaciente, string localidad)
+        {
+            //Como la mayoria de pacientes estan en 3 localidades se saca la distancia de localidades
+            int distancia=5;
+            
+            if (localidadPaciente.ToUpper().Equals("CHAPINERO"))
+            {
+                switch (localidad.Trim())
+                {
+                    case "Antonio Nariño":
+                        distancia = 2;
+                        break;
+                    case "Barrios Unidos":
+                        distancia = 1;
+                        break;
+                    case "Bosa":
+                        distancia = 4;
+                        break;
+                    case "Candelaria":
+                        distancia = 2;
+                        break;
+                    case "Ciudad Bolivar":
+                        distancia = 4;
+                        break;
+                    case "Engativa":
+                        distancia = 2;
+                        break;
+                    case "Fontibón":
+                        distancia = 2;
+                        break;
+                    case "Kennedy":
+                        distancia = 3 ;
+                        break;
+                    case "Mártires":
+                        distancia = 2 ;
+                        break;
+                    case "Rafael Uribe":
+                        distancia = 2;
+                        break;
+                    case "Puente Aranda":
+                        distancia = 2;
+                        break;
+                    case "San Cristóbal":
+                        distancia = 2;
+                        break;
+                    case "Santa Fe":
+                        distancia = 1;
+                        break;
+                    case "Suba":
+                        distancia = 2;
+                        break;
+                    case "Teusaquillo":
+                        distancia = 1;
+                        break;
+                    case "Tunjuelito":
+                        distancia = 3;
+                        break;
+                    case "Usaquén":
+                        distancia = 1;
+                        break;
+                    case "Usme":
+                        distancia = 3;
+                        break;
+                }
+            }
+
+            else if (localidadPaciente.ToUpper().Equals("TEUSAQUILLO"))
+            {
+                switch (localidad.Trim())
+                {
+                    case "Antonio Nariño":
+                        distancia = 2;
+                        break;
+                    case "Barrios Unidos":
+                        distancia = 1;
+                        break;
+                    case "Bosa":
+                        distancia = 3;
+                        break;
+                    case "Candelaria":
+                        distancia = 2;
+                        break;
+                    case "Chapinero":
+                        distancia = 1;
+                        break;
+                    case "Ciudad Bolivar":
+                        distancia = 3;
+                        break;
+                    case "Engativa":
+                        distancia = 1;
+                        break;
+                    case "Fontibón":
+                        distancia = 1;
+                        break;
+                    case "Kennedy":
+                        distancia = 2;
+                        break;
+                    case "Mártires":
+                        distancia = 1;
+                        break;
+                    case "Rafael Uribe":
+                        distancia = 1;
+                        break;
+                    case "San Cristóbal":
+                        distancia = 2;
+                        break;
+                    case "Santa Fe":
+                        distancia = 2;
+                        break;
+                    case "Suba":
+                        distancia = 2;
+                        break;
+                    case "Tunjuelito":
+                        distancia = 2;
+                        break;
+                    case "Usaquén":
+                        distancia = 2;
+                        break;
+                    case "Usme":
+                        distancia = 3;
+                        break;
+                }
+            }
+
+            else if (localidadPaciente.ToUpper().Equals("USAQUÉN"))
+            {
+                switch (localidad.Trim())
+                {
+                    case "Antonio Nariño":
+                        distancia = 4;
+                        break;
+                    case "Barrios Unidos":
+                        distancia = 1;
+                        break;
+                    case "Bosa":
+                        distancia = 5;
+                        break;
+                    case "Candelaria":
+                        distancia = 3;
+                        break;
+                    case "Chapinero":
+                        distancia = 1;
+                        break;
+                    case "Ciudad Bolivar":
+                        distancia = 5;
+                        break;
+                    case "Engativa":
+                        distancia = 2;
+                        break;
+                    case "Fontibón":
+                        distancia = 3;
+                        break;
+                    case "Kennedy":
+                        distancia = 4;
+                        break;
+                    case "Mártires":
+                        distancia = 1;
+                        break;
+                    case "Rafael Uribe":
+                        distancia = 1;
+                        break;
+                    case "San Cristóbal":
+                        distancia = 3;
+                        break;
+                    case "Santa Fe":
+                        distancia = 2;
+                        break;
+                    case "Suba":
+                        distancia = 1;
+                        break;
+                    case "Teusaquillo":
+                        distancia = 2;
+                        break;
+                    case "Tunjuelito":
+                        distancia = 4;
+                        break;
+                    case "Usme":
+                        distancia = 4;
+                        break;
+                }
+            }
+
+            //Se divide el pesoLugar entre la distancia encontrada, a mayor distancia menos sera el peso
+            int pesoLugarCalculadp = pesoLugar / distancia;
+
+            pesoDatosSolicitud += pesoLugarCalculadp;
+            porcentajeCoincidencia += porcLugar;
+        }
+
+        private void matchGenero(string preferenciaGenero, string generoAux)
+        {
+            //Se busca el match del genero preferido por el paciente y el genero del auxiliar
+            if(preferenciaGenero.Equals(generoAux))
+            {
+                pesoDatosSolicitud += pesoGeneroPrefPaciente;
+                porcentajeCoincidencia += porcGeneroPrefPaciente;
+            }
+        }
         private int RankingTurno(string institucion, string tipoTurno, string fechaInicio, string fechaFin)
         {
             int rankInstitucion = 0;
+            int rankTipoTurno = 0;
+            int rankProcedimiento = 0;
+
 
             //Se inicia calculando el ranking de la institucion
             switch (institucion.Trim().ToUpper())
@@ -536,7 +1113,92 @@ namespace Saratyc._2._Negocio.BL
                     break;
             }
 
-            return rankInstitucion;
+            //Se calcula el ranking del tipo de turno
+            switch (tipoTurno.Trim().ToUpper())
+            {
+                case "TURNO 14 HORAS":
+                    rankTipoTurno = 28;
+                    break;
+                case "24 HORAS PAR":
+                    rankTipoTurno = 27;
+                    break;
+                case "DIURNO MEDERI":
+                    rankTipoTurno = 26;
+                    break;
+                case "ESPEC MAMA DIUR":
+                    rankTipoTurno = 25;
+                    break;
+                case "ESPEC MAMA NOC":
+                    rankTipoTurno = 24;
+                    break;
+                case "24 HORAS IMPAR":
+                    rankTipoTurno = 23;
+                    break;
+                case "VIVENZA DIA":
+                    rankTipoTurno = 22;
+                    break;
+                case "VIVENZA NOCHE":
+                    rankTipoTurno = 21;
+                    break;
+                case "VIVENZA COMPLEMENTO":
+                    rankTipoTurno = 20;
+                    break;
+                case "MEDIO TURNO DIURNO  AM":
+                    rankTipoTurno = 19;
+                    break;
+                case "TURNO 10 HORAS.RANCHO":
+                    rankTipoTurno = 18;
+                    break;
+                case "TURNO 4 HORAS.RANCHO":
+                    rankTipoTurno = 17;
+                    break;
+                case "10 HORAS":
+                    rankTipoTurno = 16;
+                    break;
+                case "MEDIO TURNO DIURNO PM":
+                    rankTipoTurno = 15;
+                    break;
+                case "NOCTURNO ADICIONAL":
+                    rankTipoTurno = 14;
+                    break;
+                case "TURNO INDUCCION 2 HORAS":
+                    rankTipoTurno = 13;
+                    break;
+                case "8 HORAS":
+                    rankTipoTurno = 12;
+                    break;
+                case "DESCANSO REMUNERADO":
+                    rankTipoTurno = 11;
+                    break;
+                case "DIURNO":
+                    rankTipoTurno = 10;
+                    break;
+                case "NOCTURNO":
+                    rankTipoTurno = 9;
+                    break;
+                case "MEDIO TURNO NOCTURNO":
+                    rankTipoTurno = 8;
+                    break;
+                case "TURNO 6 HORAS":
+                    rankTipoTurno = 7;
+                    break;
+                case "2 HORAS INDUCCION":
+                    rankTipoTurno = 6;
+                    break;
+                case "4 HORAS":
+                    rankTipoTurno = 5;
+                    break;
+                case "3 HORAS":
+                    rankTipoTurno = 4;
+                    break;
+                case "2 HORAS":
+                    rankTipoTurno = 3;
+                    break;
+            }
+
+            int rankingTurno = rankInstitucion + rankTipoTurno + rankProcedimiento;
+
+            return rankingTurno;
         }
 
         private int RankingTipoContrato(string tipoContrato)

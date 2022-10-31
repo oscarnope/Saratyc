@@ -33,21 +33,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DGinstitucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGrestriccionAuxPreferido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGrestriccionAuxRechazado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGtipoTurno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGfechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGfechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGidPaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AuxiliarEnferdata = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AuxiliarSaratyc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.regresar = new System.Windows.Forms.Button();
             this.Indicador = new System.Windows.Forms.Label();
+            this.DGinstitucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGtipoTurno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGfechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGfechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGidPaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AuxiliarEnferdata = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AuxiliarSaratyc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGrestriccionAuxPreferido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGrestriccionAuxRechazado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Turno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -94,14 +95,15 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DGinstitucion,
-            this.DGrestriccionAuxPreferido,
-            this.DGrestriccionAuxRechazado,
             this.DGtipoTurno,
             this.DGfechaInicio,
             this.DGfechaFin,
             this.DGidPaciente,
             this.AuxiliarEnferdata,
-            this.AuxiliarSaratyc});
+            this.AuxiliarSaratyc,
+            this.DGrestriccionAuxPreferido,
+            this.DGrestriccionAuxRechazado,
+            this.Turno});
             this.dataGridView1.Location = new System.Drawing.Point(7, 94);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -111,69 +113,6 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // DGinstitucion
-            // 
-            this.DGinstitucion.HeaderText = "Institucion ";
-            this.DGinstitucion.MinimumWidth = 6;
-            this.DGinstitucion.Name = "DGinstitucion";
-            this.DGinstitucion.Width = 200;
-            // 
-            // DGrestriccionAuxPreferido
-            // 
-            this.DGrestriccionAuxPreferido.HeaderText = "Auxiliar Preferido ";
-            this.DGrestriccionAuxPreferido.MinimumWidth = 6;
-            this.DGrestriccionAuxPreferido.Name = "DGrestriccionAuxPreferido";
-            this.DGrestriccionAuxPreferido.Width = 125;
-            // 
-            // DGrestriccionAuxRechazado
-            // 
-            this.DGrestriccionAuxRechazado.HeaderText = "Auxiliar Rechazado";
-            this.DGrestriccionAuxRechazado.MinimumWidth = 6;
-            this.DGrestriccionAuxRechazado.Name = "DGrestriccionAuxRechazado";
-            this.DGrestriccionAuxRechazado.Width = 125;
-            // 
-            // DGtipoTurno
-            // 
-            this.DGtipoTurno.HeaderText = "Tipo Turno";
-            this.DGtipoTurno.MinimumWidth = 6;
-            this.DGtipoTurno.Name = "DGtipoTurno";
-            this.DGtipoTurno.Width = 200;
-            // 
-            // DGfechaInicio
-            // 
-            this.DGfechaInicio.HeaderText = "Fecha Inicio";
-            this.DGfechaInicio.MinimumWidth = 6;
-            this.DGfechaInicio.Name = "DGfechaInicio";
-            this.DGfechaInicio.Width = 125;
-            // 
-            // DGfechaFin
-            // 
-            this.DGfechaFin.HeaderText = "Fecha Fin";
-            this.DGfechaFin.MinimumWidth = 6;
-            this.DGfechaFin.Name = "DGfechaFin";
-            this.DGfechaFin.Width = 125;
-            // 
-            // DGidPaciente
-            // 
-            this.DGidPaciente.HeaderText = "IdPaciente";
-            this.DGidPaciente.MinimumWidth = 6;
-            this.DGidPaciente.Name = "DGidPaciente";
-            this.DGidPaciente.Width = 125;
-            // 
-            // AuxiliarEnferdata
-            // 
-            this.AuxiliarEnferdata.HeaderText = "Auxiliar Enferdata";
-            this.AuxiliarEnferdata.MinimumWidth = 6;
-            this.AuxiliarEnferdata.Name = "AuxiliarEnferdata";
-            this.AuxiliarEnferdata.Width = 125;
-            // 
-            // AuxiliarSaratyc
-            // 
-            this.AuxiliarSaratyc.HeaderText = "Auxiliar Saratyc";
-            this.AuxiliarSaratyc.MinimumWidth = 6;
-            this.AuxiliarSaratyc.Name = "AuxiliarSaratyc";
-            this.AuxiliarSaratyc.Width = 125;
             // 
             // button1
             // 
@@ -238,6 +177,74 @@
             this.Indicador.Size = new System.Drawing.Size(0, 19);
             this.Indicador.TabIndex = 7;
             // 
+            // DGinstitucion
+            // 
+            this.DGinstitucion.HeaderText = "Institucion ";
+            this.DGinstitucion.MinimumWidth = 6;
+            this.DGinstitucion.Name = "DGinstitucion";
+            this.DGinstitucion.Width = 200;
+            // 
+            // DGtipoTurno
+            // 
+            this.DGtipoTurno.HeaderText = "Tipo Turno";
+            this.DGtipoTurno.MinimumWidth = 6;
+            this.DGtipoTurno.Name = "DGtipoTurno";
+            this.DGtipoTurno.Width = 200;
+            // 
+            // DGfechaInicio
+            // 
+            this.DGfechaInicio.HeaderText = "Fecha Inicio";
+            this.DGfechaInicio.MinimumWidth = 6;
+            this.DGfechaInicio.Name = "DGfechaInicio";
+            this.DGfechaInicio.Width = 125;
+            // 
+            // DGfechaFin
+            // 
+            this.DGfechaFin.HeaderText = "Fecha Fin";
+            this.DGfechaFin.MinimumWidth = 6;
+            this.DGfechaFin.Name = "DGfechaFin";
+            this.DGfechaFin.Width = 125;
+            // 
+            // DGidPaciente
+            // 
+            this.DGidPaciente.HeaderText = "IdPaciente";
+            this.DGidPaciente.MinimumWidth = 6;
+            this.DGidPaciente.Name = "DGidPaciente";
+            this.DGidPaciente.Width = 125;
+            // 
+            // AuxiliarEnferdata
+            // 
+            this.AuxiliarEnferdata.HeaderText = "Auxiliar Enferdata";
+            this.AuxiliarEnferdata.MinimumWidth = 6;
+            this.AuxiliarEnferdata.Name = "AuxiliarEnferdata";
+            this.AuxiliarEnferdata.Width = 125;
+            // 
+            // AuxiliarSaratyc
+            // 
+            this.AuxiliarSaratyc.HeaderText = "Auxiliar Saratyc";
+            this.AuxiliarSaratyc.MinimumWidth = 6;
+            this.AuxiliarSaratyc.Name = "AuxiliarSaratyc";
+            this.AuxiliarSaratyc.Width = 125;
+            // 
+            // DGrestriccionAuxPreferido
+            // 
+            this.DGrestriccionAuxPreferido.HeaderText = "Auxiliar Preferido ";
+            this.DGrestriccionAuxPreferido.MinimumWidth = 6;
+            this.DGrestriccionAuxPreferido.Name = "DGrestriccionAuxPreferido";
+            this.DGrestriccionAuxPreferido.Width = 125;
+            // 
+            // DGrestriccionAuxRechazado
+            // 
+            this.DGrestriccionAuxRechazado.HeaderText = "Auxiliar Rechazado";
+            this.DGrestriccionAuxRechazado.MinimumWidth = 6;
+            this.DGrestriccionAuxRechazado.Name = "DGrestriccionAuxRechazado";
+            this.DGrestriccionAuxRechazado.Width = 125;
+            // 
+            // Turno
+            // 
+            this.Turno.HeaderText = "idTurno";
+            this.Turno.Name = "Turno";
+            // 
             // ConsultarTurnos
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
@@ -272,15 +279,16 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button regresar;
+        private Label Indicador;
         private DataGridViewTextBoxColumn DGinstitucion;
-        private DataGridViewTextBoxColumn DGrestriccionAuxPreferido;
-        private DataGridViewTextBoxColumn DGrestriccionAuxRechazado;
         private DataGridViewTextBoxColumn DGtipoTurno;
         private DataGridViewTextBoxColumn DGfechaInicio;
         private DataGridViewTextBoxColumn DGfechaFin;
         private DataGridViewTextBoxColumn DGidPaciente;
         private DataGridViewTextBoxColumn AuxiliarEnferdata;
         private DataGridViewTextBoxColumn AuxiliarSaratyc;
-        private Label Indicador;
+        private DataGridViewTextBoxColumn DGrestriccionAuxPreferido;
+        private DataGridViewTextBoxColumn DGrestriccionAuxRechazado;
+        private DataGridViewTextBoxColumn Turno;
     }
 }

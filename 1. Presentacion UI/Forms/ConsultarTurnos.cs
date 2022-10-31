@@ -64,16 +64,17 @@ namespace Saratyc._1._Presentacion_UI.Forms
         {
 
             institucion = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            restriccionAuxPreferido = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            restriccionAuxRechazado = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            tipoTurno = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            fechaInicio = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            fechaFin = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            idPaciente = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            idAuxiliarEnferdata = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            idAuxiliarSaratyc = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            tipoTurno = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            fechaInicio = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            fechaFin = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            idPaciente = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            idAuxiliarEnferdata = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            idAuxiliarSaratyc = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            restriccionAuxPreferido = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            restriccionAuxRechazado = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            idTurno = dataGridView1.CurrentRow.Cells[9].Value.ToString();
             //this.Hide();
-            AsignarTurno at = new AsignarTurno(institucion, restriccionAuxPreferido, restriccionAuxRechazado, tipoTurno, fechaInicio, fechaFin, idPaciente, idAuxiliarEnferdata,idAuxiliarSaratyc);
+            AsignarTurno at = new AsignarTurno(institucion, restriccionAuxPreferido, restriccionAuxRechazado, tipoTurno, fechaInicio, fechaFin, idPaciente, idAuxiliarEnferdata,idAuxiliarSaratyc, idTurno);
             at.Activate();
             at.Show();
         }
@@ -162,14 +163,14 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 var columns = turno.Split(',').ToList();
                 idTurno = columns[0].ToString();
                 institucion = columns[1].ToString();
-                restriccionAuxPreferido = columns[2].ToString();
-                restriccionAuxRechazado = columns[3].ToString();
-                tipoTurno = columns[4].ToString();
-                fechaInicio = columns[5].ToString();
-                fechaFin = columns[6].ToString();
-                idPaciente = columns[7].ToString();
-                idAuxiliarEnferdata = columns[8].ToString();
-                idAuxiliarSaratyc = columns[9].ToString();
+                tipoTurno = columns[2].ToString();
+                fechaInicio = columns[3].ToString();
+                fechaFin = columns[4].ToString();
+                idPaciente = columns[5].ToString();
+                idAuxiliarEnferdata = columns[6].ToString();
+                idAuxiliarSaratyc = columns[7].ToString();
+                restriccionAuxPreferido = columns[8].ToString();
+                restriccionAuxRechazado = columns[9].ToString();
 
                 //Se elimina la hora de las fechas
                 fechaInicio = fechaInicio.Substring(0,fechaInicio.IndexOf(" "));
@@ -215,14 +216,14 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 var columns = turno.Split(',').ToList();
                 idTurno = columns[0].ToString();
                 institucion = columns[1].ToString();
-                restriccionAuxPreferido = columns[2].ToString();
-                restriccionAuxRechazado = columns[3].ToString();
-                tipoTurno = columns[4].ToString();
-                fechaInicio = columns[5].ToString();
-                fechaFin = columns[6].ToString();
-                idPaciente = columns[7].ToString();
-                idAuxiliarEnferdata = columns[8].ToString();
-                idAuxiliarSaratyc = columns[9].ToString();
+                tipoTurno = columns[2].ToString();
+                fechaInicio = columns[3].ToString();
+                fechaFin = columns[4].ToString();
+                idPaciente = columns[5].ToString();
+                idAuxiliarEnferdata = columns[6].ToString();
+                idAuxiliarSaratyc = columns[7].ToString();
+                restriccionAuxPreferido = columns[8].ToString();
+                restriccionAuxRechazado = columns[9].ToString();
 
                 //Se elimina la hora de las fechas
                 fechaInicio = fechaInicio.Substring(0, fechaInicio.IndexOf(" "));
@@ -231,7 +232,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 //if (idAuxiliarSaratyc.Equals("") && (fechaInicio.Equals("10/10/2022 12:00:00 AM") || fechaInicio.Equals("10/10/2022 12:00:00 AM") || fechaInicio.Equals("10/10/2022 12:00:00 AM")))
                 if (idAuxiliarSaratyc.Equals(""))
                 {
-                    dataGridView1.Rows.Add(institucion, restriccionAuxPreferido, restriccionAuxRechazado, tipoTurno, fechaInicio, fechaFin, idPaciente, idAuxiliarEnferdata, idAuxiliarSaratyc);
+                    dataGridView1.Rows.Add(institucion, tipoTurno, fechaInicio, fechaFin, idPaciente, idAuxiliarEnferdata, idAuxiliarSaratyc, restriccionAuxPreferido, restriccionAuxRechazado, idTurno);
                 }
             }
 
@@ -265,14 +266,14 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 var columns = turno.Split(',').ToList();
                 idTurno = columns[0].ToString();
                 institucion = columns[1].ToString();
-                restriccionAuxPreferido = columns[2].ToString();
-                restriccionAuxRechazado = columns[3].ToString();
-                tipoTurno = columns[4].ToString();
-                fechaInicio = columns[5].ToString();
-                fechaFin = columns[6].ToString();
-                idPaciente = columns[7].ToString();
-                idAuxiliarEnferdata = columns[8].ToString();
-                idAuxiliarSaratyc = columns[9].ToString();
+                tipoTurno = columns[2].ToString();
+                fechaInicio = columns[3].ToString();
+                fechaFin = columns[4].ToString();
+                idPaciente = columns[5].ToString();
+                idAuxiliarEnferdata = columns[6].ToString();
+                idAuxiliarSaratyc = columns[7].ToString();
+                restriccionAuxPreferido = columns[8].ToString();
+                restriccionAuxRechazado = columns[9].ToString();
 
                 dataGridView1.Rows.Add(institucion, restriccionAuxPreferido, restriccionAuxRechazado, tipoTurno, fechaInicio, fechaFin, idPaciente, idAuxiliarEnferdata, idAuxiliarSaratyc);
 

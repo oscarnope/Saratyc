@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Google.Protobuf.Collections;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,15 @@ namespace Saratyc._2._Negocio.BL
             return index;
         }
 
+        public void escribirArchivoTurnos(string[] arrayEscribir, string nombreArchivo, string ruta)
+        {
+            //System.IO.File.WriteAllLines(ruta + nombreArchivo, listaEscribir);
+            using (StreamWriter sw = new StreamWriter(ruta+nombreArchivo))
+            {
+                foreach (string s in arrayEscribir)
+                    sw.Write(s + ";");
+            }
+        }
 
         void cargarLista()
         {

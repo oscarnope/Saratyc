@@ -7,3 +7,91 @@
 3;1019014407;Oxigeno;NO
 3;1019014407;Drenes;SI
 3;1019014407;Neurológico;NO
+3;1019014407;Discapacidad auditiva;SI
+3;1019014407;Glucometría;NO
+3;1019014407;Medicación aplicación endovenosa';SI
+3;1019014407;Nefrostomia;SI
+3;1019014407;Oxigeno;NO
+3;1019014407;onda Naso gástrica;NO
+3;1019014407;Traqueostomía;SI
+4;1069078218;Medicina Interna;SI
+4;1069078218;Drenes;SI
+4;1069078218;Oxigeno;NO
+4;1069078218;Drenes;NO
+4;1069078218;Neurológico;SI
+5;1071629228;Discapacidad auditiva;NO
+5;1071629228;Glucometría;SI
+5;1071629228;Medicación aplicación endovenosa';NO
+5;1071629228;Nefrostomia;SI
+5;1071629228;Oxigeno;SI
+5;1071629228;Sonda Naso gástrica;NO
+6;1116794759;Discapacidad auditiva;NO
+6;1116794759;Glucometría;SI
+6;1116794759;Medicación aplicación endovenosa';NO
+6;1116794759;Nefrostomia;NO
+6;1116794759;Oxigeno;NO
+7;20964966;Discapacidad auditiva;SI
+7;20964966;Glucometría;NO
+7;20964966;Medicación aplicación endovenosa';SI
+7;20964966;Nefrostomia;NO
+7;20964966;Oxigeno;SI
+8;23415801;Discapacidad auditiva;NO
+8;23415801;Glucometría;SI
+8;23415801;Medicación aplicación endovenosa';NO
+8;23415801;Nefrostomia;SI
+8;23415801;Oxigeno;NO
+9;24212282;Discapacidad auditiva;SI
+9;24212282;Glucometría;NO
+9;24212282;Medicación aplicación endovenosa';NO
+9;24212282;Nefrostomia;SI
+9;24212282;Oxigeno;SI
+9;24212282;Medicación aplicación endovenosa';SI
+10;25874713;Discapacidad auditiva;NO
+10;25874713;Glucometría;NO
+10;25874713;Medicación aplicación endovenosa';SI
+10;25874713;Nefrostomia;NO
+11;28689301;Oxigeno;SI
+11;28689301;Sonda Naso gástrica;NO
+11;28689301;Discapacidad auditiva;SI
+11;28689301;Glucometría;SI
+11;28689301;Medicación aplicación endovenosa';NO
+11;28689301;Nefrostomia;SI
+11;28689301;Oxigeno;NO
+11;28689301;Discapacidad auditiva;SI
+12;30333182;Glucometría;NO
+12;30333182;Medicación aplicación endovenosa';SI
+12;30333182;Nefrostomia;NO
+12;30333182;Oxigeno;SI
+12;30333182;Sonda Naso gástrica;SI
+12;30333182;Oxigeno;NO
+13;30724286;Discapacidad auditiva;NO
+13;30724286;Glucometría;SI
+13;30724286;Medicación aplicación endovenosa';SI
+13;30724286;Nefrostomia;SI
+13;30724286;Oxigeno;NO
+13;30724286;Sonda Naso gástrica;NO
+14;34941725;Oxigeno;SI
+14;34941725;Discapacidad auditiva;SI
+14;34941725;Glucometría;SI
+14;34941725;Medicación aplicación endovenosa';NO
+14;34941725;Nefrostomia;SI
+14;34941725;Oxigeno;NO
+14;34941725;Sonda Naso gástrica;NO
+15;39722971;Discapacidad auditiva;SI
+15;39722971;Glucometría;SI
+15;39722971;Medicación aplicación endovenosa';NO
+15;39722971;Nefrostomia;NO
+15;39722971;Oxigeno;SI
+15;39722971;Sonda Naso gástrica;NO
+16;41796003;Discapacidad auditiva;SI
+16;41796003;Glucometría;NO
+16;41796003;Medicación aplicación endovenosa';SI
+16;41796003;Nefrostomia;NO
+16;41796003;Oxigeno;SI
+16;41796003;Sonda Naso gástrica;SI
+17;51637213;Discapacidad auditiva;NO
+17;51637213;Glucometría;NO
+17;51637213;Medicación aplicación endovenosa';NO
+17;51637213;Nefrostomia;SI
+17;51637213;Oxigeno;NO
+17;51637213;Sonda Naso gástrica;SI

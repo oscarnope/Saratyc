@@ -32,11 +32,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textPassword = new System.Windows.Forms.TextBox();
+            this.textLogin = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ingresar = new System.Windows.Forms.Button();
+            this.indicador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,8 +68,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textPassword);
+            this.panel1.Controls.Add(this.textLogin);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(132, 63);
@@ -76,20 +77,20 @@
             this.panel1.Size = new System.Drawing.Size(289, 119);
             this.panel1.TabIndex = 2;
             // 
-            // textBox2
+            // textPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(151, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 3;
+            this.textPassword.Location = new System.Drawing.Point(151, 71);
+            this.textPassword.Name = "textPassword";
+            this.textPassword.PasswordChar = '*';
+            this.textPassword.Size = new System.Drawing.Size(100, 23);
+            this.textPassword.TabIndex = 3;
             // 
-            // textBox1
+            // textLogin
             // 
-            this.textBox1.Location = new System.Drawing.Point(151, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 2;
+            this.textLogin.Location = new System.Drawing.Point(151, 26);
+            this.textLogin.Name = "textLogin";
+            this.textLogin.Size = new System.Drawing.Size(100, 23);
+            this.textLogin.TabIndex = 2;
             // 
             // label3
             // 
@@ -124,12 +125,22 @@
             this.ingresar.UseVisualStyleBackColor = false;
             this.ingresar.Click += new System.EventHandler(this.ingresar_Click);
             // 
+            // indicador
+            // 
+            this.indicador.AutoSize = true;
+            this.indicador.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.indicador.Location = new System.Drawing.Point(1, 238);
+            this.indicador.Name = "indicador";
+            this.indicador.Size = new System.Drawing.Size(0, 19);
+            this.indicador.TabIndex = 4;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
-            this.ClientSize = new System.Drawing.Size(494, 246);
+            this.ClientSize = new System.Drawing.Size(494, 265);
+            this.Controls.Add(this.indicador);
             this.Controls.Add(this.ingresar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -154,8 +165,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textPassword;
+        private System.Windows.Forms.TextBox textLogin;
         private System.Windows.Forms.Button ingresar;
+        private Label indicador;
     }
 }

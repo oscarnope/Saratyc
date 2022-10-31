@@ -15,11 +15,15 @@ namespace Saratyc._1._Presentacion_UI.Forms
 {
     public partial class AuxiliarRecomendado : Form
     {
-        public AuxiliarRecomendado(string idPaciente, string idAuxiliar)
+        public AuxiliarRecomendado(string idPaciente, string idAuxiliar, string nombres, string apellidos, int porcentajeCompatibilidad, string idTurno)
         {
             InitializeComponent();
-            textPaciente.Text = idPaciente;
-            textAuxiliar.Text = idAuxiliar;
+            this.idPaciente.Text = idPaciente;
+            this.idAuxiliar.Text = idAuxiliar;
+            this.idTurno.Text = idTurno;
+            textNombre.Text = nombres;
+            textApellidos.Text = apellidos;
+            textPorcentajeCompatibilidad.Text = "El porcentaje de compatibilidad del auxiliar es: " + porcentajeCompatibilidad +"%";
         }
 
         private void AuxiliarRecomendado_Load(object sender, EventArgs e)
@@ -27,8 +31,9 @@ namespace Saratyc._1._Presentacion_UI.Forms
             this.AutoScroll = true;
 
             Utilidades utilidades = new Utilidades();
-            int idPaciente = Int32.Parse(textPaciente.Text);
-            int idAuxiliar = Int32.Parse(textAuxiliar.Text);
+            int idPaciente = int.Parse(this.idPaciente.Text);
+            int idAuxiliar = int.Parse(this.idAuxiliar.Text);
+            int idTurno = int.Parse(this.idTurno.Text);
 
             string IDPACIENTE = "";
             string NOMBREPACIENTE = "";
@@ -62,7 +67,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
                 if (pacienteEncontrado.Equals(0))
                 {
-                    var columns = paciente.Split(',').Where(c => c.Trim() != string.Empty).ToList();
+                    var columns = paciente.Split(';').Where(c => c.Trim() != string.Empty).ToList();
                     IDPACIENTE = columns[0].ToString();
                     NOMBREPACIENTE = columns[1].ToString();
                     APELLIDOPACIENTE = columns[2].ToString();
@@ -710,8 +715,6 @@ namespace Saratyc._1._Presentacion_UI.Forms
             int añoNacimiento = Int32.Parse(fechaNacimientoAux.Substring(fechaNacimientoAux.Length - 4, 4));
             int mesNacimiento;
 
-            string ass = fechaNacimientoAux.Substring(1, 1);
-            string ass2 = fechaNacimientoAux.Substring(1, 1);
             if (fechaNacimientoAux.Substring(1,1).Equals("/"))
             {
                 mesNacimiento = Int32.Parse(fechaNacimientoAux.Substring(0,1));                
@@ -721,8 +724,6 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 mesNacimiento = Int32.Parse(fechaNacimientoAux.Substring(0,2));
             }
 
-            string ass3 = fechaNacimientoAux.Substring(1, 1);
-            string ass4 = fechaNacimientoAux.Substring(2, 1);
             int diaNacimiento;
             if (fechaNacimientoAux.Substring(4, 1).Equals("/"))
             {
@@ -776,6 +777,19 @@ namespace Saratyc._1._Presentacion_UI.Forms
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string idPac = idPaciente.Text;
+            string idAux = idAuxiliar.Text;
+            string idTur = idTurno.Text;
+
+            BTurno bTurno = new BTurno();
+            bTurno.asignarTurno(idTur, idPac, idAux);
+
+            indicador.ForeColor = Color.Blue;
+            indicador.Text = "Se asigno el auxiliar al turno";
         }
     }
 }

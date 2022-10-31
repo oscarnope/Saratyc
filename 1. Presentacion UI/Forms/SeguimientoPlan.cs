@@ -86,7 +86,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
             else
             {            
-                lAuxiliar = bAuxiliar.buscarAuxiliar(identificacionAuxiliar);
+                lAuxiliar = bAuxiliar.buscarAuxiliarEnferdata(identificacionAuxiliar);
 
                 foreach (string auxiliar in lAuxiliar)
                 {

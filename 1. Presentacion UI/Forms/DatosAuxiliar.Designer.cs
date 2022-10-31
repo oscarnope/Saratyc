@@ -31,12 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboObjetos = new System.Windows.Forms.ComboBox();
+            this.comboDesplazamiento = new System.Windows.Forms.ComboBox();
+            this.comboPersonalidad = new System.Windows.Forms.ComboBox();
+            this.comboContextura = new System.Windows.Forms.ComboBox();
             this.label57 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
-            this.textLevantarObjetos = new System.Windows.Forms.TextBox();
-            this.textdesplazamiento = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
-            this.textPersonalidad = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textNacionalidad = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textIdentificacion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textContextura = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBarrio = new System.Windows.Forms.TextBox();
@@ -63,12 +63,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Conocimientos = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Tema = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Tema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Conocimiento = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Experiencia = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExperienciaAux = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Preferencias = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -139,6 +139,10 @@
             this.pMascotas = new System.Windows.Forms.ComboBox();
             this.label43 = new System.Windows.Forms.Label();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.pCondDisAuditiva = new System.Windows.Forms.ComboBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.pCondCateter = new System.Windows.Forms.ComboBox();
+            this.label69 = new System.Windows.Forms.Label();
             this.pCondSonTraqueo = new System.Windows.Forms.ComboBox();
             this.pCondSonVesical = new System.Windows.Forms.ComboBox();
             this.pCondSonOro = new System.Windows.Forms.ComboBox();
@@ -183,6 +187,8 @@
             this.dPacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.regresar = new System.Windows.Forms.Button();
             this.Guardar = new System.Windows.Forms.Button();
+            this.Editar = new System.Windows.Forms.Button();
+            this.Indicador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -219,12 +225,13 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboObjetos);
+            this.panel1.Controls.Add(this.comboDesplazamiento);
+            this.panel1.Controls.Add(this.comboPersonalidad);
+            this.panel1.Controls.Add(this.comboContextura);
             this.panel1.Controls.Add(this.label57);
             this.panel1.Controls.Add(this.label56);
-            this.panel1.Controls.Add(this.textLevantarObjetos);
-            this.panel1.Controls.Add(this.textdesplazamiento);
             this.panel1.Controls.Add(this.label55);
-            this.panel1.Controls.Add(this.textPersonalidad);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.textNacionalidad);
             this.panel1.Controls.Add(this.label13);
@@ -234,7 +241,6 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.textIdentificacion);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textContextura);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBarrio);
@@ -251,69 +257,93 @@
             this.panel1.Location = new System.Drawing.Point(102, 9);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(625, 291);
+            this.panel1.Size = new System.Drawing.Size(625, 260);
             this.panel1.TabIndex = 4;
+            // 
+            // comboObjetos
+            // 
+            this.comboObjetos.FormattingEnabled = true;
+            this.comboObjetos.Items.AddRange(new object[] {
+            "SI",
+            "NO"});
+            this.comboObjetos.Location = new System.Drawing.Point(403, 226);
+            this.comboObjetos.Name = "comboObjetos";
+            this.comboObjetos.Size = new System.Drawing.Size(136, 23);
+            this.comboObjetos.TabIndex = 40;
+            // 
+            // comboDesplazamiento
+            // 
+            this.comboDesplazamiento.FormattingEnabled = true;
+            this.comboDesplazamiento.Items.AddRange(new object[] {
+            "SI",
+            "NO"});
+            this.comboDesplazamiento.Location = new System.Drawing.Point(143, 226);
+            this.comboDesplazamiento.Name = "comboDesplazamiento";
+            this.comboDesplazamiento.Size = new System.Drawing.Size(136, 23);
+            this.comboDesplazamiento.TabIndex = 39;
+            // 
+            // comboPersonalidad
+            // 
+            this.comboPersonalidad.FormattingEnabled = true;
+            this.comboPersonalidad.Items.AddRange(new object[] {
+            "Ansioso (a)",
+            "Callado-Reservado(a)",
+            "Demandante",
+            "Hablador (a)",
+            "Tranquilo (a)"});
+            this.comboPersonalidad.Location = new System.Drawing.Point(385, 178);
+            this.comboPersonalidad.Name = "comboPersonalidad";
+            this.comboPersonalidad.Size = new System.Drawing.Size(149, 23);
+            this.comboPersonalidad.TabIndex = 38;
+            // 
+            // comboContextura
+            // 
+            this.comboContextura.FormattingEnabled = true;
+            this.comboContextura.Items.AddRange(new object[] {
+            "Delgado",
+            "Grueso"});
+            this.comboContextura.Location = new System.Drawing.Point(144, 178);
+            this.comboContextura.Name = "comboContextura";
+            this.comboContextura.Size = new System.Drawing.Size(136, 23);
+            this.comboContextura.TabIndex = 37;
             // 
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(285, 260);
+            this.label57.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label57.Location = new System.Drawing.Point(285, 229);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(94, 15);
+            this.label57.Size = new System.Drawing.Size(112, 14);
             this.label57.TabIndex = 36;
             this.label57.Text = "Levantar objetos";
             // 
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(37, 260);
+            this.label56.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label56.Location = new System.Drawing.Point(37, 229);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(91, 15);
+            this.label56.Size = new System.Drawing.Size(103, 14);
             this.label56.TabIndex = 35;
             this.label56.Text = "Desplazamiento";
-            // 
-            // textLevantarObjetos
-            // 
-            this.textLevantarObjetos.Enabled = false;
-            this.textLevantarObjetos.Location = new System.Drawing.Point(395, 258);
-            this.textLevantarObjetos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textLevantarObjetos.Name = "textLevantarObjetos";
-            this.textLevantarObjetos.Size = new System.Drawing.Size(140, 23);
-            this.textLevantarObjetos.TabIndex = 34;
-            // 
-            // textdesplazamiento
-            // 
-            this.textdesplazamiento.Enabled = false;
-            this.textdesplazamiento.Location = new System.Drawing.Point(144, 257);
-            this.textdesplazamiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textdesplazamiento.Name = "textdesplazamiento";
-            this.textdesplazamiento.Size = new System.Drawing.Size(136, 23);
-            this.textdesplazamiento.TabIndex = 33;
             // 
             // label55
             // 
             this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label55.Location = new System.Drawing.Point(289, 131);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(38, 15);
+            this.label55.Size = new System.Drawing.Size(43, 14);
             this.label55.TabIndex = 32;
             this.label55.Text = "Barrio";
-            // 
-            // textPersonalidad
-            // 
-            this.textPersonalidad.Enabled = false;
-            this.textPersonalidad.Location = new System.Drawing.Point(385, 180);
-            this.textPersonalidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textPersonalidad.Name = "textPersonalidad";
-            this.textPersonalidad.Size = new System.Drawing.Size(149, 23);
-            this.textPersonalidad.TabIndex = 31;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(289, 182);
+            this.label14.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(285, 181);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(75, 15);
+            this.label14.Size = new System.Drawing.Size(85, 14);
             this.label14.TabIndex = 30;
             this.label14.Text = "Personalidad";
             // 
@@ -329,19 +359,20 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(34, 156);
+            this.label13.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(34, 181);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(66, 15);
+            this.label13.Size = new System.Drawing.Size(77, 14);
             this.label13.TabIndex = 28;
             this.label13.Text = "Contextura";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(249, 226);
+            this.label12.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(245, 206);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 15);
+            this.label12.Size = new System.Drawing.Size(87, 14);
             this.label12.TabIndex = 27;
             this.label12.Text = "Restricciones";
             // 
@@ -366,9 +397,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(285, 106);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 15);
+            this.label9.Size = new System.Drawing.Size(50, 14);
             this.label9.TabIndex = 20;
             this.label9.Text = "Género";
             // 
@@ -383,39 +415,34 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(80, 52);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 15);
+            this.label8.Size = new System.Drawing.Size(90, 14);
             this.label8.TabIndex = 18;
             this.label8.Text = "Identificación";
-            // 
-            // textContextura
-            // 
-            this.textContextura.Enabled = false;
-            this.textContextura.Location = new System.Drawing.Point(144, 153);
-            this.textContextura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textContextura.Name = "textContextura";
-            this.textContextura.Size = new System.Drawing.Size(136, 23);
-            this.textContextura.TabIndex = 17;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(24, 182);
+            this.label7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(24, 157);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 15);
+            this.label7.Size = new System.Drawing.Size(92, 14);
             this.label7.TabIndex = 16;
             this.label7.Text = "Disponibilidad";
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.LightGray;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(315, 50);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 22);
             this.button1.TabIndex = 15;
             this.button1.Text = "Buscar Auxiliar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBarrio
@@ -430,7 +457,7 @@
             // textDisponibilidad
             // 
             this.textDisponibilidad.Enabled = false;
-            this.textDisponibilidad.Location = new System.Drawing.Point(144, 178);
+            this.textDisponibilidad.Location = new System.Drawing.Point(144, 153);
             this.textDisponibilidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textDisponibilidad.Name = "textDisponibilidad";
             this.textDisponibilidad.Size = new System.Drawing.Size(136, 23);
@@ -439,7 +466,7 @@
             // textFechaNacimiento
             // 
             this.textFechaNacimiento.Enabled = false;
-            this.textFechaNacimiento.Location = new System.Drawing.Point(144, 104);
+            this.textFechaNacimiento.Location = new System.Drawing.Point(144, 103);
             this.textFechaNacimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textFechaNacimiento.Name = "textFechaNacimiento";
             this.textFechaNacimiento.Size = new System.Drawing.Size(136, 23);
@@ -466,58 +493,63 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(285, 158);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 15);
+            this.label6.Size = new System.Drawing.Size(83, 14);
             this.label6.TabIndex = 9;
             this.label6.Text = "Nacionalidad";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 130);
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(34, 128);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 15);
+            this.label5.Size = new System.Drawing.Size(64, 14);
             this.label5.TabIndex = 8;
             this.label5.Text = "Localidad";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(3, 106);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 15);
+            this.label4.Size = new System.Drawing.Size(131, 14);
             this.label4.TabIndex = 7;
             this.label4.Text = "Fecha de nacimiento";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(285, 81);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 15);
+            this.label3.Size = new System.Drawing.Size(62, 14);
             this.label3.TabIndex = 6;
             this.label3.Text = "Apellidos";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 79);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(51, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 15);
+            this.label2.Size = new System.Drawing.Size(60, 14);
             this.label2.TabIndex = 5;
             this.label2.Text = "Nombres";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.LightYellow;
+            this.label1.BackColor = System.Drawing.Color.Silver;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(187, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 32);
+            this.label1.Size = new System.Drawing.Size(176, 32);
             this.label1.TabIndex = 4;
-            this.label1.Text = "DATOS AUXILIAR";
+            this.label1.Text = "Datos Auxiliar";
             // 
             // tabControl1
             // 
@@ -525,10 +557,10 @@
             this.tabControl1.Controls.Add(this.Experiencia);
             this.tabControl1.Controls.Add(this.Preferencias);
             this.tabControl1.Controls.Add(this.PrioridadPreferencias);
-            this.tabControl1.Location = new System.Drawing.Point(102, 305);
+            this.tabControl1.Location = new System.Drawing.Point(102, 272);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(625, 237);
+            this.tabControl1.Size = new System.Drawing.Size(625, 286);
             this.tabControl1.TabIndex = 28;
             // 
             // Conocimientos
@@ -537,7 +569,7 @@
             this.Conocimientos.Location = new System.Drawing.Point(4, 24);
             this.Conocimientos.Name = "Conocimientos";
             this.Conocimientos.Padding = new System.Windows.Forms.Padding(3);
-            this.Conocimientos.Size = new System.Drawing.Size(617, 209);
+            this.Conocimientos.Size = new System.Drawing.Size(617, 258);
             this.Conocimientos.TabIndex = 0;
             this.Conocimientos.Text = "Conocimientos";
             this.Conocimientos.UseVisualStyleBackColor = true;
@@ -553,7 +585,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(611, 203);
+            this.dataGridView1.Size = new System.Drawing.Size(611, 252);
             this.dataGridView1.TabIndex = 0;
             // 
             // Tema
@@ -562,7 +594,6 @@
             this.Tema.MinimumWidth = 6;
             this.Tema.Name = "Tema";
             this.Tema.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Tema.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Tema.Width = 125;
             // 
             // Conocimiento
@@ -580,7 +611,7 @@
             this.Experiencia.Location = new System.Drawing.Point(4, 24);
             this.Experiencia.Name = "Experiencia";
             this.Experiencia.Padding = new System.Windows.Forms.Padding(3);
-            this.Experiencia.Size = new System.Drawing.Size(617, 209);
+            this.Experiencia.Size = new System.Drawing.Size(617, 258);
             this.Experiencia.TabIndex = 1;
             this.Experiencia.Text = "Experiencia";
             this.Experiencia.UseVisualStyleBackColor = true;
@@ -590,13 +621,13 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewCheckBoxColumn1});
+            this.ExperienciaAux});
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(611, 203);
+            this.dataGridView2.Size = new System.Drawing.Size(611, 252);
             this.dataGridView2.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -605,24 +636,23 @@
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn1.Width = 125;
             // 
-            // dataGridViewCheckBoxColumn1
+            // ExperienciaAux
             // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Experiencia";
-            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn1.Width = 125;
+            this.ExperienciaAux.HeaderText = "Experiencia";
+            this.ExperienciaAux.MinimumWidth = 6;
+            this.ExperienciaAux.Name = "ExperienciaAux";
+            this.ExperienciaAux.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ExperienciaAux.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ExperienciaAux.Width = 125;
             // 
             // Preferencias
             // 
             this.Preferencias.Controls.Add(this.tabControl2);
             this.Preferencias.Location = new System.Drawing.Point(4, 24);
             this.Preferencias.Name = "Preferencias";
-            this.Preferencias.Size = new System.Drawing.Size(617, 209);
+            this.Preferencias.Size = new System.Drawing.Size(617, 258);
             this.Preferencias.TabIndex = 2;
             this.Preferencias.Text = "Preferencias";
             this.Preferencias.UseVisualStyleBackColor = true;
@@ -641,7 +671,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(615, 212);
+            this.tabControl2.Size = new System.Drawing.Size(615, 258);
             this.tabControl2.TabIndex = 7;
             // 
             // tabPage1
@@ -654,7 +684,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(607, 184);
+            this.tabPage1.Size = new System.Drawing.Size(607, 230);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tipo de turno";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -680,6 +710,12 @@
             // pTipoNocturno
             // 
             this.pTipoNocturno.FormattingEnabled = true;
+            this.pTipoNocturno.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pTipoNocturno.Location = new System.Drawing.Point(314, 79);
             this.pTipoNocturno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pTipoNocturno.Name = "pTipoNocturno";
@@ -698,11 +734,18 @@
             // pTipoDiurno
             // 
             this.pTipoDiurno.FormattingEnabled = true;
+            this.pTipoDiurno.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pTipoDiurno.Location = new System.Drawing.Point(314, 54);
             this.pTipoDiurno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pTipoDiurno.Name = "pTipoDiurno";
             this.pTipoDiurno.Size = new System.Drawing.Size(133, 23);
             this.pTipoDiurno.TabIndex = 22;
+            this.pTipoDiurno.SelectedIndexChanged += new System.EventHandler(this.pTipoDiurno_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -716,7 +759,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(607, 184);
+            this.tabPage2.Size = new System.Drawing.Size(607, 230);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Persona Acompaña";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -724,6 +767,12 @@
             // pCompaniaSin
             // 
             this.pCompaniaSin.FormattingEnabled = true;
+            this.pCompaniaSin.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCompaniaSin.Location = new System.Drawing.Point(314, 108);
             this.pCompaniaSin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCompaniaSin.Name = "pCompaniaSin";
@@ -760,6 +809,12 @@
             // pCompaniaEmpleada
             // 
             this.pCompaniaEmpleada.FormattingEnabled = true;
+            this.pCompaniaEmpleada.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCompaniaEmpleada.Location = new System.Drawing.Point(314, 78);
             this.pCompaniaEmpleada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCompaniaEmpleada.Name = "pCompaniaEmpleada";
@@ -778,6 +833,12 @@
             // pCompaniaFamiliar
             // 
             this.pCompaniaFamiliar.FormattingEnabled = true;
+            this.pCompaniaFamiliar.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCompaniaFamiliar.Location = new System.Drawing.Point(314, 53);
             this.pCompaniaFamiliar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCompaniaFamiliar.Name = "pCompaniaFamiliar";
@@ -795,7 +856,7 @@
             this.tabPage3.Controls.Add(this.pEdadBinomio);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(607, 184);
+            this.tabPage3.Size = new System.Drawing.Size(607, 230);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Rango Edad";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -803,6 +864,12 @@
             // pEdadAdultos
             // 
             this.pEdadAdultos.FormattingEnabled = true;
+            this.pEdadAdultos.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pEdadAdultos.Location = new System.Drawing.Point(328, 110);
             this.pEdadAdultos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pEdadAdultos.Name = "pEdadAdultos";
@@ -839,6 +906,12 @@
             // pEdadNinos
             // 
             this.pEdadNinos.FormattingEnabled = true;
+            this.pEdadNinos.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pEdadNinos.Location = new System.Drawing.Point(328, 80);
             this.pEdadNinos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pEdadNinos.Name = "pEdadNinos";
@@ -857,6 +930,12 @@
             // pEdadBinomio
             // 
             this.pEdadBinomio.FormattingEnabled = true;
+            this.pEdadBinomio.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pEdadBinomio.Location = new System.Drawing.Point(328, 55);
             this.pEdadBinomio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pEdadBinomio.Name = "pEdadBinomio";
@@ -876,7 +955,7 @@
             this.tabPage4.Controls.Add(this.pTipoDomicilio);
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(607, 184);
+            this.tabPage4.Size = new System.Drawing.Size(607, 230);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Tipo Servicio";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -884,6 +963,12 @@
             // pTipoEmpresarial
             // 
             this.pTipoEmpresarial.FormattingEnabled = true;
+            this.pTipoEmpresarial.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pTipoEmpresarial.Location = new System.Drawing.Point(316, 137);
             this.pTipoEmpresarial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pTipoEmpresarial.Name = "pTipoEmpresarial";
@@ -902,6 +987,12 @@
             // pTipoClinica
             // 
             this.pTipoClinica.FormattingEnabled = true;
+            this.pTipoClinica.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pTipoClinica.Location = new System.Drawing.Point(316, 107);
             this.pTipoClinica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pTipoClinica.Name = "pTipoClinica";
@@ -938,6 +1029,12 @@
             // pTipoIPS
             // 
             this.pTipoIPS.FormattingEnabled = true;
+            this.pTipoIPS.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pTipoIPS.Location = new System.Drawing.Point(316, 77);
             this.pTipoIPS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pTipoIPS.Name = "pTipoIPS";
@@ -956,6 +1053,12 @@
             // pTipoDomicilio
             // 
             this.pTipoDomicilio.FormattingEnabled = true;
+            this.pTipoDomicilio.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pTipoDomicilio.Location = new System.Drawing.Point(316, 52);
             this.pTipoDomicilio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pTipoDomicilio.Name = "pTipoDomicilio";
@@ -971,7 +1074,7 @@
             this.tabPage5.Controls.Add(this.pGeneroMasculino);
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(607, 184);
+            this.tabPage5.Size = new System.Drawing.Size(607, 230);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Género";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -997,6 +1100,12 @@
             // pGeneroFemenino
             // 
             this.pGeneroFemenino.FormattingEnabled = true;
+            this.pGeneroFemenino.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pGeneroFemenino.Location = new System.Drawing.Point(314, 84);
             this.pGeneroFemenino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pGeneroFemenino.Name = "pGeneroFemenino";
@@ -1015,6 +1124,12 @@
             // pGeneroMasculino
             // 
             this.pGeneroMasculino.FormattingEnabled = true;
+            this.pGeneroMasculino.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pGeneroMasculino.Location = new System.Drawing.Point(314, 59);
             this.pGeneroMasculino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pGeneroMasculino.Name = "pGeneroMasculino";
@@ -1038,7 +1153,7 @@
             this.tabPage6.Controls.Add(this.pDiagMedicina);
             this.tabPage6.Location = new System.Drawing.Point(4, 24);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(607, 184);
+            this.tabPage6.Size = new System.Drawing.Size(607, 230);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Grupo diagnóstico";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1046,6 +1161,12 @@
             // pDiagNeuro
             // 
             this.pDiagNeuro.FormattingEnabled = true;
+            this.pDiagNeuro.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pDiagNeuro.Location = new System.Drawing.Point(416, 112);
             this.pDiagNeuro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pDiagNeuro.Name = "pDiagNeuro";
@@ -1073,6 +1194,12 @@
             // pDiagMadre
             // 
             this.pDiagMadre.FormattingEnabled = true;
+            this.pDiagMadre.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pDiagMadre.Location = new System.Drawing.Point(416, 87);
             this.pDiagMadre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pDiagMadre.Name = "pDiagMadre";
@@ -1091,6 +1218,12 @@
             // pDiagPsiqui
             // 
             this.pDiagPsiqui.FormattingEnabled = true;
+            this.pDiagPsiqui.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pDiagPsiqui.Location = new System.Drawing.Point(416, 62);
             this.pDiagPsiqui.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pDiagPsiqui.Name = "pDiagPsiqui";
@@ -1100,6 +1233,12 @@
             // pDiagOncologico
             // 
             this.pDiagOncologico.FormattingEnabled = true;
+            this.pDiagOncologico.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pDiagOncologico.Location = new System.Drawing.Point(133, 112);
             this.pDiagOncologico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pDiagOncologico.Name = "pDiagOncologico";
@@ -1136,6 +1275,12 @@
             // pDiagQuirurgico
             // 
             this.pDiagQuirurgico.FormattingEnabled = true;
+            this.pDiagQuirurgico.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pDiagQuirurgico.Location = new System.Drawing.Point(133, 87);
             this.pDiagQuirurgico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pDiagQuirurgico.Name = "pDiagQuirurgico";
@@ -1154,6 +1299,12 @@
             // pDiagMedicina
             // 
             this.pDiagMedicina.FormattingEnabled = true;
+            this.pDiagMedicina.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pDiagMedicina.Location = new System.Drawing.Point(133, 62);
             this.pDiagMedicina.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pDiagMedicina.Name = "pDiagMedicina";
@@ -1175,7 +1326,7 @@
             this.tabPage7.Controls.Add(this.pConcAlerta);
             this.tabPage7.Location = new System.Drawing.Point(4, 24);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(607, 184);
+            this.tabPage7.Size = new System.Drawing.Size(607, 230);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Conciencia";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1192,6 +1343,12 @@
             // pConcVegeta
             // 
             this.pConcVegeta.FormattingEnabled = true;
+            this.pConcVegeta.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pConcVegeta.Location = new System.Drawing.Point(445, 76);
             this.pConcVegeta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pConcVegeta.Name = "pConcVegeta";
@@ -1210,6 +1367,12 @@
             // pConcEstuporoso
             // 
             this.pConcEstuporoso.FormattingEnabled = true;
+            this.pConcEstuporoso.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pConcEstuporoso.Location = new System.Drawing.Point(445, 51);
             this.pConcEstuporoso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pConcEstuporoso.Name = "pConcEstuporoso";
@@ -1219,6 +1382,12 @@
             // pConcConfusion
             // 
             this.pConcConfusion.FormattingEnabled = true;
+            this.pConcConfusion.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pConcConfusion.Location = new System.Drawing.Point(162, 101);
             this.pConcConfusion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pConcConfusion.Name = "pConcConfusion";
@@ -1255,6 +1424,12 @@
             // pConcComa
             // 
             this.pConcComa.FormattingEnabled = true;
+            this.pConcComa.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pConcComa.Location = new System.Drawing.Point(162, 76);
             this.pConcComa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pConcComa.Name = "pConcComa";
@@ -1273,6 +1448,12 @@
             // pConcAlerta
             // 
             this.pConcAlerta.FormattingEnabled = true;
+            this.pConcAlerta.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pConcAlerta.Location = new System.Drawing.Point(162, 51);
             this.pConcAlerta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pConcAlerta.Name = "pConcAlerta";
@@ -1285,7 +1466,7 @@
             this.tabPage8.Controls.Add(this.label43);
             this.tabPage8.Location = new System.Drawing.Point(4, 24);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(607, 184);
+            this.tabPage8.Size = new System.Drawing.Size(607, 230);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Presencia de mascotas";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1293,6 +1474,9 @@
             // pMascotas
             // 
             this.pMascotas.FormattingEnabled = true;
+            this.pMascotas.Items.AddRange(new object[] {
+            "SI",
+            "NO"});
             this.pMascotas.Location = new System.Drawing.Point(285, 52);
             this.pMascotas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pMascotas.Name = "pMascotas";
@@ -1310,6 +1494,10 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.pCondDisAuditiva);
+            this.tabPage9.Controls.Add(this.label70);
+            this.tabPage9.Controls.Add(this.pCondCateter);
+            this.tabPage9.Controls.Add(this.label69);
             this.tabPage9.Controls.Add(this.pCondSonTraqueo);
             this.tabPage9.Controls.Add(this.pCondSonVesical);
             this.tabPage9.Controls.Add(this.pCondSonOro);
@@ -1338,14 +1526,68 @@
             this.tabPage9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage9.Size = new System.Drawing.Size(607, 184);
+            this.tabPage9.Size = new System.Drawing.Size(607, 230);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Condición Salud";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
+            // pCondDisAuditiva
+            // 
+            this.pCondDisAuditiva.FormattingEnabled = true;
+            this.pCondDisAuditiva.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.pCondDisAuditiva.Location = new System.Drawing.Point(507, 193);
+            this.pCondDisAuditiva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pCondDisAuditiva.Name = "pCondDisAuditiva";
+            this.pCondDisAuditiva.Size = new System.Drawing.Size(74, 23);
+            this.pCondDisAuditiva.TabIndex = 71;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(351, 199);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(122, 15);
+            this.label70.TabIndex = 70;
+            this.label70.Text = "Discapacidad auditiva";
+            // 
+            // pCondCateter
+            // 
+            this.pCondCateter.FormattingEnabled = true;
+            this.pCondCateter.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.pCondCateter.Location = new System.Drawing.Point(184, 196);
+            this.pCondCateter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pCondCateter.Name = "pCondCateter";
+            this.pCondCateter.Size = new System.Drawing.Size(74, 23);
+            this.pCondCateter.TabIndex = 69;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(20, 198);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(45, 15);
+            this.label69.TabIndex = 68;
+            this.label69.Text = "Cateter";
+            // 
             // pCondSonTraqueo
             // 
             this.pCondSonTraqueo.FormattingEnabled = true;
+            this.pCondSonTraqueo.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCondSonTraqueo.Location = new System.Drawing.Point(506, 160);
             this.pCondSonTraqueo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCondSonTraqueo.Name = "pCondSonTraqueo";
@@ -1355,6 +1597,12 @@
             // pCondSonVesical
             // 
             this.pCondSonVesical.FormattingEnabled = true;
+            this.pCondSonVesical.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCondSonVesical.Location = new System.Drawing.Point(506, 132);
             this.pCondSonVesical.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCondSonVesical.Name = "pCondSonVesical";
@@ -1364,6 +1612,12 @@
             // pCondSonOro
             // 
             this.pCondSonOro.FormattingEnabled = true;
+            this.pCondSonOro.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCondSonOro.Location = new System.Drawing.Point(506, 101);
             this.pCondSonOro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCondSonOro.Name = "pCondSonOro";
@@ -1373,6 +1627,12 @@
             // pCondSonNaso
             // 
             this.pCondSonNaso.FormattingEnabled = true;
+            this.pCondSonNaso.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCondSonNaso.Location = new System.Drawing.Point(506, 68);
             this.pCondSonNaso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCondSonNaso.Name = "pCondSonNaso";
@@ -1382,6 +1642,12 @@
             // pCondSonGastro
             // 
             this.pCondSonGastro.FormattingEnabled = true;
+            this.pCondSonGastro.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCondSonGastro.Location = new System.Drawing.Point(506, 38);
             this.pCondSonGastro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCondSonGastro.Name = "pCondSonGastro";
@@ -1391,6 +1657,12 @@
             // pCondOxigeno
             // 
             this.pCondOxigeno.FormattingEnabled = true;
+            this.pCondOxigeno.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCondOxigeno.Location = new System.Drawing.Point(506, 8);
             this.pCondOxigeno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCondOxigeno.Name = "pCondOxigeno";
@@ -1400,6 +1672,12 @@
             // pCondNefro
             // 
             this.pCondNefro.FormattingEnabled = true;
+            this.pCondNefro.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCondNefro.Location = new System.Drawing.Point(184, 158);
             this.pCondNefro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCondNefro.Name = "pCondNefro";
@@ -1409,6 +1687,12 @@
             // pCondMedica
             // 
             this.pCondMedica.FormattingEnabled = true;
+            this.pCondMedica.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCondMedica.Location = new System.Drawing.Point(184, 130);
             this.pCondMedica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCondMedica.Name = "pCondMedica";
@@ -1418,6 +1702,12 @@
             // pCondGluco
             // 
             this.pCondGluco.FormattingEnabled = true;
+            this.pCondGluco.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCondGluco.Location = new System.Drawing.Point(184, 101);
             this.pCondGluco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCondGluco.Name = "pCondGluco";
@@ -1427,6 +1717,12 @@
             // pCondDrenes
             // 
             this.pCondDrenes.FormattingEnabled = true;
+            this.pCondDrenes.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCondDrenes.Location = new System.Drawing.Point(184, 68);
             this.pCondDrenes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCondDrenes.Name = "pCondDrenes";
@@ -1436,6 +1732,12 @@
             // pCondDisVisual
             // 
             this.pCondDisVisual.FormattingEnabled = true;
+            this.pCondDisVisual.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCondDisVisual.Location = new System.Drawing.Point(184, 38);
             this.pCondDisVisual.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCondDisVisual.Name = "pCondDisVisual";
@@ -1445,6 +1747,12 @@
             // pCondColostomia
             // 
             this.pCondColostomia.FormattingEnabled = true;
+            this.pCondColostomia.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.pCondColostomia.Location = new System.Drawing.Point(184, 12);
             this.pCondColostomia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pCondColostomia.Name = "pCondColostomia";
@@ -1454,7 +1762,7 @@
             // label68
             // 
             this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(351, 164);
+            this.label68.Location = new System.Drawing.Point(349, 164);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(85, 15);
             this.label68.TabIndex = 55;
@@ -1564,7 +1872,7 @@
             this.PrioridadPreferencias.Controls.Add(this.panel2);
             this.PrioridadPreferencias.Location = new System.Drawing.Point(4, 24);
             this.PrioridadPreferencias.Name = "PrioridadPreferencias";
-            this.PrioridadPreferencias.Size = new System.Drawing.Size(617, 209);
+            this.PrioridadPreferencias.Size = new System.Drawing.Size(617, 258);
             this.PrioridadPreferencias.TabIndex = 3;
             this.PrioridadPreferencias.Text = "PrioridadPreferencias";
             this.PrioridadPreferencias.UseVisualStyleBackColor = true;
@@ -1590,7 +1898,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(617, 209);
+            this.panel2.Size = new System.Drawing.Size(617, 258);
             this.panel2.TabIndex = 28;
             // 
             // label51
@@ -1605,6 +1913,12 @@
             // priCondicion
             // 
             this.priCondicion.FormattingEnabled = true;
+            this.priCondicion.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.priCondicion.Location = new System.Drawing.Point(476, 103);
             this.priCondicion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.priCondicion.Name = "priCondicion";
@@ -1614,6 +1928,12 @@
             // priDiagnostico
             // 
             this.priDiagnostico.FormattingEnabled = true;
+            this.priDiagnostico.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.priDiagnostico.Location = new System.Drawing.Point(476, 77);
             this.priDiagnostico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.priDiagnostico.Name = "priDiagnostico";
@@ -1623,6 +1943,12 @@
             // priTipoServicio
             // 
             this.priTipoServicio.FormattingEnabled = true;
+            this.priTipoServicio.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.priTipoServicio.Location = new System.Drawing.Point(476, 52);
             this.priTipoServicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.priTipoServicio.Name = "priTipoServicio";
@@ -1668,6 +1994,12 @@
             // priGenero
             // 
             this.priGenero.FormattingEnabled = true;
+            this.priGenero.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.priGenero.Location = new System.Drawing.Point(171, 129);
             this.priGenero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.priGenero.Name = "priGenero";
@@ -1677,6 +2009,12 @@
             // priEdad
             // 
             this.priEdad.FormattingEnabled = true;
+            this.priEdad.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.priEdad.Location = new System.Drawing.Point(171, 103);
             this.priEdad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.priEdad.Name = "priEdad";
@@ -1686,6 +2024,12 @@
             // priAcompaña
             // 
             this.priAcompaña.FormattingEnabled = true;
+            this.priAcompaña.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.priAcompaña.Location = new System.Drawing.Point(171, 77);
             this.priAcompaña.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.priAcompaña.Name = "priAcompaña";
@@ -1695,6 +2039,12 @@
             // priTipoTurno
             // 
             this.priTipoTurno.FormattingEnabled = true;
+            this.priTipoTurno.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.priTipoTurno.Location = new System.Drawing.Point(171, 52);
             this.priTipoTurno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.priTipoTurno.Name = "priTipoTurno";
@@ -1734,36 +2084,64 @@
             // 
             // regresar
             // 
-            this.regresar.Location = new System.Drawing.Point(391, 562);
+            this.regresar.BackColor = System.Drawing.Color.LightGray;
+            this.regresar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.regresar.Location = new System.Drawing.Point(487, 563);
             this.regresar.Name = "regresar";
             this.regresar.Size = new System.Drawing.Size(94, 29);
             this.regresar.TabIndex = 29;
             this.regresar.Text = "Regresar";
-            this.regresar.UseVisualStyleBackColor = true;
+            this.regresar.UseVisualStyleBackColor = false;
             this.regresar.Click += new System.EventHandler(this.regresar_Click);
             // 
             // Guardar
             // 
-            this.Guardar.Location = new System.Drawing.Point(246, 562);
+            this.Guardar.BackColor = System.Drawing.Color.LightGray;
+            this.Guardar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Guardar.Location = new System.Drawing.Point(246, 563);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(94, 29);
             this.Guardar.TabIndex = 30;
             this.Guardar.Text = "Guardar";
-            this.Guardar.UseVisualStyleBackColor = true;
+            this.Guardar.UseVisualStyleBackColor = false;
             this.Guardar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // AuxiliarEnfermeria
+            // Editar
+            // 
+            this.Editar.BackColor = System.Drawing.Color.LightGray;
+            this.Editar.Enabled = false;
+            this.Editar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Editar.Location = new System.Drawing.Point(371, 563);
+            this.Editar.Name = "Editar";
+            this.Editar.Size = new System.Drawing.Size(94, 29);
+            this.Editar.TabIndex = 32;
+            this.Editar.Text = "Editar";
+            this.Editar.UseVisualStyleBackColor = false;
+            this.Editar.Click += new System.EventHandler(this.Editar_Click);
+            // 
+            // Indicador
+            // 
+            this.Indicador.AutoSize = true;
+            this.Indicador.Location = new System.Drawing.Point(4, 607);
+            this.Indicador.Name = "Indicador";
+            this.Indicador.Size = new System.Drawing.Size(0, 15);
+            this.Indicador.TabIndex = 35;
+            // 
+            // DatosAuxiliar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 638);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
+            this.ClientSize = new System.Drawing.Size(754, 627);
+            this.Controls.Add(this.Indicador);
+            this.Controls.Add(this.Editar);
             this.Controls.Add(this.Guardar);
             this.Controls.Add(this.regresar);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "AuxiliarEnfermeria";
+            this.Name = "DatosAuxiliar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AuxiliarEnfermeria";
             this.Load += new System.EventHandler(this.AuxiliarEnfermeria_Load);
@@ -1800,6 +2178,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dPacienteBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1809,7 +2188,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textIdentificacion;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textContextura;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBarrio;
@@ -1828,7 +2206,6 @@
         private System.Windows.Forms.TextBox textLocalidad;
         private System.Windows.Forms.TextBox textGenero;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textPersonalidad;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textNacionalidad;
         private TabControl tabControl1;
@@ -1926,13 +2303,7 @@
         private Button Guardar;
         private Label label57;
         private Label label56;
-        private TextBox textLevantarObjetos;
-        private TextBox textdesplazamiento;
         private Label label55;
-        private DataGridViewComboBoxColumn Tema;
-        private DataGridViewCheckBoxColumn Conocimiento;
-        private DataGridViewComboBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private TabPage tabPage9;
         private ComboBox pCondSonTraqueo;
         private ComboBox pCondSonVesical;
@@ -1959,5 +2330,19 @@
         private Label label58;
         private Label label15;
         private BindingSource dPacienteBindingSource;
+        private ComboBox comboObjetos;
+        private ComboBox comboDesplazamiento;
+        private ComboBox comboPersonalidad;
+        private ComboBox comboContextura;
+        private DataGridViewTextBoxColumn Tema;
+        private DataGridViewCheckBoxColumn Conocimiento;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewCheckBoxColumn ExperienciaAux;
+        private Button Editar;
+        private ComboBox pCondDisAuditiva;
+        private Label label70;
+        private ComboBox pCondCateter;
+        private Label label69;
+        private Label Indicador;
     }
 }
