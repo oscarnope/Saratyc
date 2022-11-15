@@ -69,7 +69,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
             //Se invoca el algoritmo que calcula la recomendacion de auxiliares, este se alimenta del archivo de phyton y a esos resultados les realiza procesamiento adicional
             BRecomendarAuxiliares bRecomendarAuxiliares = new BRecomendarAuxiliares(institucion,tipoTurno,fechaInicio,fechaFin,idPaciente,idauxAsignado,idAuxPreferido,idAuxRechazado);
 
-            AuxiliaresRecomendados au = new AuxiliaresRecomendados(idPaciente, idTurno);
+            AuxiliaresRecomendados au = new AuxiliaresRecomendados(idPaciente, idTurno, institucion, tipoTurno);
             au.Activate();
             au.Show();
         }

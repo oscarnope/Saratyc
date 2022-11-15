@@ -10,7 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="2. Negocio\RN\" />
+    <Compile Remove="2. Negocio\RN\**" />
+    <EmbeddedResource Remove="2. Negocio\RN\**" />
+    <None Remove="2. Negocio\RN\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="5. Reportes\" />
   </ItemGroup>
 
@@ -26,6 +31,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="1. Presentacion UI\Forms\AuxiliarRecomendado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="1. Presentacion UI\Forms\Reportes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="1. Presentacion UI\Forms\PQR.cs">

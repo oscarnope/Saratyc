@@ -3,6 +3,7 @@ using Saratyc._4._Datos.DL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
 {
     public partial class AuxiliarRecomendado : Form
     {
-        public AuxiliarRecomendado(string idPaciente, string idAuxiliar, string nombres, string apellidos, int porcentajeCompatibilidad, string idTurno)
+        public AuxiliarRecomendado(string idPaciente, string idAuxiliar, string nombres, string apellidos, string porcentajeCompatibilidad, string idTurno, string tipoTurno)
         {
             InitializeComponent();
             this.idPaciente.Text = idPaciente;
@@ -24,16 +25,30 @@ namespace Saratyc._1._Presentacion_UI.Forms
             textNombre.Text = nombres;
             textApellidos.Text = apellidos;
             textPorcentajeCompatibilidad.Text = "El porcentaje de compatibilidad del auxiliar es: " + porcentajeCompatibilidad +"%";
+            textPrefTurnoA.Text = ToUpperFirstChar(tipoTurno);
+        }
+
+        private string ToUpperFirstChar(string tipoTurno)
+        {
+            if (string.IsNullOrEmpty(tipoTurno))
+                return tipoTurno;
+
+            return char.ToUpper(tipoTurno[0]) + tipoTurno.Substring(1).ToLowerInvariant();
         }
 
         private void AuxiliarRecomendado_Load(object sender, EventArgs e)
         {
+            StartPosition = FormStartPosition.CenterScreen;
             this.AutoScroll = true;
 
             Utilidades utilidades = new Utilidades();
             int idPaciente = int.Parse(this.idPaciente.Text);
             int idAuxiliar = int.Parse(this.idAuxiliar.Text);
             int idTurno = int.Parse(this.idTurno.Text);
+
+            string rutaActual = AppDomain.CurrentDomain.BaseDirectory;
+            string carpetaOrigen = ConfigurationManager.AppSettings["rutaOrigen"];
+            string ruta;
 
             string IDPACIENTE = "";
             string NOMBREPACIENTE = "";
@@ -60,7 +75,10 @@ namespace Saratyc._1._Presentacion_UI.Forms
             //Variable usada para detectar si ya se encontro el paciente
             int pacienteEncontrado = 0;
 
-            var pacientes = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Pacientes.csv");
+            ruta = rutaActual + carpetaOrigen + "\\Pacientes.csv";
+
+            //var pacientes = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Pacientes.csv");
+            var pacientes = File.ReadAllLines(ruta);
 
             foreach (var paciente in pacientes)
             {
@@ -110,9 +128,8 @@ namespace Saratyc._1._Presentacion_UI.Forms
                         textPrefMascotasP.Text = PREFERENCIAMASCOTAS;
 
                         textPrefCompA.Text = PERSONAACOMPANA;
-                        textPrefEdadA.Text = FECHANACIMIENTOPACIENTE;
+                        textPrefEdadA.Text = CalcularEdad(FECHANACIMIENTOPACIENTE,1);
                         textPrefGeneroA.Text = GENEROPACIENTE;
-                        textPrefTurnoA.Text = GENEROPACIENTE;
                         textPrefDiagA.Text = GRUPODIAGNOSTICO;
                         textPrefCondA.Text = CONDICIONSALUD;
 
@@ -326,8 +343,10 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
 
             int auxiliarEncontrado=0;
+            ruta = rutaActual + carpetaOrigen + "\\Auxiliares.csv";
 
-            var auxiliares = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Auxiliares4.1.csv");
+            //var auxiliares = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Auxiliares.csv");
+            var auxiliares = File.ReadAllLines(ruta);
 
             foreach (var auxiliar in auxiliares)
             {
@@ -646,27 +665,29 @@ namespace Saratyc._1._Presentacion_UI.Forms
                         if (NIVELCONCIENCIA.Trim().Equals(CONCIENCIA1.Trim()))
                         {
                             textExpAuxConci.Text = EXPERIENCIACC1;
+                            textConAuxConci.Text = CONOCIMIENTOCC1;
                         }
                         else if (NIVELCONCIENCIA.Trim().Equals(CONCIENCIA2.Trim()))
                         {
                             textExpAuxConci.Text = EXPERIENCIACC2;
+                            textConAuxConci.Text = CONOCIMIENTOCC2;
                         }
                         else if (NIVELCONCIENCIA.Trim().Equals(CONCIENCIA3.Trim()))
                         {
                             textExpAuxConci.Text = EXPERIENCIACC3;
-                        }
-                        else if (NIVELCONCIENCIA.Trim().Equals(CONCIENCIA3.Trim()))
-                        {
-                            textExpAuxConci.Text = EXPERIENCIACC3;
+                            textConAuxConci.Text = CONOCIMIENTOCC3;
                         }
                         else if (NIVELCONCIENCIA.Trim().Equals(CONCIENCIA4.Trim()))
                         {
                             textExpAuxConci.Text = EXPERIENCIACC4;
+                            textConAuxConci.Text = CONOCIMIENTOCC4;
                         }
                         else if (NIVELCONCIENCIA.Trim().Equals(CONCIENCIA5.Trim()))
                         {
                             textExpAuxConci.Text = EXPERIENCIACC5;
+                            textConAuxConci.Text = CONOCIMIENTOCC5;
                         }
+
 
                         ////////////////
 
@@ -674,17 +695,21 @@ namespace Saratyc._1._Presentacion_UI.Forms
                         if (PERSONAACOMPANA.Trim().Equals(ACOMPAÑAMIENTO1.Trim()))
                         {
                             textExpAuxTipoC.Text = EXPERIENCIAA1;
+                            textConAuxComp.Text = CONOCIMIENTOA1;
                         }
                         else if (PERSONAACOMPANA.Trim().Equals(ACOMPAÑAMIENTO2.Trim()))
                         {
-                            textExpAuxTipoC.Text = EXPERIENCIAA1;
+                            textExpAuxTipoC.Text = EXPERIENCIAA2;
+                            textConAuxComp.Text = CONOCIMIENTOA2;
+
                         }
                         else if (PERSONAACOMPANA.Trim().Equals(ACOMPAÑAMIENTO3.Trim()))
                         {
                             textExpAuxTipoC.Text = EXPERIENCIAA3;
+                            textConAuxComp.Text = CONOCIMIENTOA3;
                         }
 
-                        textPrefEdadAux.Text = CalcularEdad(FECHANACIMIENTOAUX);
+                        textPrefEdadAux.Text = CalcularEdad(FECHANACIMIENTOAUX,2);
                         textPrefNacionalidadAux.Text = NACIONALIDAD;
                         textPrefPersonalidadAux.Text = PERSONALIDAD;
                         textPrefGeneroAux.Text = GENEROPAUX;
@@ -709,30 +734,126 @@ namespace Saratyc._1._Presentacion_UI.Forms
             
         }
 
-        private string CalcularEdad(string fechaNacimientoAux)
+        private string obtenerTipoTurno(object tipoTurno)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string CalcularEdad(string fechaNacimiento, int tipo)
         {
 
-            int añoNacimiento = Int32.Parse(fechaNacimientoAux.Substring(fechaNacimientoAux.Length - 4, 4));
-            int mesNacimiento;
+            //Tipo es 1 si se esta calculando la fecha de un paciente que esta en formato 23-Oct-93 o 8-Nov-56
+            //Tipo es 2 si se esta calculando la fecha de un auxiliar que esta en formato 7/05/2025
 
-            if (fechaNacimientoAux.Substring(1,1).Equals("/"))
+            int añoNacimiento=0;
+            int mesNacimiento=0;
+            int diaNacimiento = 0;
+
+
+            if (tipo.Equals(1))
             {
-                mesNacimiento = Int32.Parse(fechaNacimientoAux.Substring(0,1));                
+                añoNacimiento = Int32.Parse(fechaNacimiento.Substring(fechaNacimiento.Length - 2, 2));
+
+                if (añoNacimiento>=0 && añoNacimiento <= 22)
+                {
+                    añoNacimiento = añoNacimiento + 2000;
+                }
+
+                if (fechaNacimiento.Contains("Jan"))
+                {
+                    mesNacimiento = 01;
+                }
+                else if (fechaNacimiento.Contains("Feb"))
+                {
+                    mesNacimiento = 02;
+                }
+                else if (fechaNacimiento.Contains("Mar"))
+                {
+                    mesNacimiento = 03;
+                }
+                else if (fechaNacimiento.Contains("Apr"))
+                {
+                    mesNacimiento = 04;
+                }
+                else if (fechaNacimiento.Contains("May"))
+                {
+                    mesNacimiento = 05;
+                }
+                else if (fechaNacimiento.Contains("Jun"))
+                {
+                    mesNacimiento = 06;
+                }
+                else if (fechaNacimiento.Contains("Jul"))
+                {
+                    mesNacimiento = 07;
+                }
+                else if (fechaNacimiento.Contains("Aug"))
+                {
+                    mesNacimiento = 08;
+                }
+                else if (fechaNacimiento.Contains("Sep"))
+                {
+                    mesNacimiento = 09;
+                }
+                else if (fechaNacimiento.Contains("Oct"))
+                {
+                    mesNacimiento = 10;
+                }
+                else if (fechaNacimiento.Contains("Nov"))
+                {
+                    mesNacimiento = 11;
+                }
+                else if (fechaNacimiento.Contains("Dec"))
+                {
+                    mesNacimiento = 12;
+                }
+
+
+
+                /*if (fechaNacimiento.Substring(4, 1).Equals("/"))
+                {
+                    diaNacimiento = Int32.Parse(fechaNacimiento.Substring(2, 2));
+                }
+                else if (fechaNacimiento.Substring(3, 1).Equals("/"))
+                {
+                    diaNacimiento = Int32.Parse(fechaNacimiento.Substring(2, 1));
+                }
+                else
+                {
+                    diaNacimiento = Int32.Parse(fechaNacimiento.Substring(3, 2));
+                }*/
+
             }
-            else
+            else if (tipo.Equals(2))
             {
-                mesNacimiento = Int32.Parse(fechaNacimientoAux.Substring(0,2));
+                añoNacimiento = Int32.Parse(fechaNacimiento.Substring(fechaNacimiento.Length - 4, 4));
+
+                if (fechaNacimiento.Substring(1, 1).Equals("/"))
+                {
+                    mesNacimiento = Int32.Parse(fechaNacimiento.Substring(0, 1));
+                }
+                else
+                {
+                    mesNacimiento = Int32.Parse(fechaNacimiento.Substring(0, 2));
+                }
+
+                /*
+                if (fechaNacimiento.Substring(4, 1).Equals("/"))
+                {
+                    diaNacimiento = Int32.Parse(fechaNacimiento.Substring(2, 2));
+                }
+                else if (fechaNacimiento.Substring(3, 1).Equals("/"))
+                {
+                    diaNacimiento = Int32.Parse(fechaNacimiento.Substring(2, 1));
+                }
+                else
+                {
+                    diaNacimiento = Int32.Parse(fechaNacimiento.Substring(3, 2));
+                }
+                */
+
             }
 
-            int diaNacimiento;
-            if (fechaNacimientoAux.Substring(4, 1).Equals("/"))
-            {
-                diaNacimiento = Int32.Parse(fechaNacimientoAux.Substring(2, 2));
-            }
-            else
-            {
-                diaNacimiento = Int32.Parse(fechaNacimientoAux.Substring(3, 2));
-            }
 
             var today = DateTime.Today;
 

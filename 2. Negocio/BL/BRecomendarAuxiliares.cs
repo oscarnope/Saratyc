@@ -24,20 +24,22 @@ namespace Saratyc._2._Negocio.BL
 
         //Se declaran las variables que se usaran para ponderar en el match
         int pesoCondicionExperiencia = 10;
-        int pesoDiagnosticoExperiencia = 9;
-        int pesoConcienciaExperiencia = 8;
-        int pesoCompañiaExperiencia = 7;
-        int pesoRestricciones = 6;
-        int pesoCondicionConocimiento = 5;
-        int pesoDiagnosticoConocimiento = 4;
-        int pesoConcienciaConocimiento = 8;
-        int pesoTemperamento = 3;
-        int pesoLugar = 2;
-        int pesoGeneroPrefPaciente = 0;
+        int pesoDiagnosticoExperiencia = 10;
+        int pesoConcienciaExperiencia = 10;
+        int pesoCompañiaExperiencia = 10;
+        int pesoRestricciones = 0;
+        int pesoCondicionConocimiento = 9;
+        int pesoDiagnosticoConocimiento = 9;
+        int pesoConcienciaConocimiento = 9;
+        int pesoTemperamento = 7;
+        int pesoLugar = 7;
+        int pesoGeneroPrefPaciente = 7;
+        int pesoEdadPrefPaciente = 7;
 
         //Pesos de preferencias
         int pesoDatosSolicitud = 0;
 
+        /*
         //Se declaran las variables que se usaran para ponderar el % de coincidencia
         double porcCondicionExperiencia = 16.39;
         double porcDiagnosticoExperiencia = 14.75;
@@ -50,6 +52,36 @@ namespace Saratyc._2._Negocio.BL
         double porcTemperamento = 4.92;
         double porcLugar = 3.28;
         double porcGeneroPrefPaciente = 0;
+        */
+        
+
+        double porcCondicionExperiencia = 10;
+        double porcDiagnosticoExperiencia = 10;
+        double porcConcienciaExperiencia = 9;
+        double porcCompañiaExperiencia = 9;
+        double porcRestricciones = 7;
+        double porcCondicionConocimiento = 6;
+        double porcDiagnosticoConocimiento = 6;
+        double porcConcienciaConocimiento = 6;
+        double porcTemperamento = 5;
+        double porcLugar = 0;//Esto no se usara en esta version
+        double porcGeneroPrefPaciente = 4;
+        double porcEdadPrefPaciente = 3;
+
+        /*
+        double porcCondicionExperiencia = 16.39;
+        double porcDiagnosticoExperiencia = 14.75;
+        double porcConcienciaExperiencia = 13.11;
+        double porcCompañiaExperiencia = 11.48;
+        double porcRestricciones = 9.84;
+        double porcCondicionConocimiento = 8.20;
+        double porcDiagnosticoConocimiento = 6.56;
+        double porcConcienciaConocimiento = 0;
+        double porcTemperamento = 4.92;
+        double porcLugar = 3.28;
+        */
+        
+
 
         //Variable que indica el porcentaje de coincidencias
         double porcentajeCoincidencia = 0;
@@ -293,6 +325,8 @@ namespace Saratyc._2._Negocio.BL
 
             //Se cargan los datos de los pacientes
             var pacientes = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Pacientes.csv");
+
+            
 
             double porcentajeCoincidenciaMax = 0;
 
@@ -554,10 +588,20 @@ namespace Saratyc._2._Negocio.BL
                             matchRestricciones(NIVELAUTONOMIA,RESTRICCION_DESPLAZAMIENTO, RESTRICCION_OBJETOS);
                             matchTemperamento(TEMPERAMENTO,PERSONALIDAD);
                             //matchTipoServicio
-                            matchLugar(LOCALIDADPACIENTE, LOCALIDAD);
+                            //matchLugar(LOCALIDADPACIENTE, LOCALIDAD);
                             matchGenero(PREFERENCIAGENERO, GENEROPAUX);
-                            //matchGenero(LOCALIDADPACIENTE, LOCALIDAD);
-
+                            matchEdad(FECHANACIMIENTOAUX,PREFERENCIAEDAD);
+                            
+                            /*
+                            if(IDAUX.Equals("43"))
+                            {
+                                porcentajeCoincidencia = 71.998;
+                            }
+                            else if (IDAUX.Equals("430"))
+                            {
+                                porcentajeCoincidencia = 40.998;
+                            }
+                            */
 
                             if (!IDAUX.Equals("ID"))
                             {
@@ -1073,6 +1117,84 @@ namespace Saratyc._2._Negocio.BL
                 pesoDatosSolicitud += pesoGeneroPrefPaciente;
                 porcentajeCoincidencia += porcGeneroPrefPaciente;
             }
+        }
+
+        private void matchEdad(string fechaNacimientoAux, string preferenciaEdad)
+        {
+
+            //Se busca el match del genero preferido por el paciente y el genero del auxiliar
+
+            string rangoEdad = CalcularEdad(fechaNacimientoAux);
+            if (preferenciaEdad.Equals(rangoEdad))
+            {
+                pesoDatosSolicitud += pesoEdadPrefPaciente;
+                porcentajeCoincidencia += porcEdadPrefPaciente;
+            }
+        }
+
+        public string CalcularEdad(string fechaNacimientoAux)
+        {
+
+            if (fechaNacimientoAux.Equals("FECHA NACIMIENTO"))
+            {
+                fechaNacimientoAux = "1/1/1990";
+            }
+            
+            int añoNacimiento = Int32.Parse(fechaNacimientoAux.Substring(fechaNacimientoAux.Length - 4, 4));
+            int mesNacimiento;
+
+            if (fechaNacimientoAux.Substring(1, 1).Equals("/"))
+            {
+                mesNacimiento = Int32.Parse(fechaNacimientoAux.Substring(0, 1));
+            }
+            else
+            {
+                mesNacimiento = Int32.Parse(fechaNacimientoAux.Substring(0, 2));
+            }
+
+            int diaNacimiento=0;
+            /*if (fechaNacimientoAux.Substring(4, 1).Equals("/") && fechaNacimientoAux.Substring(2, 1).Equals("/"))
+            {
+                diaNacimiento = Int32.Parse(fechaNacimientoAux.Substring(3, 1));
+            }
+            else if (fechaNacimientoAux.Substring(2, 1).Equals("/") && fechaNacimientoAux.Substring(5, 1).Equals("/"))
+            {
+                diaNacimiento = Int32.Parse(fechaNacimientoAux.Substring(2, 2));
+            }
+            else if(fechaNacimientoAux.Substring(2, 1).Equals("/") && fechaNacimientoAux.Substring(4, 1).Equals("/"))
+            {
+                diaNacimiento = Int32.Parse(fechaNacimientoAux.Substring(3, 2));
+            }
+            else if(fechaNacimientoAux.Substring(1, 1).Equals("/") && fechaNacimientoAux.Substring(3, 1).Equals("/"))
+            {
+                diaNacimiento = Int32.Parse(fechaNacimientoAux.Substring(2, 1));
+            }*/
+
+            var today = DateTime.Today;
+
+            var a = (today.Year * 100 + today.Month) * 100 + today.Day;
+            var b = (añoNacimiento * 100 + mesNacimiento) * 100 + diaNacimiento;
+
+            //return (a - b) / 10000;
+
+
+            //Date edadAuxiliar = DateTimeConverter(fechaNacimientoAux);
+            int edad = ((a - b) / 10000);
+
+            string sEdad;
+            if (edad <= 35)
+            {
+                sEdad = "Rango de Edad 20-35";
+            }
+            else if (edad <= 50)
+            {
+                sEdad = "Rango de Edad 36-50";
+            }
+            else
+            {
+                sEdad = "Rango de Edad mayor de 50";
+            }
+            return sEdad;
         }
         private int RankingTurno(string institucion, string tipoTurno, string fechaInicio, string fechaFin)
         {

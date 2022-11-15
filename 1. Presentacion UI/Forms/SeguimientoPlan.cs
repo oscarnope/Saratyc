@@ -38,8 +38,9 @@ namespace Saratyc._1._Presentacion_UI.Forms
         string nivel;
         string publicada;
         string fechaPublicacion;
-        string fechaPresentacion;
         string fechaEvaluacion;
+        string fechaPresentacion;
+        string fechaExpiracion;
         string resultado;
 
 
@@ -105,7 +106,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
                     disponibilidad = columns[11].ToString();
                     personalidad = columns[12].ToString();
                     desplazamiento = columns[13].ToString();
-                    levantarObjetos = columns[14].ToString();
+                    //levantarObjetos = columns[14].ToString();
 
                     textNombre.Text = nombre;
                     textApellido.Text = apellido;
@@ -116,8 +117,12 @@ namespace Saratyc._1._Presentacion_UI.Forms
                     dataGridView2.Rows.Clear();
                     dataGridView2.Refresh();
 
+                    dataGridView3.Rows.Clear();
+                    dataGridView3.Refresh();
+
                     poblarCapacitaciones(identificacion);
                     poblarEvaluaciones(identificacion);
+                    poblarCursosObligatorios(identificacion);
                     //poblarPreferencias(listaValoresPref);
 
                     indicador.ForeColor = Color.Black;
@@ -612,6 +617,119 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
 
             
+        }
+
+        private void poblarCursosObligatorios(string identificacion)
+        {
+            //bSeguimientoPlan.poblarConocimiento(identificacion);
+
+            DataGridViewRow row = new DataGridViewRow();
+            DataGridViewRow row2 = new DataGridViewRow();
+            DataGridViewRow row3 = new DataGridViewRow();
+            DataGridViewRow row4 = new DataGridViewRow();
+            DataGridViewRow row5 = new DataGridViewRow();
+            DataGridViewRow row6 = new DataGridViewRow();
+            DataGridViewRow row7 = new DataGridViewRow();
+            DataGridViewRow row8 = new DataGridViewRow();
+            DataGridViewRow row9 = new DataGridViewRow();
+            DataGridViewRow row10 = new DataGridViewRow();
+            DataGridViewRow row11 = new DataGridViewRow();
+            DataGridViewRow row12 = new DataGridViewRow();
+            DataGridViewRow row13 = new DataGridViewRow();
+            DataGridViewRow row14 = new DataGridViewRow();
+            DataGridViewRow row15 = new DataGridViewRow();
+            DataGridViewRow row16 = new DataGridViewRow();
+            DataGridViewRow row17 = new DataGridViewRow();
+            DataGridViewRow row18 = new DataGridViewRow();
+            DataGridViewRow row19 = new DataGridViewRow();
+            DataGridViewRow row20 = new DataGridViewRow();
+
+            int numFila = 0;
+
+            var cursosObligatorios = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\CursosObligatorios.csv");
+
+            string fechaExpiracion;
+
+            foreach (var cursoObligatorio in cursosObligatorios)
+            {
+                var columns = cursoObligatorio.Split(';').ToList();
+                idAuxiliar = columns[0].ToString();
+                ccAuxiliar = columns[1].ToString();
+                tema = columns[2].ToString();
+                nivel = columns[3].ToString();
+                fechaExpiracion = columns[4].ToString();
+                fechaPresentacion = columns[5].ToString();
+
+
+                //Añade la fila si encuentra al auxiliar buscado    
+                if (identificacion.Equals(ccAuxiliar.ToString()))
+                {
+
+                    //Pregunta por el numero de la fila
+                    if (numFila.Equals(0))
+                    {
+                        row.CreateCells(dataGridView3);
+                        row.Cells[0].Value = tema;
+                        row.Cells[1].Value = nivel;
+                        if (!fechaPresentacion.Equals(""))
+                        {
+                            DataGridViewCheckBoxCell chkcur1 = (DataGridViewCheckBoxCell)row.Cells[2];
+                            chkcur1.Value = true;
+                            dataGridView3.EndEdit();
+                        }
+                        row.Cells[3].Value = fechaPresentacion;
+                        row.Cells[4].Value = fechaExpiracion;
+
+                        dataGridView3.Rows.Add(row);
+                        numFila++;
+                    }
+
+                    else if (numFila.Equals(1))
+                    {
+                        row2.CreateCells(dataGridView3);
+                        row2.Cells[0].Value = tema;
+                        row2.Cells[1].Value = nivel;
+                        if (!fechaPresentacion.Equals(""))
+                        {
+                            DataGridViewCheckBoxCell chkcur2 = (DataGridViewCheckBoxCell)row2.Cells[2];
+                            chkcur2.Value = true;
+                            dataGridView3.EndEdit();
+                        }
+                        row2.Cells[3].Value = fechaPresentacion;
+                        row2.Cells[4].Value = fechaExpiracion;
+
+                        dataGridView3.Rows.Add(row2);
+                        numFila++;
+                    }
+
+                    else if (numFila.Equals(2))
+                    {
+                        row3.CreateCells(dataGridView3);
+                        row3.Cells[0].Value = tema;
+                        row3.Cells[1].Value = nivel;
+                        if (!fechaPresentacion.Equals(""))
+                        {
+                            DataGridViewCheckBoxCell chkcur3 = (DataGridViewCheckBoxCell)row3.Cells[2];
+                            chkcur3.Value = true;
+                            dataGridView3.EndEdit();
+                        }
+                        row3.Cells[3].Value = fechaPresentacion;
+                        row3.Cells[4].Value = fechaExpiracion;
+
+                        dataGridView3.Rows.Add(row3);
+                        numFila++;
+                    }
+
+
+
+
+                }
+            }
+
+
+
+
+
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

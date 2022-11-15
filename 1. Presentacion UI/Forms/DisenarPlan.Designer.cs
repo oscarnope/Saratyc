@@ -38,7 +38,7 @@
             this.textIdentificacion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Evaluaciones = new System.Windows.Forms.TabControl();
+            this.CursosObligatorios = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Tema = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,10 +70,19 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PQR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConsiderarPQR = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ConsiderarCurso = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
             this.chkConocimiento = new System.Windows.Forms.CheckBox();
             this.chkExperiencia = new System.Windows.Forms.CheckBox();
             this.chkIntereses = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.chkCursosObligatorios = new System.Windows.Forms.CheckBox();
+            this.chkCursos = new System.Windows.Forms.CheckBox();
             this.chkPQR = new System.Windows.Forms.CheckBox();
             this.chkEvaluaciones = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -82,9 +91,14 @@
             this.regresar = new System.Windows.Forms.Button();
             this.indicador = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaExpiracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ConsiderarCursoObligatorio = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.Evaluaciones.SuspendLayout();
+            this.CursosObligatorios.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -97,6 +111,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -201,19 +219,21 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Plan de Capacitación";
             // 
-            // Evaluaciones
+            // CursosObligatorios
             // 
-            this.Evaluaciones.Controls.Add(this.tabPage1);
-            this.Evaluaciones.Controls.Add(this.tabPage2);
-            this.Evaluaciones.Controls.Add(this.tabPage3);
-            this.Evaluaciones.Controls.Add(this.tabPage4);
-            this.Evaluaciones.Controls.Add(this.tabPage5);
-            this.Evaluaciones.Controls.Add(this.tabPage6);
-            this.Evaluaciones.Location = new System.Drawing.Point(48, 167);
-            this.Evaluaciones.Name = "Evaluaciones";
-            this.Evaluaciones.SelectedIndex = 0;
-            this.Evaluaciones.Size = new System.Drawing.Size(600, 205);
-            this.Evaluaciones.TabIndex = 3;
+            this.CursosObligatorios.Controls.Add(this.tabPage1);
+            this.CursosObligatorios.Controls.Add(this.tabPage2);
+            this.CursosObligatorios.Controls.Add(this.tabPage3);
+            this.CursosObligatorios.Controls.Add(this.tabPage4);
+            this.CursosObligatorios.Controls.Add(this.tabPage5);
+            this.CursosObligatorios.Controls.Add(this.tabPage6);
+            this.CursosObligatorios.Controls.Add(this.tabPage7);
+            this.CursosObligatorios.Controls.Add(this.tabPage8);
+            this.CursosObligatorios.Location = new System.Drawing.Point(48, 167);
+            this.CursosObligatorios.Name = "CursosObligatorios";
+            this.CursosObligatorios.SelectedIndex = 0;
+            this.CursosObligatorios.Size = new System.Drawing.Size(600, 205);
+            this.CursosObligatorios.TabIndex = 3;
             // 
             // tabPage1
             // 
@@ -392,24 +412,32 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "Tema";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 125;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.HeaderText = "Nivel";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 125;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.HeaderText = "Resultado";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 125;
             // 
             // ConsiderarEval
             // 
             this.ConsiderarEval.HeaderText = "Considerar";
+            this.ConsiderarEval.MinimumWidth = 6;
             this.ConsiderarEval.Name = "ConsiderarEval";
             this.ConsiderarEval.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ConsiderarEval.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ConsiderarEval.Width = 125;
             // 
             // tabPage5
             // 
@@ -482,6 +510,7 @@
             this.dataGridView6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView6.Location = new System.Drawing.Point(3, 3);
             this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.RowHeadersWidth = 51;
             this.dataGridView6.RowTemplate.Height = 25;
             this.dataGridView6.Size = new System.Drawing.Size(586, 171);
             this.dataGridView6.TabIndex = 0;
@@ -489,19 +518,100 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.HeaderText = "Tema";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 125;
             // 
             // PQR
             // 
             this.PQR.HeaderText = "PQR";
+            this.PQR.MinimumWidth = 6;
             this.PQR.Name = "PQR";
+            this.PQR.Width = 125;
             // 
             // ConsiderarPQR
             // 
             this.ConsiderarPQR.HeaderText = "Considerar";
+            this.ConsiderarPQR.MinimumWidth = 6;
             this.ConsiderarPQR.Name = "ConsiderarPQR";
             this.ConsiderarPQR.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ConsiderarPQR.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ConsiderarPQR.Width = 125;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.dataGridView7);
+            this.tabPage7.Location = new System.Drawing.Point(4, 24);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(592, 177);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Cursos";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView7
+            // 
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.Nivel,
+            this.ConsiderarCurso});
+            this.dataGridView7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView7.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.RowHeadersWidth = 51;
+            this.dataGridView7.RowTemplate.Height = 29;
+            this.dataGridView7.Size = new System.Drawing.Size(586, 171);
+            this.dataGridView7.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tema";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // Nivel
+            // 
+            this.Nivel.HeaderText = "Nivel";
+            this.Nivel.MinimumWidth = 6;
+            this.Nivel.Name = "Nivel";
+            this.Nivel.Width = 125;
+            // 
+            // ConsiderarCurso
+            // 
+            this.ConsiderarCurso.HeaderText = "Considerar";
+            this.ConsiderarCurso.MinimumWidth = 6;
+            this.ConsiderarCurso.Name = "ConsiderarCurso";
+            this.ConsiderarCurso.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ConsiderarCurso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ConsiderarCurso.Width = 125;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.dataGridView8);
+            this.tabPage8.Location = new System.Drawing.Point(4, 24);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(592, 177);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Cursos Obligatorios";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView8
+            // 
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.FechaExpiracion,
+            this.ConsiderarCursoObligatorio});
+            this.dataGridView8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView8.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.RowTemplate.Height = 25;
+            this.dataGridView8.Size = new System.Drawing.Size(586, 171);
+            this.dataGridView8.TabIndex = 0;
             // 
             // chkConocimiento
             // 
@@ -538,6 +648,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.chkCursosObligatorios);
+            this.panel2.Controls.Add(this.chkCursos);
             this.panel2.Controls.Add(this.chkPQR);
             this.panel2.Controls.Add(this.chkEvaluaciones);
             this.panel2.Controls.Add(this.label5);
@@ -546,8 +658,30 @@
             this.panel2.Controls.Add(this.chkExperiencia);
             this.panel2.Location = new System.Drawing.Point(48, 414);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(582, 89);
+            this.panel2.Size = new System.Drawing.Size(582, 110);
             this.panel2.TabIndex = 7;
+            // 
+            // chkCursosObligatorios
+            // 
+            this.chkCursosObligatorios.AutoSize = true;
+            this.chkCursosObligatorios.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkCursosObligatorios.Location = new System.Drawing.Point(141, 87);
+            this.chkCursosObligatorios.Name = "chkCursosObligatorios";
+            this.chkCursosObligatorios.Size = new System.Drawing.Size(145, 18);
+            this.chkCursosObligatorios.TabIndex = 11;
+            this.chkCursosObligatorios.Text = "Cursos Obligatorios";
+            this.chkCursosObligatorios.UseVisualStyleBackColor = true;
+            // 
+            // chkCursos
+            // 
+            this.chkCursos.AutoSize = true;
+            this.chkCursos.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkCursos.Location = new System.Drawing.Point(402, 63);
+            this.chkCursos.Name = "chkCursos";
+            this.chkCursos.Size = new System.Drawing.Size(67, 18);
+            this.chkCursos.TabIndex = 10;
+            this.chkCursos.Text = "Cursos";
+            this.chkCursos.UseVisualStyleBackColor = true;
             // 
             // chkPQR
             // 
@@ -585,7 +719,7 @@
             // 
             this.Disenar.BackColor = System.Drawing.Color.LightGray;
             this.Disenar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Disenar.Location = new System.Drawing.Point(334, 528);
+            this.Disenar.Location = new System.Drawing.Point(334, 541);
             this.Disenar.Name = "Disenar";
             this.Disenar.Size = new System.Drawing.Size(75, 23);
             this.Disenar.TabIndex = 8;
@@ -597,7 +731,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.LightGray;
             this.button2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(215, 528);
+            this.button2.Location = new System.Drawing.Point(215, 541);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 9;
@@ -608,7 +742,7 @@
             // 
             this.regresar.BackColor = System.Drawing.Color.LightGray;
             this.regresar.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.regresar.Location = new System.Drawing.Point(450, 528);
+            this.regresar.Location = new System.Drawing.Point(450, 541);
             this.regresar.Name = "regresar";
             this.regresar.Size = new System.Drawing.Size(94, 23);
             this.regresar.TabIndex = 30;
@@ -637,6 +771,35 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tema";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "Tema";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "Nivel";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // FechaExpiracion
+            // 
+            this.FechaExpiracion.HeaderText = "Fecha Expiración";
+            this.FechaExpiracion.Name = "FechaExpiracion";
+            // 
+            // ConsiderarCursoObligatorio
+            // 
+            this.ConsiderarCursoObligatorio.HeaderText = "Considerar";
+            this.ConsiderarCursoObligatorio.Name = "ConsiderarCursoObligatorio";
+            this.ConsiderarCursoObligatorio.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ConsiderarCursoObligatorio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // DisenarPlan
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
@@ -647,7 +810,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Disenar);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.Evaluaciones);
+            this.Controls.Add(this.CursosObligatorios);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "DisenarPlan";
@@ -655,7 +818,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.Evaluaciones.ResumeLayout(false);
+            this.CursosObligatorios.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
@@ -668,6 +831,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -684,7 +851,7 @@
         private Button button1;
         private TextBox textIdentificacion;
         private Label label2;
-        private TabControl Evaluaciones;
+        private TabControl CursosObligatorios;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private DataGridView dataGridView1;
@@ -732,5 +899,19 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private DataGridViewTextBoxColumn PQR;
         private DataGridViewCheckBoxColumn ConsiderarPQR;
+        private TabPage tabPage7;
+        private DataGridView dataGridView7;
+        private CheckBox chkCursos;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn Nivel;
+        private DataGridViewCheckBoxColumn ConsiderarCurso;
+        private TabPage tabPage8;
+        private DataGridView dataGridView8;
+        private CheckBox chkCursosObligatorios;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private DataGridViewTextBoxColumn FechaExpiracion;
+        private DataGridViewCheckBoxColumn ConsiderarCursoObligatorio;
     }
 }

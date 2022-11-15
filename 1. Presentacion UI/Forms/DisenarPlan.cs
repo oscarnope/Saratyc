@@ -102,11 +102,20 @@ namespace Saratyc._1._Presentacion_UI.Forms
                     dataGridView6.Rows.Clear();
                     dataGridView6.Refresh();
 
+                    dataGridView7.Rows.Clear();
+                    dataGridView7.Refresh();
+
+                    dataGridView8.Rows.Clear();
+                    dataGridView8.Refresh();
+
                     poblarConocimientos(identificacionAuxiliar);
                     poblarExperiencias(identificacionAuxiliar);
                     poblarIntereses(identificacionAuxiliar);
                     poblarEvaluaciones(identificacionAuxiliar);
                     poblarDemanda();
+                    poblarPQR(identificacionAuxiliar);
+                    poblarCursos(identificacionAuxiliar);
+                    poblarCursosObligatorios(identificacionAuxiliar);
 
                     indicador.ForeColor = Color.Blue;
                     indicador.Text = "Se encontró la información del auxiliar";
@@ -770,6 +779,244 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
         }
 
+        private void poblarPQR(string identificacion)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            DataGridViewRow row2 = new DataGridViewRow();
+            DataGridViewRow row3 = new DataGridViewRow();
+            DataGridViewRow row4 = new DataGridViewRow();
+            DataGridViewRow row5 = new DataGridViewRow();
+            DataGridViewRow row6 = new DataGridViewRow();
+            DataGridViewRow row7 = new DataGridViewRow();
+            DataGridViewRow row8 = new DataGridViewRow();
+            DataGridViewRow row9 = new DataGridViewRow();
+            DataGridViewRow row10 = new DataGridViewRow();
+            DataGridViewRow row11 = new DataGridViewRow();
+            DataGridViewRow row12 = new DataGridViewRow();
+            DataGridViewRow row13 = new DataGridViewRow();
+            DataGridViewRow row14 = new DataGridViewRow();
+            DataGridViewRow row15 = new DataGridViewRow();
+            DataGridViewRow row16 = new DataGridViewRow();
+            DataGridViewRow row17 = new DataGridViewRow();
+            DataGridViewRow row18 = new DataGridViewRow();
+            DataGridViewRow row19 = new DataGridViewRow();
+            DataGridViewRow row20 = new DataGridViewRow();
+
+            int numFila = 0;
+
+            var PQRS = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\PQR.csv");
+
+            foreach (var PQR in PQRS)
+            {
+                var columns = PQR.Split(';').ToList();
+                idAuxiliar = columns[0].ToString();
+                ccAuxiliar = columns[1].ToString();
+                tema = columns[2].ToString();
+
+                //Añade la fila si encuentra al auxiliar buscado    
+                if (identificacion.Equals(ccAuxiliar.ToString()))
+                {
+                    if (numFila.Equals(0))
+                    {
+                        row.CreateCells(dataGridView6);
+                        row.Cells[0].Value = tema;
+                        row.Cells[1].Value = "SI";
+                        DataGridViewCheckBoxCell chkpqr1 = (DataGridViewCheckBoxCell)row.Cells[2];
+                        chkpqr1.Value = true;
+                        dataGridView6.EndEdit();
+                        dataGridView6.Rows.Add(row);
+                        numFila++;
+                    }
+
+                    else if (numFila.Equals(1))
+                    {
+                        row2.CreateCells(dataGridView6);
+                        row2.Cells[0].Value = tema;
+                        row2.Cells[1].Value = "SI";
+                        DataGridViewCheckBoxCell chkpqr2 = (DataGridViewCheckBoxCell)row2.Cells[2];
+                        chkpqr2.Value = true;
+                        dataGridView6.EndEdit();
+                        dataGridView6.Rows.Add(row2);
+                        numFila++;
+                    }
+
+                    else if (numFila.Equals(2))
+                    {
+                        row3.CreateCells(dataGridView6);
+                        row3.Cells[0].Value = tema;
+                        row3.Cells[1].Value = "SI";
+                        DataGridViewCheckBoxCell chkpqr3 = (DataGridViewCheckBoxCell)row3.Cells[2];
+                        chkpqr3.Value = true;
+                        dataGridView6.EndEdit();
+                        dataGridView6.Rows.Add(row3);
+                        numFila++;
+                    }
+
+                }
+            }
+        }
+
+        private void poblarCursos(string identificacion)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            DataGridViewRow row2 = new DataGridViewRow();
+            DataGridViewRow row3 = new DataGridViewRow();
+            DataGridViewRow row4 = new DataGridViewRow();
+            DataGridViewRow row5 = new DataGridViewRow();
+            DataGridViewRow row6 = new DataGridViewRow();
+            DataGridViewRow row7 = new DataGridViewRow();
+            DataGridViewRow row8 = new DataGridViewRow();
+            DataGridViewRow row9 = new DataGridViewRow();
+            DataGridViewRow row10 = new DataGridViewRow();
+            DataGridViewRow row11 = new DataGridViewRow();
+            DataGridViewRow row12 = new DataGridViewRow();
+            DataGridViewRow row13 = new DataGridViewRow();
+            DataGridViewRow row14 = new DataGridViewRow();
+            DataGridViewRow row15 = new DataGridViewRow();
+            DataGridViewRow row16 = new DataGridViewRow();
+            DataGridViewRow row17 = new DataGridViewRow();
+            DataGridViewRow row18 = new DataGridViewRow();
+            DataGridViewRow row19 = new DataGridViewRow();
+            DataGridViewRow row20 = new DataGridViewRow();
+
+            int numFila = 0;
+
+            var Cursos = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\Cursos.csv");
+
+            foreach (var Curso in Cursos)
+            {
+                var columns = Curso.Split(';').ToList();
+                idAuxiliar = columns[0].ToString();
+                ccAuxiliar = columns[1].ToString();
+                tema = columns[2].ToString();
+                nivel = columns[3].ToString();
+
+                //Añade la fila si encuentra al auxiliar buscado    
+                if (identificacion.Equals(ccAuxiliar.ToString()))
+                {
+                    if (numFila.Equals(0))
+                    {
+                        row.CreateCells(dataGridView7);
+                        row.Cells[0].Value = tema;
+                        row.Cells[1].Value = nivel;
+                        DataGridViewCheckBoxCell chkCurso1 = (DataGridViewCheckBoxCell)row.Cells[2];
+                        chkCurso1.Value = true;
+                        dataGridView7.EndEdit();
+                        dataGridView7.Rows.Add(row);
+                        numFila++;
+                    }
+
+                    else if (numFila.Equals(1))
+                    {
+                        row2.CreateCells(dataGridView7);
+                        row2.Cells[0].Value = tema;
+                        row2.Cells[1].Value = nivel;
+                        DataGridViewCheckBoxCell chkCurso2 = (DataGridViewCheckBoxCell)row2.Cells[2];
+                        chkCurso2.Value = true;
+                        dataGridView7.EndEdit();
+                        dataGridView7.Rows.Add(row);
+                        numFila++;
+                    }
+
+                    else if (numFila.Equals(2))
+                    {
+                        row3.CreateCells(dataGridView6);
+                        row3.Cells[0].Value = tema;
+                        row3.Cells[1].Value = nivel;
+                        DataGridViewCheckBoxCell chkCurso3 = (DataGridViewCheckBoxCell)row3.Cells[2];
+                        chkCurso3.Value = true;
+                        dataGridView7.EndEdit();
+                        dataGridView7.Rows.Add(row3);
+                        numFila++;
+                    }
+
+                }
+            }
+        }
+
+        private void poblarCursosObligatorios(string identificacion)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            DataGridViewRow row2 = new DataGridViewRow();
+            DataGridViewRow row3 = new DataGridViewRow();
+            DataGridViewRow row4 = new DataGridViewRow();
+            DataGridViewRow row5 = new DataGridViewRow();
+            DataGridViewRow row6 = new DataGridViewRow();
+            DataGridViewRow row7 = new DataGridViewRow();
+            DataGridViewRow row8 = new DataGridViewRow();
+            DataGridViewRow row9 = new DataGridViewRow();
+            DataGridViewRow row10 = new DataGridViewRow();
+            DataGridViewRow row11 = new DataGridViewRow();
+            DataGridViewRow row12 = new DataGridViewRow();
+            DataGridViewRow row13 = new DataGridViewRow();
+            DataGridViewRow row14 = new DataGridViewRow();
+            DataGridViewRow row15 = new DataGridViewRow();
+            DataGridViewRow row16 = new DataGridViewRow();
+            DataGridViewRow row17 = new DataGridViewRow();
+            DataGridViewRow row18 = new DataGridViewRow();
+            DataGridViewRow row19 = new DataGridViewRow();
+            DataGridViewRow row20 = new DataGridViewRow();
+
+            int numFila = 0;
+
+            var Cursos = File.ReadAllLines("C:\\Users\\Julian\\source\\repos\\Saratyc\\Saratyc\\Resources\\CursosObligatorios.csv");
+
+            string fechaExpiracion;
+
+            foreach (var Curso in Cursos)
+            {
+                var columns = Curso.Split(';').ToList();
+                idAuxiliar = columns[0].ToString();
+                ccAuxiliar = columns[1].ToString();
+                tema = columns[2].ToString();
+                nivel = columns[3].ToString();
+                fechaExpiracion= columns[4].ToString();
+
+                //Añade la fila si encuentra al auxiliar buscado    
+                if (identificacion.Equals(ccAuxiliar.ToString()))
+                {
+                    if (numFila.Equals(0))
+                    {
+                        row.CreateCells(dataGridView8);
+                        row.Cells[0].Value = tema;
+                        row.Cells[1].Value = nivel;
+                        row.Cells[2].Value = fechaExpiracion;
+                        DataGridViewCheckBoxCell chkCursoObl1 = (DataGridViewCheckBoxCell)row.Cells[3];
+                        chkCursoObl1.Value = true;
+                        dataGridView8.EndEdit();
+                        dataGridView8.Rows.Add(row);
+                        numFila++;
+                    }
+
+                    else if (numFila.Equals(1))
+                    {
+                        row2.CreateCells(dataGridView8);
+                        row2.Cells[0].Value = tema;
+                        row2.Cells[1].Value = nivel;
+                        row2.Cells[2].Value = fechaExpiracion;
+                        DataGridViewCheckBoxCell chkCursoObl2 = (DataGridViewCheckBoxCell)row2.Cells[3];
+                        chkCursoObl2.Value = false;
+                        dataGridView8.EndEdit();
+                        dataGridView8.Rows.Add(row2);
+                        numFila++;
+                    }
+
+                    else if (numFila.Equals(2))
+                    {
+                        row3.CreateCells(dataGridView8);
+                        row3.Cells[0].Value = tema;
+                        row3.Cells[1].Value = nivel;
+                        row3.Cells[2].Value = fechaExpiracion;
+                        DataGridViewCheckBoxCell chkCursoObl3 = (DataGridViewCheckBoxCell)row3.Cells[3];
+                        chkCursoObl3.Value = false;
+                        dataGridView8.EndEdit();
+                        dataGridView8.Rows.Add(row3);
+                        numFila++;
+                    }
+
+                }
+            }
+        }
         private void poblarDemanda()
         {
             DataGridViewRow row = new DataGridViewRow();
@@ -954,6 +1201,8 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
         }
 
+
+
         private void button3_Click(object sender, EventArgs e)
         {
             List<string> lTemas = new List<string>();
@@ -961,6 +1210,8 @@ namespace Saratyc._1._Presentacion_UI.Forms
             int filasMostradas = dataGridView1.DisplayedRowCount(true);
             bool seleccion = false;
             string temaSeleccionado = "";
+            string nivel = "";
+            string resultado = "";
             int currentRow = 0;
 
             //Conocimiento
@@ -981,13 +1232,14 @@ namespace Saratyc._1._Presentacion_UI.Forms
                             {
                                 //esta seleccionada
                                 seleccion = true;
-                                lTemas.Add(temaSeleccionado + ",Conocimiento");
+                                lTemas.Add(temaSeleccionado + ",Conocimiento,SI,,,");
 
                             }
                             else
                             {
                                 //no esta seleccionada
                                 seleccion = false;
+                                lTemas.Add(temaSeleccionado + ",Conocimiento,NO,,,");
                             }
                         }
                     }
@@ -996,6 +1248,8 @@ namespace Saratyc._1._Presentacion_UI.Forms
             }
 
 
+
+            filasMostradas = dataGridView2.DisplayedRowCount(true);
             if (chkExperiencia.Checked)
             {
                 foreach (DataGridViewRow row in dataGridView2.Rows)
@@ -1012,13 +1266,14 @@ namespace Saratyc._1._Presentacion_UI.Forms
                             {
                                 //esta seleccionada
                                 seleccion = true;
-                                lTemas.Add(temaSeleccionado + ",Experiencia");
+                                lTemas.Add(temaSeleccionado + ",Experiencia,SI,,,");
 
                             }
                             else
                             {
                                 //no esta seleccionada
                                 seleccion = false;
+                                lTemas.Add(temaSeleccionado + ",Experiencia,NO,,,");
                             }
                         }
                     }
@@ -1027,6 +1282,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
             }
 
 
+            filasMostradas = dataGridView3.DisplayedRowCount(true);
             if (chkIntereses.Checked)
             {
                 foreach (DataGridViewRow row in dataGridView3.Rows)
@@ -1043,13 +1299,14 @@ namespace Saratyc._1._Presentacion_UI.Forms
                             {
                                 //esta seleccionada
                                 seleccion = true;
-                                lTemas.Add(temaSeleccionado + ",Interes");
+                                lTemas.Add(temaSeleccionado + ",Interes,SI,,,");
 
                             }
                             else
                             {
                                 //no esta seleccionada
                                 seleccion = false;
+                                lTemas.Add(temaSeleccionado + ",Interes,NO,,,");
                             }
                         }
                     }
@@ -1057,6 +1314,7 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 }
             }
 
+            filasMostradas = dataGridView4.DisplayedRowCount(true);
             if (chkEvaluaciones.Checked)
             {
                 foreach (DataGridViewRow row in dataGridView4.Rows)
@@ -1065,6 +1323,9 @@ namespace Saratyc._1._Presentacion_UI.Forms
                     if (currentRow < filasMostradas - 1)
                     {
                         temaSeleccionado = row.Cells[0].Value.ToString();
+                        nivel = row.Cells[1].Value.ToString();
+                        resultado = row.Cells[2].Value.ToString();
+
 
                         if (!temaSeleccionado.Equals(null))
                         {
@@ -1073,13 +1334,14 @@ namespace Saratyc._1._Presentacion_UI.Forms
                             {
                                 //esta seleccionada
                                 seleccion = true;
-                                lTemas.Add(temaSeleccionado + ",Evaluaciones");
+                                lTemas.Add(temaSeleccionado + ",Evaluaciones,SI,"+nivel+","+resultado + ",");
 
                             }
                             else
                             {
                                 //no esta seleccionada
                                 seleccion = false;
+                                lTemas.Add(temaSeleccionado + ",Evaluaciones,NO," + nivel + "," + resultado + ",");
                             }
                         }
                     }
@@ -1087,10 +1349,11 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 }
             }
 
+            filasMostradas = dataGridView6.DisplayedRowCount(true);
             if (chkPQR.Checked)
             {
 
-                foreach (DataGridViewRow row in dataGridView5.Rows)
+                foreach (DataGridViewRow row in dataGridView6.Rows)
                 {
                     currentRow = row.Index;
                     if (currentRow < filasMostradas - 1)
@@ -1099,18 +1362,19 @@ namespace Saratyc._1._Presentacion_UI.Forms
 
                         if (!temaSeleccionado.Equals(null))
                         {
-                            DataGridViewCheckBoxCell cell5 = (DataGridViewCheckBoxCell)row.Cells["ConsiderarDemanda"];
-                            if (Convert.ToBoolean(cell5.Value))
+                            DataGridViewCheckBoxCell cell6 = (DataGridViewCheckBoxCell)row.Cells["ConsiderarPQR"];
+                            if (Convert.ToBoolean(cell6.Value))
                             {
                                 //esta seleccionada
                                 seleccion = true;
-                                lTemas.Add(temaSeleccionado + ",Demanda");
+                                lTemas.Add(temaSeleccionado + ",PQR,SI,,,");
 
                             }
                             else
                             {
                                 //no esta seleccionada
                                 seleccion = false;
+                                lTemas.Add(temaSeleccionado + ",PQR,NO,,,");
                             }
                         }
                     }
@@ -1118,101 +1382,296 @@ namespace Saratyc._1._Presentacion_UI.Forms
                 }
             }
 
-            /*
-            foreach (DataGridViewRow row in dataGridView6.Rows)
+            filasMostradas = dataGridView7.DisplayedRowCount(true);
+            if (chkCursos.Checked)
             {
-                currentRow = row.Index;
-                if (currentRow < filasMostradas - 1)
+
+                foreach (DataGridViewRow row in dataGridView7.Rows)
                 {
-                    temaSeleccionado = row.Cells[0].Value.ToString();
-
-                    if (!temaSeleccionado.Equals(null))
+                    currentRow = row.Index;
+                    if (currentRow < filasMostradas - 1)
                     {
-                        DataGridViewCheckBoxCell cell6 = (DataGridViewCheckBoxCell)row.Cells["ConsiderarPQR"];
-                        if (Convert.ToBoolean(cell6.Value))
-                        {
-                            //esta seleccionada
-                            seleccion = true;
-                            lTemas.Add(temaSeleccionado+ ",PQR");
+                        temaSeleccionado = row.Cells[0].Value.ToString();
+                        nivel = row.Cells[1].Value.ToString();                        
 
-                        }
-                        else
+
+                        if (!temaSeleccionado.Equals(null))
                         {
-                            //no esta seleccionada
-                            seleccion = false;
+                            DataGridViewCheckBoxCell cell7 = (DataGridViewCheckBoxCell)row.Cells["ConsiderarCurso"];
+                            if (Convert.ToBoolean(cell7.Value))
+                            {
+                                //esta seleccionada
+                                seleccion = true;
+                                lTemas.Add(temaSeleccionado + ",Cursos,SI," + nivel + ",,");
+
+                            }
+                            else
+                            {
+                                //no esta seleccionada
+                                seleccion = false;
+                                lTemas.Add(temaSeleccionado + ",Cursos,NO," + nivel + ",,");
+                            }
                         }
                     }
-                }
 
+                }
             }
-            */
-            
-            
+
+            filasMostradas = dataGridView8.DisplayedRowCount(true);
+            if (chkCursosObligatorios.Checked)
+            {
+
+                foreach (DataGridViewRow row in dataGridView8.Rows)
+                {
+                    currentRow = row.Index;
+                    if (currentRow < filasMostradas - 1)
+                    {
+                        temaSeleccionado = row.Cells[0].Value.ToString();
+                        nivel = row.Cells[1].Value.ToString();
+                        string sFechaExpiracion = row.Cells[2].Value.ToString();
+
+                        if (!temaSeleccionado.Equals(null))
+                        {
+                            DataGridViewCheckBoxCell cell8 = (DataGridViewCheckBoxCell)row.Cells["ConsiderarCursoObligatorio"];
+                            if (Convert.ToBoolean(cell8.Value))
+                            {
+                                //esta seleccionada
+                                seleccion = true;
+                                lTemas.Add(temaSeleccionado + ",Cursos Obligatorios,SI,," + resultado + "," + sFechaExpiracion);
+
+                            }
+                            else
+                            {
+                                //no esta seleccionada
+                                seleccion = false;
+                                lTemas.Add(temaSeleccionado + ",Cursos Obligatorios,NO,," + resultado + "," + sFechaExpiracion);
+                            }
+                        }
+                    }
+
+                }
+            }
+
+
             string tema;
             string concepto;
-            string nivel="";
-            List<string> lcapacitaciones = new List<string>();
-            List<string> ltemasPropuestos = new List<string>();
+            string considerar;
 
+            string tema2 = "";
+            string conocimiento2 = "";
+            string experiencia2 = "";
+            string considerar2 = "";
+            string interes2 = "";
+            string nivel2 = "";
+            string evaluacionBasica2 = "";
+            string evaluacionAvanzada2 = "";
+            string demanda2 = "";
+            string pqr2 = "";
+            string cursos2 = "";
+            string cursosObligatorios2 = "";
+            string indice = "";
+            string oldValue = "";
+            string newValue = "";
+
+            int fila = 0;
+
+            List<string> lcapacitaciones = new List<string>();
+            List<string> lcapacitacionesPrev = new List<string>();
+            List<string> ltemasPropuestos = new List<string>();
+            int indice2;
 
             foreach (var ltema in lTemas)
             {
 
+                //var columns = ltema.Split(',').Where(c => c.Trim() != string.Empty).ToList();
+                var columns = ltema.Split(',').ToList();
 
-                var columns = ltema.Split(',').Where(c => c.Trim() != string.Empty).ToList();
                 tema = columns[0].ToString();
                 concepto = columns[1].ToString();
-
-                if (concepto.Equals("Conocimiento"))
-                {
-                    nivel = "Avanzado";
-                }
-                else if (concepto.Equals("Experiencia"))
-                {
-                    nivel = "Avanzado";
-                }
-                else if (concepto.Equals("Interes"))
-                {
-                    nivel = "Basico";
-                }
-                else if (concepto.Equals("Evaluaciones"))
-                {
-                    nivel = "Avanzado";
-                }
-                else if (concepto.Equals("Demanda"))
-                {
-                    nivel = "Basico";
-                }
-                else if (concepto.Equals("PQR"))
-                {
-                    nivel = "Avanzado";
-                }
+                considerar = columns[2].ToString();
+                nivel = columns[3].ToUpper().ToString();
+                resultado = columns[4].ToString();
+                string sFechaExpiracion = columns[5].ToString();
+                fila++;
 
                 //Si el listado de capacitaciones ya contiene ese tema
-                if(ltemasPropuestos.Contains(tema))
+                if (ltemasPropuestos.Contains(tema))
                 {
-                    //Si ya lo contiene no lo añade
-                    if(nivel.Equals("Basico"))
+                    foreach (var lcapacitacion in lcapacitacionesPrev)
                     {
-                        //
-                    }
-                    else
-                    {
-                        //Si es avanzado entonces lo reemplaza de nivel Basico a Avanzado
-                        string oldValue = tema + ",Basico";
-                        string newValue = tema + ",Avanzado";
-                        int index = lcapacitaciones.IndexOf(oldValue);
-                        if (index != -1)
+                        var columns2 = lcapacitacion.Split(',').ToList();
+                        tema2 = columns2[0].ToString();
+                        conocimiento2 = columns2[1].ToString();
+                        experiencia2 = columns2[2].ToString();
+                        interes2 = columns2[3].ToString();
+                        nivel2 = columns2[4].ToString();
+                        evaluacionBasica2 = columns2[5].ToString();
+                        evaluacionAvanzada2 = columns2[6].ToString();
+                        demanda2 = columns2[7].ToString();
+                        pqr2 = columns2[8].ToString();
+                        cursos2 = columns2[9].ToString();
+                        cursosObligatorios2 = columns2[10].ToString();
+
+                        if (tema.Equals(tema2))
                         {
-                            lcapacitaciones[index] = newValue;
+                            if (concepto.Equals("Conocimiento"))
+                            {
+                                oldValue = lTemas[fila];
+                                if (considerar.Equals("SI"))
+                                {
+                                    lcapacitacionesPrev.RemoveAt(fila);
+                                    newValue = tema2 + "," + "NO" + "," + experiencia2 + "," + interes2 + "," + nivel2 + "," + evaluacionBasica2 + "," + evaluacionAvanzada2 + "," + demanda2 + "," + pqr2 + "," + cursos2 + ","  + cursosObligatorios2;                                    
+                                    lcapacitacionesPrev.Add(newValue);
+                                }
+                            }
+                            else if (concepto.Equals("Experiencia"))
+                            {
+                                indice2 = ltemasPropuestos.IndexOf(tema);
+                                oldValue = lcapacitacionesPrev[indice2];
+                                if (considerar.Equals("SI"))
+                                {
+                                    lcapacitacionesPrev.RemoveAt(indice2);
+                                    ltemasPropuestos.RemoveAt(indice2);
+                                    newValue = tema2 + "," + conocimiento2 + "," + "NO" + "," + interes2 + "," + nivel2 + "," + evaluacionBasica2 + "," + evaluacionAvanzada2 + "," + demanda2 + "," + pqr2 + "," + cursos2 + "," + cursosObligatorios2;
+                                    lcapacitacionesPrev.Add(newValue);
+                                    ltemasPropuestos.Add(newValue);
+                                }
+                            }
+                            else if (concepto.Equals("Interes"))
+                            {
+                                indice2 = ltemasPropuestos.IndexOf(tema);
+                                oldValue = lcapacitacionesPrev[indice2];
+                                if (considerar.Equals("SI"))
+                                {
+                                    lcapacitacionesPrev.RemoveAt(indice2);
+                                    ltemasPropuestos.RemoveAt(indice2);
+                                    newValue = tema2 + "," + conocimiento2 + "," + experiencia2 + "," + "SI" + "," + nivel2 + "," + evaluacionBasica2 + "," + evaluacionAvanzada2 + "," + demanda2 + "," + pqr2 + "," + cursos2 + "," + cursosObligatorios2;
+                                    lcapacitacionesPrev.Add(newValue);
+                                    ltemasPropuestos.Add(newValue);
+                                }
+                            }
+                            else if (concepto.Equals("Evaluaciones"))
+                            {
+                               
+                                indice2 = ltemasPropuestos.IndexOf(tema);
+                                oldValue = lcapacitacionesPrev[indice2];
+                                if (considerar.Equals("SI") && nivel.Equals("BASICO") && resultado.Equals("NO APROBADO"))
+                                {
+                                    if(evaluacionAvanzada2.Equals("NO APROBADA"))
+                                    {
+
+                                    }
+                                    else if (considerar.Equals("SI") && nivel.Equals("BASICO") && resultado.Equals("NO APROBADO"))
+                                    {
+                                        lcapacitacionesPrev.RemoveAt(indice2);
+                                        ltemasPropuestos.RemoveAt(indice2);
+                                        newValue = tema2 + "," + conocimiento2 + "," + experiencia2 + "," + "SI" + "," + nivel2 + "," + evaluacionBasica2 + "," + evaluacionAvanzada2 + "," + demanda2 + "," + pqr2 + "," + cursos2 + "," + cursosObligatorios2;
+                                        lcapacitacionesPrev.Add(newValue);
+                                        ltemasPropuestos.Add(newValue);
+                                    }
+                                }
+                            }
                         }
                     }
-
                 }
                 else
                 {
+                    if(concepto.Equals("Conocimiento"))
+                    {
+                        if (considerar.Equals("NO"))
+                        {
+                            lcapacitacionesPrev.Add(tema + "," + "SI" + ",,,,,,,,,");
+                        }
+                        else
+                        {
+                            lcapacitacionesPrev.Add(tema + "," + "NO" + ",,,,,,,,,");
+                        }
+                    }
+                    else if (concepto.Equals("Experiencia"))
+                    {
+                        if (considerar.Equals("NO"))
+                        {
+                            lcapacitacionesPrev.Add(tema + ",," + "SI" + ",,,,,,,,");
+                        }
+                        else
+                        {
+                            lcapacitacionesPrev.Add(tema + ",," + "NO" + ",,,,,,,,");
+                        }                       
+                    }
+                    else if (concepto.Equals("Interes"))
+                    {
+                        if (considerar.Equals("NO"))
+                        {
+                            lcapacitacionesPrev.Add(tema + ",,," + "NO" + ",,,,,,,");
+                        }
+                        else
+                        {
+                            lcapacitacionesPrev.Add(tema + ",,," + "SI" + ",,,,,,,");
+                        }
+                    }
+                    else if (concepto.Equals("Evaluaciones"))                    {
+                        
+                        if (considerar.Equals("SI") && Nivel.Equals("BASICO"))
+                        {
+                            lcapacitacionesPrev.Add(tema + ",,,," + "NO APROBADA" + ",,,,,,");
+                        }
+                        else if (considerar.Equals("SI") && Nivel.Equals("AVANZADO"))
+                        {
+                            lcapacitacionesPrev.Add(tema + ",,,," + "NO APROBADA" + ",,,,,,");
+                        }
+                    }
+                    else if (concepto.Equals("Demanda"))
+                    {
+                        if (considerar.Equals("SI"))
+                        {
+                            lcapacitacionesPrev.Add(tema + ",,,,," + "SI" + ",,,,,,");
+                        }
+                        else
+                        {
+                            lcapacitacionesPrev.Add(tema + ",,,,," + "NO" + ",,,,,");
+                        }
+                    }
+                    else if (concepto.Equals("PQR"))
+                    {
+                        if (considerar.Equals("SI"))
+                        {
+                            lcapacitacionesPrev.Add(tema + ",,,,,," + "SI" + ",,,,");
+                        }
+                        else
+                        {
+                            lcapacitacionesPrev.Add(tema + ",,,,,," + "NO" + ",,,,");
+                        }
+                    }                    
+                    else if (concepto.Equals("Cursos"))
+                    {
+                        if (considerar.Equals("SI") && nivel.Equals("BASICO"))
+                        {
+                            lcapacitacionesPrev.Add(tema + ",,,,,,," + nivel + ",,,");
+                        }
+                        else if (considerar.Equals("SI") && nivel.Equals("AVANZADO"))
+                        {
+                            lcapacitacionesPrev.Add(tema + ",,,,,,,," + nivel + ",,");
+                        }
+                    }
+                    
+                    else if (concepto.Equals("Cursos Obligatorios"))
+                    {
+                        if (considerar.Equals("SI") && nivel.Equals("BASICO"))
+                        {
+                            lcapacitacionesPrev.Add(tema + ",,,,,,,,," + nivel + ",");
+                        }
+                        else if(considerar.Equals("SI") && nivel.Equals("AVANZADO"))
+                        {
+                            lcapacitacionesPrev.Add(tema + ",,,,,,,,,," + nivel + ",");
+                        }
+                    }
+                    
+
+
                     //Si no lo contiene lo añade a la lista de capacitaciones
-                    lcapacitaciones.Add(tema + "," + nivel);
+                    //lcapacitacionesPrev.Add(tema + "," + concepto + "," + considerar + "," + nivel + "," + resultado);
+                    
+                    //lcapacitaciones.Add(tema + "," + nivel);
 
                     //lo añade a la lista de temas
 

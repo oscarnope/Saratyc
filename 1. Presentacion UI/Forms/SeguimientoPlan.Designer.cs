@@ -52,17 +52,28 @@
             this.Tema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Publicada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.FechaPublicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Capacitaciones = new System.Windows.Forms.TabControl();
+            this.CursosObligatorios = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.regresar = new System.Windows.Forms.Button();
             this.Disenar = new System.Windows.Forms.Button();
             this.indicador = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TemaCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NivelCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PresentadoCurso = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.fechaPresentacionCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaExpiracionCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.Capacitaciones.SuspendLayout();
+            this.CursosObligatorios.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -290,15 +301,43 @@
             this.FechaPublicacion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.FechaPublicacion.Width = 125;
             // 
-            // Capacitaciones
+            // CursosObligatorios
             // 
-            this.Capacitaciones.Controls.Add(this.tabPage1);
-            this.Capacitaciones.Controls.Add(this.tabPage4);
-            this.Capacitaciones.Location = new System.Drawing.Point(46, 201);
-            this.Capacitaciones.Name = "Capacitaciones";
-            this.Capacitaciones.SelectedIndex = 0;
-            this.Capacitaciones.Size = new System.Drawing.Size(600, 205);
-            this.Capacitaciones.TabIndex = 4;
+            this.CursosObligatorios.Controls.Add(this.tabPage1);
+            this.CursosObligatorios.Controls.Add(this.tabPage4);
+            this.CursosObligatorios.Controls.Add(this.tabPage2);
+            this.CursosObligatorios.Location = new System.Drawing.Point(46, 201);
+            this.CursosObligatorios.Name = "CursosObligatorios";
+            this.CursosObligatorios.SelectedIndex = 0;
+            this.CursosObligatorios.Size = new System.Drawing.Size(600, 205);
+            this.CursosObligatorios.TabIndex = 4;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridView3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(592, 177);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "Cursos Obligatorios";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TemaCurso,
+            this.NivelCurso,
+            this.PresentadoCurso,
+            this.fechaPresentacionCurso,
+            this.fechaExpiracionCurso});
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 25;
+            this.dataGridView3.Size = new System.Drawing.Size(586, 171);
+            this.dataGridView3.TabIndex = 0;
             // 
             // regresar
             // 
@@ -332,6 +371,43 @@
             this.indicador.Size = new System.Drawing.Size(0, 15);
             this.indicador.TabIndex = 34;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Tema";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tema";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // TemaCurso
+            // 
+            this.TemaCurso.HeaderText = "Tema";
+            this.TemaCurso.Name = "TemaCurso";
+            // 
+            // NivelCurso
+            // 
+            this.NivelCurso.HeaderText = "Nivel";
+            this.NivelCurso.Name = "NivelCurso";
+            // 
+            // PresentadoCurso
+            // 
+            this.PresentadoCurso.HeaderText = "Presentado";
+            this.PresentadoCurso.Name = "PresentadoCurso";
+            this.PresentadoCurso.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.PresentadoCurso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // fechaPresentacionCurso
+            // 
+            this.fechaPresentacionCurso.HeaderText = "Fecha Presentación";
+            this.fechaPresentacionCurso.Name = "fechaPresentacionCurso";
+            // 
+            // fechaExpiracionCurso
+            // 
+            this.fechaExpiracionCurso.HeaderText = "Fecha Expiración";
+            this.fechaExpiracionCurso.Name = "fechaExpiracionCurso";
+            // 
             // SeguimientoPlan
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
@@ -339,7 +415,7 @@
             this.Controls.Add(this.indicador);
             this.Controls.Add(this.regresar);
             this.Controls.Add(this.Disenar);
-            this.Controls.Add(this.Capacitaciones);
+            this.Controls.Add(this.CursosObligatorios);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "SeguimientoPlan";
@@ -351,7 +427,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.Capacitaciones.ResumeLayout(false);
+            this.CursosObligatorios.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,7 +455,7 @@
         private DataGridViewTextBoxColumn Tema;
         private DataGridViewCheckBoxColumn Publicada;
         private DataGridViewTextBoxColumn FechaPublicacion;
-        private TabControl Capacitaciones;
+        private TabControl CursosObligatorios;
         private Button regresar;
         private Button Disenar;
         private Label indicador;
@@ -388,5 +466,14 @@
         private DataGridViewTextBoxColumn dgFPresentacion;
         private DataGridViewTextBoxColumn dgFEvaluacion;
         private DataGridViewTextBoxColumn dgResultado;
+        private TabPage tabPage2;
+        private DataGridView dataGridView3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn TemaCurso;
+        private DataGridViewTextBoxColumn NivelCurso;
+        private DataGridViewCheckBoxColumn PresentadoCurso;
+        private DataGridViewTextBoxColumn fechaPresentacionCurso;
+        private DataGridViewTextBoxColumn fechaExpiracionCurso;
     }
 }
